@@ -1,0 +1,15 @@
+/* ================= FULL WIDTH 500px BANNER ================= */
+
+.page-banner {
+    width: 100%;
+    height: 500px;
+    /* Adjust if header height different */
+    overflow: hidden;
+}
+
+.page-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* Keeps image proportional */
+    display: block;
+}

@@ -1,26 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0f1921;
+  --foreground: #ffffff;
+  --accent: #d0a850;
+  --accent-hover: #b89240;
+  --card-bg: #ffffff;
+  --card-text: #0f1921;
+  --border-gold: rgba(208, 168, 80, 0.3);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --font-serif: 'Cinzel', serif;
+  --font-sans: 'Inter', sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, .heading-serif {
+  font-family: var(--font-serif);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Sections */
+.section-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  height: 1px;
+  width: 100px;
+  background: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .section-title { font-size: 1.8rem; }
+  .section-title::before, .section-title::after { width: 40px; }
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* UI Elements */
+.gold-border-box {
+  border: 1px solid var(--accent);
+  padding: 50px;
+  max-width: 1000px;
+  margin: 60px auto;
+  text-align: center;
+  color: #d0a850;
+  line-height: 1.8;
+  background: rgba(208, 168, 80, 0.05);
+}
+
+.visa-card {
+  background: var(--card-bg);
+  color: var(--card-text);
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.visa-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+}
+
+.visa-card h3 {
+  font-size: 1.6rem;
+  margin: 20px 0 10px;
+  color: #0f1921;
+}
+
+.visa-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.btn-gold {
+  background: var(--accent);
+  color: #0f1921;
+  padding: 14px 35px;
+  border-radius: 8px;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  border: 2px solid var(--accent);
+}
+
+.btn-gold:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+.dest-card {
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 12px;
+  border: 2px solid #d0a850;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.dest-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(208, 168, 80, 0.2);
+}
+
+.dest-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.dest-card .name {
+  color: #0f1921;
+  font-weight: 800;
+  font-size: 12px;
+  text-align: center;
+  padding: 8px 0;
+  text-transform: uppercase;
+}
+
+/* Navigation */
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+.footer-link {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: var(--accent);
 }
