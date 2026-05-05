@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-sans);
 }
 
 
@@ -131,7 +131,7 @@ nav ul li a {
 }
 
 body {
-    background: linear-gradient(135deg,#ff0080,#7928ca,#0b1f3a);
+    background: #0f1921;
     color: white;
     overflow-x: hidden;
 }
@@ -148,7 +148,8 @@ body {
 
 /* HEADER */
 header {
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
     padding: 10px 8%;
     display: flex;
@@ -1283,7 +1284,7 @@ pte-section {
 .services-section {
     padding: 100px 20px;
     background: linear-gradient(135deg, #f5f9ff, #eaf3ff);
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-sans);
 }
 
 /* CONTAINER */

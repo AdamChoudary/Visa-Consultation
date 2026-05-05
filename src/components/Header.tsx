@@ -9,22 +9,31 @@ export default function Header() {
 
   const visaServices = [
     { name: 'Student Visa', href: '/studentvisa' },
-    { name: 'Immigration', href: '/immigration' },
     { name: 'Visit Visas', href: '/visitvisas' },
+    { name: 'Immigration', href: '/immigration' },
+    { name: 'Appointments', href: '/appointments' },
     { name: 'Work Visas', href: '/workvisas' },
     { name: 'Family Reunion', href: '/familyreunion' },
-    { name: 'Appointments', href: '/appointments' },
+    { 
+      name: 'Language Test', 
+      subItems: [
+        { name: 'TOEFL Test', href: '/toefl-test' },
+        { name: 'PTE Test', href: '/pte-test' },
+        { name: 'IELTS Test', href: '/ielts' },
+        { name: 'Duolingo Test', href: '/duolingo' }
+      ]
+    },
   ];
 
   return (
-    <header className="bg-[#0f1921] py-6 sticky top-0 z-50">
-      <div className="container mx-auto px-6 flex justify-between items-center">
+    <header className="bg-[#0f1921] py-3 sticky top-0 z-50">
+      <div className="container mx-auto px-3 flex justify-between items-center">
         {/* Logo Section */}
-        <Link href="/" className="flex items-center gap-4 no-underline group">
+        <Link href="/" className="flex items-center gap-1 no-underline group">
           <div className="relative">
-            <img src="/images/TheVisaConsultancy.png" alt="Logo" className="h-14 w-auto drop-shadow-2xl" />
+            <img src="./logo.png" alt="Logo" className="h-18 w-auto drop-shadow-2xl" />
           </div>
-          <span className="text-white text-2xl md:text-3xl font-black tracking-tight heading-serif uppercase">
+          <span className="text-white text-xs md:text-xl tracking-tight font-medium heading-serif ">
             The Visa Consultancy
           </span>
         </Link>
@@ -45,16 +54,40 @@ export default function Header() {
               </button>
               
               {/* Dropdown Menu */}
-              <div className={`absolute left-0 mt-2 w-56 bg-[#0f1921] border border-[#d0a850]/30 rounded-xl shadow-2xl transition-all duration-300 ${dropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+              <div className={`absolute left-0 mt-2 w-64 bg-[#0f1921] border border-[#d0a850]/30 rounded-xl shadow-2xl transition-all duration-300 ${dropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
                 <div className="py-2">
                   {visaServices.map((service, idx) => (
-                    <Link 
-                      key={idx} 
-                      href={service.href}
-                      className="block px-6 py-3 text-white hover:bg-[#d0a850] hover:text-black transition-colors text-xs font-bold uppercase tracking-widest no-underline"
-                    >
-                      {service.name}
-                    </Link>
+                    service.subItems ? (
+                      <div key={idx} className="relative group/sub">
+                        <div className="w-full text-left flex items-center justify-between px-6 py-3 text-white hover:bg-[#d0a850] hover:text-black transition-colors text-xs font-bold uppercase tracking-widest cursor-pointer">
+                          {service.name}
+                          <i className="fas fa-caret-down -rotate-90 group-hover/sub:text-black"></i>
+                        </div>
+                        
+                        {/* Sub-Dropdown Menu */}
+                        <div className="absolute top-0 left-full w-56 bg-[#0f1921] border border-[#d0a850]/30 rounded-xl shadow-2xl opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300">
+                          <div className="py-2">
+                            {service.subItems.map((sub, subIdx) => (
+                              <Link 
+                                key={subIdx} 
+                                href={sub.href}
+                                className="block px-6 py-3 text-white hover:bg-[#d0a850] hover:text-black transition-colors text-xs font-bold uppercase tracking-widest no-underline"
+                              >
+                                {sub.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <Link 
+                        key={idx} 
+                        href={service.href}
+                        className="block px-6 py-3 text-white hover:bg-[#d0a850] hover:text-black transition-colors text-xs font-bold uppercase tracking-widest no-underline"
+                      >
+                        {service.name}
+                      </Link>
+                    )
                   ))}
                 </div>
               </div>
@@ -75,22 +108,34 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div className={`lg:hidden fixed inset-0 bg-[#0f1921] z-40 transition-transform duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col items-center justify-center h-full gap-8 text-xl font-black uppercase tracking-[0.2em] overflow-y-auto py-20">
+        <div className="flex flex-col items-center justify-center min-h-screen gap-8 text-xl font-black uppercase tracking-[0.2em] overflow-y-auto py-20 px-4">
           <Link href="/" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] no-underline">Home</Link>
           
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-4 w-full">
             <span className="text-[#d0a850] text-sm">Visa Services</span>
             {visaServices.map((service, idx) => (
-              <Link key={idx} href={service.href} onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] no-underline text-base">
-                {service.name}
-              </Link>
+              service.subItems ? (
+                <div key={idx} className="flex flex-col items-center gap-3 mt-2 border-t border-white/10 pt-4 w-full">
+                  <span className="text-white text-base no-underline text-center">{service.name}</span>
+                  {service.subItems.map((sub, subIdx) => (
+                    <Link key={subIdx} href={sub.href} onClick={() => setMenuOpen(false)} className="text-gray-400 hover:text-[#d0a850] text-xs no-underline">
+                      {sub.name}
+                    </Link>
+                  ))}
+                  <div className="w-full border-b border-white/10 pb-2"></div>
+                </div>
+              ) : (
+                <Link key={idx} href={service.href} onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] no-underline text-base text-center">
+                  {service.name}
+                </Link>
+              )
             ))}
           </div>
 
           <Link href="/partners" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] no-underline">Partners</Link>
           <Link href="/clients" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] no-underline">Clients</Link>
           <Link href="/blogs" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] no-underline">Blogs</Link>
-          <Link href="/contact" onClick={() => setMenuOpen(false)} className="text-[#d0a850] border-2 border-[#d0a850] px-8 py-3 rounded-full no-underline">Contact</Link>
+          <Link href="/contact" onClick={() => setMenuOpen(false)} className="text-[#d0a850] border-2 border-[#d0a850] px-8 py-3 rounded-full no-underline mt-4">Contact</Link>
         </div>
       </div>
     </header>

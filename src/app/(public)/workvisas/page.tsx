@@ -13,74 +13,111 @@ export default function Workvisas() {
   ];
 
   return (
-    <div className="bg-[#0f1921] pt-32 pb-24 min-h-screen">
-      <div className="container mx-auto px-6">
-        {/* Hero Section */}
-        <div className="flex flex-col lg:flex-row items-center gap-16 mb-24">
-          <div className="flex-1 space-y-8 animate-fade-in">
-             <h1 className="text-4xl md:text-7xl font-black text-white leading-tight heading-serif uppercase">
-              Work Visa <br/>
-              <span className="text-[#d0a850]">Advance Your Career</span>
-             </h1>
-             <p className="text-xl text-gray-300 leading-relaxed font-medium">
-               Whether it's a corporate job or a business startup, we provide the gateway to your professional goals. 
-               Our team handles PR and TR permits with expert care.
-             </p>
-             <Link href="/contact" className="btn-gold">Free Consultation</Link>
-          </div>
-          <div className="flex-1 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="relative group">
-              <div className="absolute inset-0 bg-[#d0a850]/20 blur-3xl group-hover:bg-[#d0a850]/30 transition-all duration-700"></div>
-              <img src="/images/workvisa.png" alt="Work Visa" className="relative z-10 w-full rounded-2xl shadow-2xl transition-transform duration-700 group-hover:scale-105" />
+    <div className="bg-[#0f1921] min-h-screen selection:bg-[#d0a850] selection:text-black">
+      {/* 1. HERO SECTION */}
+      <section className="relative pt-40 pb-24 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#d0a850] rounded-full blur-[120px]"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-20">
+            <div className="flex-1 space-y-10 animate-fade-in">
+               <div className="inline-block px-4 py-1 bg-[#d0a850]/10 border border-[#d0a850]/20 rounded-full">
+                  <span className="text-[#d0a850] text-[10px] font-black uppercase tracking-[0.3em]">Career Growth</span>
+               </div>
+               <h1 className="text-5xl md:text-8xl font-black text-white leading-[0.9] heading-serif uppercase tracking-tighter">
+                Work <br/>
+                <span className="text-[#d0a850]">Visa</span>
+               </h1>
+               <p className="text-xl text-white/70 leading-relaxed font-medium max-w-xl">
+                 Whether it's a corporate job or a business startup, we provide the gateway to your professional goals. 
+                 Our team handles PR and TR permits with expert care.
+               </p>
+               <div className="flex flex-wrap gap-6 pt-4">
+                 <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-10 py-4 rounded-full font-black uppercase text-xs tracking-widest hover:bg-[#b89445] transition-all no-underline shadow-[0_10px_30px_rgba(208,168,80,0.2)]">
+                   Apply for Work Permit
+                 </Link>
+                 <div className="flex items-center gap-4">
+                    <div className="w-12 h-[1px] bg-white/20"></div>
+                    <span className="text-white/40 text-[10px] uppercase font-bold tracking-widest">Global Career</span>
+                 </div>
+               </div>
+            </div>
+            <div className="flex-1 relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                <img src="/images/workvisa.png" alt="Work Visa" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Work Grid */}
-        <section className="py-24 border-t border-white/5">
-          <div className="text-center mb-20">
-            <h2 className="section-title uppercase tracking-[0.2em] font-black">Global Career Paths</h2>
+      {/* 2. CAREER GRID */}
+      <section className="py-32 bg-white/[0.02] border-y border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-24 space-y-4">
+             <span className="text-[#d0a850] text-xs font-black uppercase tracking-[0.4em]">Career Paths</span>
+             <h2 className="text-4xl md:text-6xl font-black text-white heading-serif uppercase tracking-tight">Global Opportunities</h2>
+             <div className="w-24 h-[2px] bg-[#d0a850] mx-auto mt-8"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {jobs.map((job, i) => (
-              <div key={i} className="visa-card !bg-white/5 !text-white border border-white/10 hover:border-[#d0a850]/50 group overflow-hidden">
-                <div className="h-48 overflow-hidden rounded-t-xl mb-6">
-                  <img src={job.img} alt={job.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div key={i} className="group rounded-3xl bg-white/5 border border-white/10 hover:border-[#d0a850]/40 transition-all duration-500 overflow-hidden">
+                <div className="h-56 overflow-hidden relative">
+                  <img src={job.img} alt={job.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f1921] to-transparent opacity-60"></div>
+                  <div className="absolute bottom-4 left-6">
+                    <h3 className="text-white text-2xl font-black uppercase tracking-widest">{job.name}</h3>
+                  </div>
                 </div>
-                <h3 className="text-white text-xl font-bold mb-4 uppercase tracking-widest px-6">{job.name}</h3>
-                <p className="text-gray-400 font-medium leading-relaxed px-6 mb-8">{job.desc}</p>
-                <div className="px-6 pb-8">
-                  <Link href="/contact" className="text-[#d0a850] font-black uppercase text-xs tracking-widest border-b border-[#d0a850] pb-1 no-underline hover:text-white hover:border-white transition-all">Apply Now</Link>
+                <div className="p-8 space-y-6">
+                  <p className="text-white/50 font-medium leading-relaxed text-sm">{job.desc}</p>
+                  <Link href="/contact" className="inline-block text-[#d0a850] font-black uppercase text-[10px] tracking-widest border-b border-[#d0a850] pb-1 no-underline hover:text-white hover:border-white transition-all">
+                    Get Started
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Process Support */}
-        <section className="py-32 border-t border-white/5">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-8 order-2 lg:order-1">
-              <h2 className="text-4xl md:text-5xl font-black text-[#d0a850] uppercase tracking-widest">Professional Pathways</h2>
-              <p className="text-xl text-gray-300 leading-relaxed font-medium">
-                We guide you through employer requirements, medical assessments, and embassy submissions to ensure a successful work permit process.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* 3. PROCESS SUPPORT */}
+      <section className="py-32 container mx-auto px-6">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-24">
+          <div className="flex-1 space-y-10">
+             <span className="text-[#d0a850] text-sm font-black uppercase tracking-[0.4em]">Professional Pathways</span>
+             <h2 className="text-4xl md:text-6xl font-black text-white heading-serif uppercase leading-[1.1] tracking-tight lg:text-right">Expert Work <br/> <span className="text-[#d0a850]">Support</span></h2>
+             <p className="text-xl text-white/60 leading-relaxed font-medium lg:text-right">
+               We guide you through employer requirements, medical assessments, and embassy submissions to ensure a successful work permit process.
+             </p>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 pt-4 lg:justify-items-end">
                 {[
                   "Employer Sponsorship", "LMIA Documentation", "Contract Verification", "Points-Based Assessment"
                 ].map((item, i) => (
-                  <div key={i} className="p-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold text-sm uppercase tracking-widest">
-                    <i className="fas fa-check-circle text-[#d0a850] mr-2"></i> {item}
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#d0a850]/20 flex items-center justify-center">
+                      <i className="fas fa-check text-[#d0a850] text-[10px]"></i>
+                    </div>
+                    <span className="text-white font-bold uppercase tracking-widest text-[11px]">{item}</span>
                   </div>
                 ))}
-              </div>
-            </div>
-            <div className="rounded-[40px] overflow-hidden border-2 border-[#d0a850]/30 shadow-2xl order-1 lg:order-2">
-              <img src="/images/CanadaWorkVisa.jpg" alt="Professional" className="w-full h-full object-cover" />
+             </div>
+             <div className="pt-8 flex lg:justify-end">
+               <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-10 py-4 rounded-full font-black uppercase text-xs tracking-widest hover:bg-[#b89445] transition-all no-underline shadow-lg shadow-[#d0a850]/10">
+                 Apply Now
+               </Link>
+             </div>
+          </div>
+          <div className="flex-1 relative group">
+            <div className="rounded-[40px] overflow-hidden border border-white/10 shadow-2xl relative z-10">
+              <img src="/images/CanadaWorkVisa.jpg" alt="Work Permit" className="w-full h-[550px] object-cover transition-transform duration-1000 group-hover:scale-110" />
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,12 +1,16 @@
-import { Poppins } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const poppins = Poppins({
-  weight: ['300', '400', '600', '700', '800'],
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-poppins",
+  variable: "--font-inter",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
 });
 
 export const metadata = {
@@ -23,7 +27,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" sizes="32x32" href="/images/TheVisaConsultancy.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/TheVisaConsultancy.png" />
       </head>
-      <body className={`${poppins.variable} min-h-screen flex flex-col bg-[#0f1921]`}>
+      <body className={`${inter.variable} ${playfair.variable} min-h-screen flex flex-col bg-[#0f1921]`}>
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

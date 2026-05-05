@@ -1,17 +1,15 @@
-import { Poppins, Cinzel } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "../globals.css";
 import Link from "next/link";
 
-const poppins = Poppins({
-  weight: ['300', '400', '600', '700', '800'],
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-poppins",
+  variable: "--font-inter",
 });
 
-const cinzel = Cinzel({
-  weight: ['400', '700', '900'],
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-cinzel",
+  variable: "--font-playfair",
 });
 
 export const metadata = {
@@ -24,7 +22,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
-      <body className={`${poppins.variable} ${cinzel.variable} font-sans bg-[#0f1921] text-white antialiased`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans bg-[#0f1921] text-white antialiased`}>
         <div className="flex min-h-screen">
           {/* Sidebar */}
           <aside className="w-72 bg-[#0b1218] border-r border-[#d0a850]/10 flex flex-col sticky top-0 h-screen">

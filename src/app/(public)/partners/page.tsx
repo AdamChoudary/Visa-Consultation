@@ -42,37 +42,70 @@ export default function Partners() {
   ];
 
   return (
-    <div className="bg-[#0f1921] pt-32 pb-24 min-h-screen">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-24">
-          <h2 className="section-title uppercase tracking-[0.2em] font-black">Our Trusted Partners</h2>
-          <p className="text-gray-400 mt-6 leading-relaxed font-medium max-w-3xl mx-auto uppercase">
-            We collaborate with industry leaders who share our commitment to excellence and innovation.
-          </p>
+    <div className="bg-[#0f1921] min-h-screen selection:bg-[#d0a850] selection:text-black">
+      {/* 1. HERO SECTION */}
+      <section className="relative pt-40 pb-24 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#d0a850] rounded-full blur-[120px]"></div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {partners.map((partner, i) => (
-            <div key={i} className="visa-card !bg-white/5 !text-white border border-white/10 hover:border-[#d0a850]/50 group">
-              <div className="w-full h-48 overflow-hidden rounded-xl mb-8 bg-white p-4 flex items-center justify-center">
-                <img src={partner.image} alt={partner.name} className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110" />
-              </div>
-              <h3 className="text-white text-2xl font-bold mb-4 uppercase tracking-widest">{partner.name}</h3>
-              <p className="text-gray-400 font-medium leading-relaxed mb-8">{partner.desc}</p>
-              
-              <div className="flex gap-6 mb-10">
-                {partner.socials.map((social, idx) => (
-                  <a key={idx} href={social.link} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#d0a850] text-xl transition-all">
-                    <i className={`fab ${social.icon}`}></i>
-                  </a>
-                ))}
-              </div>
-
-              <a href={partner.url} target="_blank" rel="noopener noreferrer" className="btn-gold !w-full text-center">Visit Website</a>
-            </div>
-          ))}
+        
+        <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+           <div className="inline-block px-4 py-1 bg-[#d0a850]/10 border border-[#d0a850]/20 rounded-full mb-10">
+              <span className="text-[#d0a850] text-[10px] font-black uppercase tracking-[0.3em]">Network of Excellence</span>
+           </div>
+           <h1 className="text-5xl md:text-8xl font-black text-white leading-[0.9] heading-serif uppercase tracking-tighter mb-10">
+            Our Trusted <br/>
+            <span className="text-[#d0a850]">Partners</span>
+           </h1>
+           <p className="text-xl text-white/70 leading-relaxed font-medium">
+             We collaborate with industry leaders who share our commitment to excellence and innovation. 
+             Our network ensures you get the best support in every aspect of your journey.
+           </p>
         </div>
-      </div>
+      </section>
+
+      {/* 2. PARTNERS GRID */}
+      <section className="py-32 bg-white/[0.02] border-y border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+            {partners.map((partner, i) => (
+              <div key={i} className="group p-10 rounded-[40px] bg-white/5 border border-white/10 hover:border-[#d0a850]/40 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-full h-56 rounded-3xl bg-white p-10 flex items-center justify-center mb-10 relative overflow-hidden group-hover:shadow-[0_0_40px_rgba(208,168,80,0.1)] transition-all">
+                  <img src={partner.image} alt={partner.name} className="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700" />
+                </div>
+                <h3 className="text-white text-2xl font-black mb-6 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{partner.name}</h3>
+                <p className="text-white/40 font-medium leading-relaxed text-sm mb-10">{partner.desc}</p>
+                
+                <div className="flex gap-6 mb-10">
+                  {partner.socials.map((social, idx) => (
+                    <a key={idx} href={social.link} target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#d0a850] text-xl transition-all">
+                      <i className={`fab ${social.icon}`}></i>
+                    </a>
+                  ))}
+                </div>
+
+                <a href={partner.url} target="_blank" rel="noopener noreferrer" className="inline-block bg-[#d0a850] text-[#0f1921] px-10 py-4 rounded-full font-black uppercase text-xs tracking-widest hover:bg-[#b89445] transition-all no-underline w-full text-center">
+                  Visit Website
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. CTA */}
+      <section className="py-32 container mx-auto px-6 text-center">
+         <div className="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-[40px] p-16 md:p-24 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#d0a850]/5 rounded-full blur-[80px]"></div>
+            <h2 className="text-4xl md:text-7xl font-black text-white heading-serif uppercase mb-10 relative z-10">Become a <span className="text-[#d0a850]">Partner?</span></h2>
+            <p className="text-xl text-white/60 font-medium mb-12 max-w-2xl mx-auto relative z-10">
+              Join our network of elite service providers and help us deliver exceptional value to our clients worldwide.
+            </p>
+            <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-12 py-5 rounded-full font-black uppercase text-sm tracking-[0.2em] hover:bg-[#b89445] transition-all no-underline inline-block relative z-10 shadow-xl shadow-[#d0a850]/10">
+              Inquire Now
+            </Link>
+         </div>
+      </section>
     </div>
   );
 }
