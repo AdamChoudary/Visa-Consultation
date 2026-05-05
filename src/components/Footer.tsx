@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0f1921] pt-24 pb-12 mt-0 border-t border-white/5">
+    <footer className="bg-[#0f1927] pt-24 pb-12 mt-0 border-t border-white/5">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 text-center md:text-left">
         
         {/* About Column */}

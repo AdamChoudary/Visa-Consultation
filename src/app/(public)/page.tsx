@@ -158,7 +158,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-7xl items-center justify-items-center mx-auto">
             {[
               { n: "Canada", img: "https://flagcdn.com/w320/ca.png" },
               { n: "United Kingdom", img: "https://flagcdn.com/w320/gb.png" },
