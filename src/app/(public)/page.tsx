@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -10,11 +11,11 @@ export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const socialLinks = [
-    { href: "https://wa.me/923335965199", icon: <FaWhatsapp />, color: "text-[#25D366]", label: "WhatsApp" },
-    { href: "https://www.facebook.com/thevisaconsultancy1", icon: <FaFacebook />, color: "text-[#1877F2]", label: "Facebook" },
-    { href: "https://www.tiktok.com/@the.visa.consulta6", icon: <FaTiktok />, color: "text-[#000000]", label: "TikTok" },
-    { href: "https://www.instagram.com/the_visa_consultancy", icon: <FaInstagram />, color: "text-[#E4405F]", label: "Instagram" },
-    { href: "https://www.linkedin.com/company/the-visa-consultancy", icon: <FaLinkedin />, color: "text-[#0077B5]", label: "LinkedIn" },
+    { href: "https://wa.me/923335965199", icon: <FaWhatsapp />, color: "#25D366", label: "WhatsApp" },
+    { href: "https://www.facebook.com/thevisaconsultancy1", icon: <FaFacebook />, color: "#1877F2", label: "Facebook" },
+    { href: "https://www.tiktok.com/@the.visa.consulta6", icon: <FaTiktok />, color: "#FE2C55", label: "TikTok" },
+    { href: "https://www.instagram.com/the_visa_consultancy", icon: <FaInstagram />, color: "#E4405F", label: "Instagram" },
+    { href: "https://www.linkedin.com/company/the-visa-consultancy", icon: <FaLinkedin />, color: "#0077B5", label: "LinkedIn" },
   ];
 
   useEffect(() => {
@@ -73,12 +74,6 @@ export default function Home() {
     { n: "AUSTRALIA", img: "/images/StudentVisaAustralia.jpg" }
   ];
 
-  const socialLinks = [
-    { name: "Facebook", icon: "fab fa-facebook-f", href: "https://www.facebook.com/thevisaconsultancy" },
-    { name: "Instagram", icon: "fab fa-instagram", href: "https://www.instagram.com/thevisaconsultancy" },
-    { name: "Twitter", icon: "fab fa-twitter", href: "https://twitter.com/thevisaconsult" },
-    { name: "LinkedIn", icon: "fab fa-linkedin-in", href: "https://www.linkedin.com/company/the-visa-consultancy" }
-  ];
 
   return (
     <main className="bg-[#0f1921] min-h-screen selection:bg-[#d0a850] selection:text-black">
@@ -105,28 +100,6 @@ export default function Home() {
              transition={{ duration: 0.8 }}
              className="space-y-8"
            >
-             <div className="inline-flex items-center gap-3 px-6 py-2 bg-white/5 border border-white/10 rounded-full backdrop-blur-md">
-               <div className="w-2 h-2 bg-[#d0a850] rounded-full animate-pulse shadow-[0_0_10px_#d0a850]"></div>
-               <span className="text-[#d0a850] text-[10px] font-black uppercase tracking-[0.5em]">Premium Global Mobility</span>
-             </div>
-             
-             <h1 className="text-6xl md:text-9xl font-black text-white heading-serif leading-[0.8] tracking-tighter uppercase">
-               Expert <br/> <span className="text-[#d0a850]">Consultancy</span>
-             </h1>
-             
-             <p className="text-xl text-white/60 font-medium max-w-2xl mx-auto leading-relaxed">
-               Crafting your journey to global success with precision and excellence. 
-               The definitive name in high-end visa and immigration solutions.
-             </p>
-
-             <div className="flex flex-wrap items-center justify-center gap-8 pt-10">
-               <Link href="/appointments" className="bg-[#d0a850] text-[#0f1921] px-14 py-6 rounded-full font-black uppercase text-xs tracking-[0.3em] hover:bg-white hover:text-black transition-all no-underline shadow-2xl shadow-[#d0a850]/20">
-                 Book Appointment
-               </Link>
-               <button onClick={toggleMute} className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all group">
-                 <i className={`fas ${isMuted ? 'fa-volume-mute' : 'fa-volume-up'} text-lg`}></i>
-               </button>
-             </div>
            </motion.div>
         </div>
 
@@ -138,10 +111,10 @@ export default function Home() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ x: -10, color: '#d0a850' }}
+              whileHover={{ x: -10, color: link.color }}
               className="w-12 h-12 rounded-xl bg-[#0f1921]/80 border border-white/5 backdrop-blur-xl flex items-center justify-center text-white/40 text-lg transition-all"
             >
-              <i className={link.icon}></i>
+              {link.icon}
             </motion.a>
           ))}
         </div>
