@@ -27,9 +27,14 @@ export async function setSession(user: { id: number; email: string; role: string
   cookieStore.set("session", session, { expires, httpOnly: true });
 }
 
-export async function getSession() {
-  const cookieStore = await cookies();
-  const session = cookieStore.get("session")?.value;
+export async function getSession(providedSession?: string) {
+  let session = providedSession;
+  
+  if (!session) {
+    const cookieStore = await cookies();
+    session = cookieStore.get("session")?.value;
+  }
+  
   if (!session) return null;
   try {
     return await decrypt(session);

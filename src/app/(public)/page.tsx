@@ -1,11 +1,21 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { FaFacebook, FaTiktok, FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 
 export default function Home() {
   const [isMuted, setIsMuted] = useState(true);
   const [volume, setVolume] = useState(1);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const socialLinks = [
+    { href: "https://wa.me/923335965199", icon: <FaWhatsapp />, color: "text-[#25D366]", label: "WhatsApp" },
+    { href: "https://www.facebook.com/thevisaconsultancy1", icon: <FaFacebook />, color: "text-[#1877F2]", label: "Facebook" },
+    { href: "https://www.tiktok.com/@the.visa.consulta6", icon: <FaTiktok />, color: "text-[#000000]", label: "TikTok" },
+    { href: "https://www.instagram.com/the_visa_consultancy", icon: <FaInstagram />, color: "text-[#E4405F]", label: "Instagram" },
+    { href: "https://www.linkedin.com/company/the-visa-consultancy", icon: <FaLinkedin />, color: "text-[#0077B5]", label: "LinkedIn" },
+  ];
 
   useEffect(() => {
     const observerOptions = {
@@ -69,6 +79,25 @@ export default function Home() {
           <source src="/VC video.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/40"></div>
+
+        {/* Floating Social Links */}
+        <div className="fixed right-6 top-1/2 -translate-y-1/2 z-[100] flex flex-col gap-4">
+          {socialLinks.map((link, idx) => (
+            <motion.a
+              key={idx}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 + (idx * 0.1), duration: 0.5 }}
+              className={`w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-2xl transition-all duration-300 ${link.color} hover:scale-125 shadow-2xl border border-black/5`}
+              title={link.label}
+            >
+              {link.icon}
+            </motion.a>
+          ))}
+        </div>
 
         {/* Volume Controller */}
         <div className="absolute bottom-8 right-8 z-20 flex items-center gap-2 bg-black/40 hover:bg-black/60 backdrop-blur-md p-2 rounded-full border border-white/10 shadow-2xl transition-all group/volume">

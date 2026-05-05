@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSession } from "@/lib/auth";
+import { getSession } from "./lib/auth";
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
+  const sessionCookie = request.cookies.get("session")?.value;
   
   if (path.startsWith("/admin") && path !== "/admin/login") {
-    const session = await getSession();
+    const session = await getSession(sessionCookie);
     
     if (!session) {
       return NextResponse.redirect(new URL("/admin/login", request.url));
@@ -13,7 +14,7 @@ export async function proxy(request: NextRequest) {
   }
 
   if (path === "/admin/login") {
-    const session = await getSession();
+    const session = await getSession(sessionCookie);
     if (session) {
       return NextResponse.redirect(new URL("/admin", request.url));
     }

@@ -70,10 +70,6 @@ export default function Footer() {
         </p>
       </div>
 
-      {/* WhatsApp Floating */}
-      <a href="https://wa.me/923335965199" target="_blank" rel="noreferrer" className="fixed right-8 bottom-8 w-16 h-16 bg-[#25D366] text-white flex items-center justify-center rounded-full text-3xl shadow-[0_10px_30px_rgba(37,211,102,0.3)] hover:scale-110 transition-all duration-300 z-50">
-        <i className="fab fa-whatsapp"></i>
-      </a>
     </footer>
   );
 }
