@@ -1,7 +1,6 @@
-"use client";
-
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,7 +30,14 @@ export default function Header() {
         {/* Logo Section */}
         <Link href="/" className="flex items-center gap-1 no-underline group">
           <div className="relative">
-            <img src="./logo.png" alt="Logo" className="h-18 w-auto drop-shadow-2xl" />
+            <Image 
+              src="/logo.png" 
+              alt="Logo" 
+              width={100} 
+              height={100} 
+              className="h-18 w-auto drop-shadow-2xl" 
+              priority
+            />
           </div>
           <span className="text-white text-xs md:text-xl tracking-tight font-medium heading-serif ">
             The Visa Consultancy

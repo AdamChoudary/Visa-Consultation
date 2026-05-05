@@ -1,59 +1,59 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Appointments | The Visa Consultancy",
+  title: "Book Appointment | The Visa Consultancy",
 };
 
-export default function Appointments() {
+export default function AppointmentPage() {
   const appointmentTypes = [
-    { title: "Student Visa", desc: "Discuss study options, university eligibility, and documentation." },
-    { title: "Visit Visa", desc: "Consult on tourist destinations and submission procedures." },
-    { title: "Immigration", desc: "Guidance for PR, skilled worker, and family sponsorship." },
-    { title: "Business", desc: "Discuss pathways for overseas business expansion." }
+    { title: "Student Visa", desc: "Expert guidance for university admissions and study permit applications." },
+    { title: "Visit Visa", desc: "Assistance for tourist and family visit visas for all major destinations." },
+    { title: "Immigration & PR", desc: "Comprehensive support for permanent residency and skilled migration." },
+    { title: "Work Permit", desc: "Dedicated solutions for employer-sponsored and independent work visas." }
   ];
 
   return (
-    <div className="bg-[#0f1921] min-h-screen">
-      <section className="relative min-h-[80vh] flex items-center pt-10 overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-24 pt-10">
+    <div className="bg-[#0f1921] min-h-screen pt-24 selection:bg-[#d0a850] selection:text-black">
+      <div className="container mx-auto px-6">
+        {/* 1. HERO SECTION */}
+        <section className="min-h-[80vh] flex items-center py-20">
+          <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-24">
             <div className="flex-1 space-y-10 animate-fade-in">
-               <div className="space-y-6">
-                  <div className="inline-flex items-center gap-3 px-4 py-1 bg-white/5 border border-white/10 rounded-full">
-                     <span className="text-[#d0a850] text-[9px] font-black uppercase tracking-[0.4em]">Personalized Support</span>
-                  </div>
-                  <h1 className="text-5xl md:text-7xl font-black text-white leading-[0.9] heading-serif uppercase tracking-tighter">
-                   Expert <br/>
-                   <span className="text-[#d0a850]">Consultation</span>
-                  </h1>
-                  <div className="w-16 h-[2px] bg-[#d0a850]"></div>
+               <div className="space-y-4">
+                 <span className="text-[#d0a850] text-xs font-black uppercase tracking-[0.6em] block mb-4">Consultation</span>
+                 <h1 className="text-5xl md:text-8xl font-black text-white heading-serif leading-[0.9] tracking-tighter uppercase">
+                   Book <br/> <span className="text-[#d0a850]">Meeting</span>
+                 </h1>
                </div>
-
-               <p className="text-lg text-white/50 leading-relaxed font-medium max-w-lg">
-                 Schedule a personalized session with our expert consultants. Choose your service type, and let us guide you through every step of your visa journey.
+               
+               <p className="text-xl text-white/40 leading-relaxed font-medium max-w-xl">
+                 Secure your global future with a personalized consultation. Our experts are ready to guide you through every step of your visa journey.
                </p>
 
-               <div className="flex flex-wrap items-center gap-10 pt-4">
-                 <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-[0.2em] hover:bg-[#b89445] transition-all no-underline shadow-lg hover:-translate-y-1">
-                   Book Your Session
+               <div className="flex flex-wrap gap-6 pt-6">
+                 <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-12 py-5 rounded-full font-black uppercase text-[10px] tracking-[0.3em] hover:bg-white hover:text-black transition-all no-underline shadow-2xl shadow-[#d0a850]/10">
+                   Schedule Now
                  </Link>
-                 <div className="flex items-center gap-6">
-                    <div className="w-12 h-[1px] bg-white/10"></div>
-                    <span className="text-white/20 text-[8px] uppercase font-black tracking-[0.5em]">Start Today</span>
-                 </div>
                </div>
             </div>
 
             <div className="flex-1 relative animate-fade-in flex justify-end" style={{ animationDelay: '0.2s' }}>
               <div className="relative z-10">
                 <div className="relative rounded-3xl overflow-hidden border-2 border-[#d0a850] shadow-2xl max-w-xl">
-                  <img src="/page images/appointment1.png" alt="Appointments" className="w-full h-auto object-cover" />
+                  <Image 
+                    src="/page images/appointment1.png" 
+                    alt="Appointments" 
+                    width={800} 
+                    height={1000} 
+                    className="w-full h-auto object-cover" 
+                    priority
+                  />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* Types Grid */}
         <section className="py-32 border-t border-white/5">
@@ -126,5 +126,6 @@ export default function Appointments() {
           </div>
         </section>
       </div>
+    </div>
   );
 }

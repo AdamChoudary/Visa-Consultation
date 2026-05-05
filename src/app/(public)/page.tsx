@@ -64,37 +64,84 @@ export default function Home() {
     }
   };
 
+  const destinations = [
+    { n: "UK", img: "/images/StudentVisaUK.jpeg" },
+    { n: "USA", img: "/images/USAvisitVisa.jpeg" },
+    { n: "CANADA", img: "/images/CanadaWorkVisa.jpg" },
+    { n: "EUROPE", img: "/images/schengenVisitVisa.jpeg" },
+    { n: "DUBAI", img: "/images/DubaiVisitVisa.jpeg" },
+    { n: "AUSTRALIA", img: "/images/StudentVisaAustralia.jpg" }
+  ];
+
+  const socialLinks = [
+    { name: "Facebook", icon: "fab fa-facebook-f", href: "https://www.facebook.com/thevisaconsultancy" },
+    { name: "Instagram", icon: "fab fa-instagram", href: "https://www.instagram.com/thevisaconsultancy" },
+    { name: "Twitter", icon: "fab fa-twitter", href: "https://twitter.com/thevisaconsult" },
+    { name: "LinkedIn", icon: "fab fa-linkedin-in", href: "https://www.linkedin.com/company/the-visa-consultancy" }
+  ];
+
   return (
     <main className="bg-[#0f1921] min-h-screen selection:bg-[#d0a850] selection:text-black">
       {/* 1. HERO SECTION */}
-      <section className="relative w-full h-[85vh] overflow-hidden ">
+      <section className="relative w-full h-[85vh] overflow-hidden bg-[#0f1921]">
         <video 
           ref={videoRef}
           autoPlay 
           muted
           loop 
           playsInline 
-          className="w-full h-full object-cover"
+          preload="metadata"
+          className="w-full h-full object-cover opacity-60"
         >
           <source src="/VC video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0f1921]"></div>
+
+        {/* Hero Content Overlay */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+           <motion.div 
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8 }}
+             className="space-y-8"
+           >
+             <div className="inline-flex items-center gap-3 px-6 py-2 bg-white/5 border border-white/10 rounded-full backdrop-blur-md">
+               <div className="w-2 h-2 bg-[#d0a850] rounded-full animate-pulse shadow-[0_0_10px_#d0a850]"></div>
+               <span className="text-[#d0a850] text-[10px] font-black uppercase tracking-[0.5em]">Premium Global Mobility</span>
+             </div>
+             
+             <h1 className="text-6xl md:text-9xl font-black text-white heading-serif leading-[0.8] tracking-tighter uppercase">
+               Expert <br/> <span className="text-[#d0a850]">Consultancy</span>
+             </h1>
+             
+             <p className="text-xl text-white/60 font-medium max-w-2xl mx-auto leading-relaxed">
+               Crafting your journey to global success with precision and excellence. 
+               The definitive name in high-end visa and immigration solutions.
+             </p>
+
+             <div className="flex flex-wrap items-center justify-center gap-8 pt-10">
+               <Link href="/appointments" className="bg-[#d0a850] text-[#0f1921] px-14 py-6 rounded-full font-black uppercase text-xs tracking-[0.3em] hover:bg-white hover:text-black transition-all no-underline shadow-2xl shadow-[#d0a850]/20">
+                 Book Appointment
+               </Link>
+               <button onClick={toggleMute} className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all group">
+                 <i className={`fas ${isMuted ? 'fa-volume-mute' : 'fa-volume-up'} text-lg`}></i>
+               </button>
+             </div>
+           </motion.div>
+        </div>
 
         {/* Floating Social Links */}
-        <div className="fixed right-6 top-1/2 -translate-y-1/2 z-[100] flex flex-col gap-4">
+        <div className="fixed right-8 top-1/2 -translate-y-1/2 z-[100] hidden lg:flex flex-col gap-6">
           {socialLinks.map((link, idx) => (
             <motion.a
               key={idx}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5 + (idx * 0.1), duration: 0.5 }}
-              className={`w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center text-2xl transition-all duration-300 ${link.color} hover:scale-125 shadow-2xl border border-black/5`}
-              title={link.label}
+              whileHover={{ x: -10, color: '#d0a850' }}
+              className="w-12 h-12 rounded-xl bg-[#0f1921]/80 border border-white/5 backdrop-blur-xl flex items-center justify-center text-white/40 text-lg transition-all"
             >
-              {link.icon}
+              <i className={link.icon}></i>
             </motion.a>
           ))}
         </div>
