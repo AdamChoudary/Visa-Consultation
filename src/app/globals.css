@@ -234,3 +234,41 @@ h1, h2, h3, .heading-serif {
   background: #d0a860;
   color: #000;
 }
+
+/* Quill Editor Customization */
+.ql-container.ql-snow {
+  border: none !important;
+}
+
+.ql-toolbar.ql-snow {
+  border: none !important;
+  border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+  background: #f8fafc;
+  padding: 12px !important;
+}
+
+.ql-editor {
+  min-height: 450px;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  color: #0f1921 !important;
+  padding: 30px !important;
+}
+
+.ql-editor.ql-blank::before {
+  color: #94a3b8 !important;
+  font-style: normal !important;
+  left: 30px !important;
+}
+
+.ql-snow .ql-stroke {
+  stroke: #475569 !important;
+}
+
+.ql-snow .ql-fill {
+  fill: #475569 !important;
+}
+
+.ql-snow .ql-picker {
+  color: #475569 !important;
+}

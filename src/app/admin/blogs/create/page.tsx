@@ -83,14 +83,16 @@ export default function CreateBlogPage() {
           </div>
 
           <div className="space-y-4">
-            <label className="text-[10px] font-black text-[#d0a850] uppercase tracking-[0.3em]">Content Editor</label>
-            <div className="bg-white rounded-3xl overflow-hidden text-black min-h-[500px]">
+            <div className="flex justify-between items-center">
+              <label className="text-[10px] font-black text-[#d0a850] uppercase tracking-[0.3em]">Article Content</label>
+              <span className="text-[9px] font-medium text-gray-500 uppercase tracking-widest italic">Rich text editor enabled</span>
+            </div>
+            <div className="bg-white rounded-[32px] overflow-hidden shadow-2xl border border-white/10">
               <ReactQuill 
                 theme="snow" 
                 value={content} 
                 onChange={setContent} 
                 modules={modules}
-                className="h-full"
                 placeholder="Start writing your story..."
               />
             </div>
