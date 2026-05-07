@@ -42,70 +42,73 @@ export default function Partners() {
   ];
 
   return (
-    <div className="bg-[#0f1921] min-h-screen selection:bg-[#d0a850] selection:text-black">
-      {/* 1. HERO SECTION */}
-      <section className="relative pt-40 pb-24 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#d0a850] rounded-full blur-[120px]"></div>
-        </div>
-        
-        <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
-           <div className="inline-block px-4 py-1 bg-[#d0a850]/10 border border-[#d0a850]/20 rounded-full mb-10">
-              <span className="text-[#d0a850] text-[10px] font-black uppercase tracking-[0.3em]">Network of Excellence</span>
-           </div>
-           <h1 className="text-5xl md:text-8xl font-black text-white leading-[0.9] heading-serif uppercase tracking-tighter mb-10">
-            Our Trusted <br/>
-            <span className="text-[#d0a850]">Partners</span>
-           </h1>
-           <p className="text-xl text-white/70 leading-relaxed font-medium">
-             We collaborate with industry leaders who share our commitment to excellence and innovation. 
-             Our network ensures you get the best support in every aspect of your journey.
-           </p>
-        </div>
-      </section>
+    <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+      <div className="container mx-auto px-4 md:px-6">
+        {/* 1. HERO SECTION */}
+        <section className="min-h-[30vh] md:min-h-[40vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
+          <div className="w-full text-center space-y-8 md:space-y-10 animate-fade-in">
+             <div className="space-y-4">
+               <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] block">Global Network</span>
+               <h1 className="text-4xl md:text-8xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
+                 Our <br className="hidden md:block"/> <span className="text-[#d0a850]">Partners</span>
+               </h1>
+             </div>
+             <p className="text-base md:text-xl text-white/40 leading-relaxed font-medium max-w-3xl mx-auto">
+               Collaborating with world-class institutions and organizations to provide you with the best international opportunities and support.
+             </p>
+          </div>
+        </section>
 
-      {/* 2. PARTNERS GRID */}
-      <section className="py-32 bg-white/[0.02] border-y border-white/5">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        {/* 2. PARTNERS GRID */}
+        <section className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end mb-12 md:mb-20 gap-8 text-center lg:text-left">
+            <div className="max-w-2xl space-y-4">
+               <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Trusted Alliance</span>
+               <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase tracking-tight">Institutional <br className="hidden md:block"/>Excellence</h2>
+            </div>
+            <p className="text-white/40 max-w-sm text-sm font-medium leading-relaxed">
+              Our network spans across continents, bringing global standards to your doorstep.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
             {partners.map((partner, i) => (
-              <div key={i} className="group p-10 rounded-[40px] bg-white/5 border border-white/10 hover:border-[#d0a850]/40 transition-all duration-500 hover:-translate-y-2">
-                <div className="w-full h-56 rounded-3xl bg-white p-10 flex items-center justify-center mb-10 relative overflow-hidden group-hover:shadow-[0_0_40px_rgba(208,168,80,0.1)] transition-all">
-                  <img src={partner.image} alt={partner.name} className="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700" />
+              <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
+                <div className="w-16 h-16 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-3xl mb-8 md:mb-10 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
+                  <i className="fas fa-handshake"></i>
                 </div>
-                <h3 className="text-white text-2xl font-black mb-6 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{partner.name}</h3>
-                <p className="text-white/40 font-medium leading-relaxed text-sm mb-10">{partner.desc}</p>
-                
-                <div className="flex gap-6 mb-10">
-                  {partner.socials.map((social, idx) => (
-                    <a key={idx} href={social.link} target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#d0a850] text-xl transition-all">
-                      <i className={`fab ${social.icon}`}></i>
+                <h3 className="text-white text-base md:text-lg font-bold mb-6 md:mb-8 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{partner.name}</h3>
+                <p className="text-white/30 font-medium leading-relaxed text-sm md:text-base antialiased mb-8">
+                  {partner.desc}
+                </p>
+                <div className="flex gap-4">
+                  {partner.socials.map((soc, idx) => (
+                    <a key={idx} href={soc.link} target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#d0a850] transition-colors">
+                      <i className={`fab ${soc.icon}`}></i>
                     </a>
                   ))}
                 </div>
-
-                <a href={partner.url} target="_blank" rel="noopener noreferrer" className="inline-block bg-[#d0a850] text-[#0f1921] px-10 py-4 rounded-full font-black uppercase text-xs tracking-widest hover:bg-[#b89445] transition-all no-underline w-full text-center">
-                  Visit Website
-                </a>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 3. CTA */}
-      <section className="py-32 container mx-auto px-6 text-center">
-         <div className="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-[40px] p-16 md:p-24 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#d0a850]/5 rounded-full blur-[80px]"></div>
-            <h2 className="text-4xl md:text-7xl font-black text-white heading-serif uppercase mb-10 relative z-10">Become a <span className="text-[#d0a850]">Partner?</span></h2>
-            <p className="text-xl text-white/60 font-medium mb-12 max-w-2xl mx-auto relative z-10">
-              Join our network of elite service providers and help us deliver exceptional value to our clients worldwide.
-            </p>
-            <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-12 py-5 rounded-full font-black uppercase text-sm tracking-[0.2em] hover:bg-[#b89445] transition-all no-underline inline-block relative z-10 shadow-xl shadow-[#d0a850]/10">
-              Inquire Now
-            </Link>
-         </div>
-      </section>
+        {/* 3. CTA */}
+        <section className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto">
+           <div className="bg-white/[0.02] border border-white/5 rounded-2xl md:rounded-[40px] p-8 md:p-24 text-center space-y-8 md:space-y-12">
+              <div className="space-y-4">
+                <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Join the Network</span>
+                <h2 className="text-3xl md:text-7xl font-bold text-white heading-serif uppercase tracking-tight leading-tight">Become a <br className="hidden md:block"/> <span className="text-[#d0a850]">Global Partner</span></h2>
+              </div>
+              <p className="text-base md:text-xl text-white/40 font-medium max-w-2xl mx-auto">
+                Expand your reach and collaborate with a leading visa consultancy. Let's create global success stories together.
+              </p>
+              <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-10 md:px-12 py-4 md:py-5 rounded-full font-bold uppercase text-[14px] md:text-[14px] tracking-[0.3em] hover:bg-white hover:text-black transition-all no-underline inline-block shadow-2xl shadow-[#d0a850]/5">
+                Contact Partnership
+              </Link>
+           </div>
+        </section>
+      </div>
     </div>
   );
 }

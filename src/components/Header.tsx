@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,21 +28,21 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-[#0f1921] py-3 sticky top-0 z-50">
-      <div className="container mx-auto px-3 flex justify-between items-center">
+    <header className="bg-[#0f1921] py-3 sticky top-0 z-50 border-b border-white/5">
+      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         {/* Logo Section */}
-        <Link href="/" className="flex items-center gap-1 no-underline group">
+        <Link href="/" className="flex items-center gap-3 no-underline group z-[60]">
           <div className="relative">
             <Image 
               src="/logo.png" 
               alt="Logo" 
-              width={100} 
-              height={100} 
-              className="h-18 w-auto drop-shadow-2xl" 
+              width={80} 
+              height={80} 
+              className="h-10 w-auto md:h-18 drop-shadow-2xl transition-transform group-hover:scale-105" 
               priority
             />
           </div>
-          <span className="text-white text-xs md:text-xl tracking-tight font-medium heading-serif ">
+          <span className="text-white text-sm md:text-xl tracking-tight font-medium heading-serif">
             The Visa Consultancy
           </span>
         </Link>
@@ -108,44 +109,117 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Mobile Toggle */}
-        <button className="lg:hidden text-white text-3xl bg-transparent border-none focus:outline-none" onClick={() => setMenuOpen(!menuOpen)}>
-          <i className={`fas ${menuOpen ? 'fa-times' : 'fa-bars'}`}></i>
-        </button>
+        {/* Mobile Toggle Button (Only visible when menu is closed) */}
+        {!menuOpen && (
+          <button 
+            className="lg:hidden text-white text-2xl bg-transparent border-none focus:outline-none p-2 z-[60]" 
+            onClick={() => setMenuOpen(true)}
+          >
+            <i className="fas fa-bars"></i>
+          </button>
+        )}
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`lg:hidden fixed inset-0 bg-[#0f1921] z-40 transition-transform duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col items-center justify-center min-h-screen gap-8 text-xl font-black uppercase tracking-[0.2em] overflow-y-auto py-20 px-4">
-          <Link href="/" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] no-underline">Home</Link>
-          
-          <div className="flex flex-col items-center gap-4 w-full">
-            <span className="text-[#d0a850] text-sm">Visa Services</span>
-            {visaServices.map((service, idx) => (
-              service.subItems ? (
-                <div key={idx} className="flex flex-col items-center gap-3 mt-2 border-t border-white/10 pt-4 w-full">
-                  <span className="text-white text-base no-underline text-center">{service.name}</span>
-                  {service.subItems.map((sub, subIdx) => (
-                    <Link key={subIdx} href={sub.href} onClick={() => setMenuOpen(false)} className="text-gray-400 hover:text-[#d0a850] text-xs no-underline">
-                      {sub.name}
-                    </Link>
-                  ))}
-                  <div className="w-full border-b border-white/10 pb-2"></div>
-                </div>
-              ) : (
-                <Link key={idx} href={service.href} onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] no-underline text-base text-center">
-                  {service.name}
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {menuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMenuOpen(false)}
+              className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-md z-[70]"
+            />
+
+            {/* Side Drawer */}
+            <motion.div 
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="lg:hidden fixed top-0 right-0 h-screen w-[85%] sm:w-[400px] bg-[#0f1921] z-[80] shadow-[-20px_0_50px_rgba(0,0,0,0.5)] border-l border-white/10 flex flex-col"
+            >
+              {/* Drawer Header */}
+              <div className="flex items-center justify-between p-6 border-b border-white/5">
+                <span className="text-[#d0a850] text-xs font-bold uppercase tracking-[0.3em]">Menu</span>
+                <button 
+                  onClick={() => setMenuOpen(false)}
+                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+                >
+                  <i className="fas fa-times text-xl"></i>
+                </button>
+              </div>
+
+              {/* Drawer Content */}
+              <div className="flex-1 overflow-y-auto px-8 py-10">
+                <nav className="flex flex-col gap-10">
+                  <div className="flex flex-col gap-6">
+                    <Link href="/" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] text-2xl font-bold no-underline transition-colors">Home</Link>
+                    <Link href="/partners" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] text-2xl font-bold no-underline transition-colors">Partners</Link>
+                    <Link href="/clients" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] text-2xl font-bold no-underline transition-colors">Clients</Link>
+                    <Link href="/blogs" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] text-2xl font-bold no-underline transition-colors">Blogs</Link>
+                  </div>
+
+                  <div className="h-[1px] w-12 bg-[#d0a850]/30"></div>
+
+                  <div className="space-y-8">
+                    <div className="flex items-center gap-3">
+                      <div className="h-[1px] flex-1 bg-white/5"></div>
+                      <span className="text-[#d0a850] text-[10px] font-black uppercase tracking-[0.5em]">Visa Services</span>
+                      <div className="h-[1px] flex-1 bg-white/5"></div>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-4">
+                      {visaServices.map((service, idx) => (
+                        <div key={idx} className="space-y-3">
+                          {service.subItems ? (
+                            <>
+                              <span className="text-white/40 text-[10px] font-bold uppercase tracking-widest block">{service.name}</span>
+                              <div className="grid grid-cols-2 gap-2 ml-2">
+                                {service.subItems.map((sub, subIdx) => (
+                                  <Link 
+                                    key={subIdx} 
+                                    href={sub.href} 
+                                    onClick={() => setMenuOpen(false)} 
+                                    className="text-white hover:text-[#d0a850] text-xs font-medium no-underline py-1"
+                                  >
+                                    {sub.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </>
+                          ) : (
+                            <Link 
+                              href={service.href} 
+                              onClick={() => setMenuOpen(false)} 
+                              className="text-white hover:text-[#d0a850] text-base font-medium no-underline block"
+                            >
+                              {service.name}
+                            </Link>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </nav>
+              </div>
+
+              {/* Drawer Footer */}
+              <div className="p-8 border-t border-white/5 mt-auto bg-black/20">
+                <Link 
+                  href="/contact" 
+                  onClick={() => setMenuOpen(false)} 
+                  className="block w-full bg-[#d0a850] text-black text-center py-4 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-[#b89445] transition-all no-underline shadow-lg"
+                >
+                  Book Consultation
                 </Link>
-              )
-            ))}
-          </div>
-
-          <Link href="/partners" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] no-underline">Partners</Link>
-          <Link href="/clients" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] no-underline">Clients</Link>
-          <Link href="/blogs" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] no-underline">Blogs</Link>
-          <Link href="/contact" onClick={() => setMenuOpen(false)} className="text-[#d0a850] border-2 border-[#d0a850] px-8 py-3 rounded-full no-underline mt-4">Contact</Link>
-        </div>
-      </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
