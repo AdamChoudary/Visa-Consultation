@@ -70,7 +70,7 @@ export default function VisitVisasPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
             {destinations.map((dest, i) => (
               <div key={i} className="group bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500 overflow-hidden">
-                <div className="h-48 md:h-64 overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-700">
+                <div className="h-48 md:h-64 overflow-hidden relative transition-all duration-700">
                   <Image 
                     src={dest.img} 
                     alt={dest.name} 

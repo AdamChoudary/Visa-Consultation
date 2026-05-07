@@ -101,7 +101,7 @@ export default function Duolingo() {
                </div>
             </div>
             <div className="flex-1 w-full relative group">
-              <div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-1000 bg-white/5 p-12 md:p-24 flex items-center justify-center">
+              <div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10 transition-all duration-1000 bg-white/5 p-12 md:p-24 flex items-center justify-center">
                 <i className="fas fa-graduation-cap text-8xl md:text-[12rem] text-[#d0a850]/20 group-hover:text-[#d0a850]/40 transition-all duration-700"></i>
               </div>
             </div>

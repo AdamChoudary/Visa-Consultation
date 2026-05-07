@@ -105,7 +105,7 @@ export default function PteTest() {
                </div>
             </div>
             <div className="flex-1 w-full relative group">
-              <div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-1000">
+              <div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10 transition-all duration-1000">
                 <Image 
                   src="/images/pte.jpg" 
                   alt="PTE Academic Success" 
