@@ -9,6 +9,7 @@ export default function Home() {
   const [isMuted, setIsMuted] = useState(true);
   const [volume, setVolume] = useState(1);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
 
   const socialLinks = [
     { href: "https://wa.me/923335965199", icon: <FaWhatsapp />, color: "#25D366", label: "WhatsApp" },
@@ -40,30 +41,36 @@ export default function Home() {
   }, []);
 
   const toggleMute = () => {
-    if (videoRef.current) {
-      const nextMuted = !videoRef.current.muted;
-      videoRef.current.muted = nextMuted;
-      setIsMuted(nextMuted);
-      if (!nextMuted && videoRef.current.volume === 0) {
-        videoRef.current.volume = 0.5;
-        setVolume(0.5);
+    const videos = [videoRef.current, mobileVideoRef.current];
+    videos.forEach(video => {
+      if (video) {
+        const nextMuted = !video.muted;
+        video.muted = nextMuted;
+        setIsMuted(nextMuted);
+        if (!nextMuted && video.volume === 0) {
+          video.volume = 0.5;
+          setVolume(0.5);
+        }
       }
-    }
+    });
   };
 
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = parseFloat(e.target.value);
     setVolume(val);
-    if (videoRef.current) {
-      videoRef.current.volume = val;
-      if (val > 0) {
-        videoRef.current.muted = false;
-        setIsMuted(false);
-      } else {
-        videoRef.current.muted = true;
-        setIsMuted(true);
+    const videos = [videoRef.current, mobileVideoRef.current];
+    videos.forEach(video => {
+      if (video) {
+        video.volume = val;
+        if (val > 0) {
+          video.muted = false;
+          setIsMuted(false);
+        } else {
+          video.muted = true;
+          setIsMuted(true);
+        }
       }
-    }
+    });
   };
 
   const destinations = [
@@ -79,7 +86,8 @@ export default function Home() {
   return (
     <main className="bg-[#0f1921] min-h-screen selection:bg-[#d0a850] selection:text-black overflow-x-hidden">
       {/* 1. HERO SECTION */}
-      <section className="relative w-full md:h-[85vh] overflow-hidden bg-[#0f1921]">
+      <section className="relative w-full h-[90vh] md:h-[85vh] overflow-hidden bg-[#0f1921]">
+        {/* Desktop Video */}
         <video
           ref={videoRef}
           autoPlay
@@ -87,10 +95,24 @@ export default function Home() {
           loop
           playsInline
           preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover md:object-cover opacity-60"
+          className="absolute inset-0 w-full h-full object-cover opacity-60 hidden md:block"
         >
           <source src="/VC video.mp4" type="video/mp4" />
         </video>
+
+        {/* Mobile Video (Portrait) */}
+        <video
+          ref={mobileVideoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover opacity-70 md:hidden"
+        >
+          <source src="/vcv portrait.mp4" type="video/mp4" />
+        </video>
+
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0f1921]"></div>
 
         {/* Hero Content Overlay */}
