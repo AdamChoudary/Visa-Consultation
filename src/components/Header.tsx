@@ -241,48 +241,7 @@ export default function Header() {
                     </div>
                     <Link href="/partners" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] py-5 text-xl font-bold no-underline transition-colors border-b border-white/5">Partners</Link>
                     <Link href="/clients" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] py-5 text-xl font-bold no-underline transition-colors border-b border-white/5">Clients</Link>
-                    <Link href="/blogs" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] py-5 text-xl font-bold no-underline transition-colors border-b border-white/5">Blogs</Link>
-
-                    {/* Language Selection Accordion */}
-                    <div className="border-b border-white/5">
-                      <button 
-                        onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                        className="w-full flex items-center justify-start gap-3 py-5 text-white hover:text-[#d0a850] text-xl font-bold bg-transparent border-none cursor-pointer group"
-                      >
-                        <span className={langDropdownOpen ? 'text-[#d0a850]' : ''}>Language</span>
-                        <motion.i 
-                          animate={{ rotate: langDropdownOpen ? 180 : 0 }}
-                          className={`fas fa-chevron-down text-sm ${langDropdownOpen ? 'text-[#d0a850]' : 'text-white/20'}`}
-                        ></motion.i>
-                      </button>
-                      
-                      <AnimatePresence>
-                        {langDropdownOpen && (
-                          <motion.div 
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            className="overflow-hidden bg-white/[0.02] rounded-xl mb-4"
-                          >
-                            <div className="py-2 flex flex-col">
-                              {[
-                                { code: 'EN', label: 'English' },
-                                { code: 'UR', label: 'Urdu' },
-                                { code: 'AR', label: 'Arabic' }
-                              ].map((lang) => (
-                                <button 
-                                  key={lang.code}
-                                  onClick={() => { setCurrentLang(lang.code); setMenuOpen(false); }}
-                                  className={`px-8 py-4 text-left hover:bg-white/5 text-sm font-medium transition-all ${currentLang === lang.code ? 'text-[#d0a850]' : 'text-white/70'}`}
-                                >
-                                  {lang.label} ({lang.code})
-                                </button>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
+                    <Link href="/blogs" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] py-5 text-xl font-bold no-underline transition-colors border-b border-white/5">Blogs</Link> 
                   </div>
                 </nav>
               </div>
