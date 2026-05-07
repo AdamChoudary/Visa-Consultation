@@ -72,10 +72,41 @@ export default function Partners() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
-            {partners.map((partner, i) => (
+            {[
+              {
+                name: "Bin Araba Real Estates",
+                mainIcon: "fa-building",
+                desc: "A professional real estate company offering residential and commercial property solutions with transparent dealings and premium investment opportunities.",
+                socials: [
+                  { icon: "fa-facebook-f", link: "https://www.facebook.com/BINARABrealestate" },
+                  { icon: "fa-tiktok", link: "https://www.tiktok.com/@bin.arab90" },
+                  { icon: "fa-instagram", link: "https://www.instagram.com/bin.arab.real.estate" }
+                ]
+              },
+              {
+                name: "Remarks Studio",
+                mainIcon: "fa-paint-brush",
+                desc: "A creative digital marketing agency specializing in branding, social media marketing, video editing, and digital growth strategies.",
+                socials: [
+                  { icon: "fa-facebook-f", link: "https://www.facebook.com/remarkstudio1" },
+                  { icon: "fa-tiktok", link: "https://www.tiktok.com/@remark.studio" },
+                  { icon: "fa-instagram", link: "https://www.instagram.com/remark_studios" }
+                ]
+              },
+              {
+                name: "The Printing Company",
+                mainIcon: "fa-print",
+                desc: "Providing professional printing services including brochures, business cards, banners, and complete branding materials.",
+                socials: [
+                  { icon: "fa-facebook-f", link: "https://www.facebook.com/theprintingcompany1" },
+                  { icon: "fa-tiktok", link: "https://www.tiktok.com/@theprintingcompany1" },
+                  { icon: "fa-instagram", link: "https://www.instagram.com/the_printing_company1" }
+                ]
+              }
+            ].map((partner, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-16 h-16 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-3xl mb-8 md:mb-10 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
-                  <i className="fas fa-handshake"></i>
+                  <i className={`fas ${partner.mainIcon}`}></i>
                 </div>
                 <h3 className="text-white text-base md:text-lg font-bold mb-6 md:mb-8 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{partner.name}</h3>
                 <p className="text-white/30 font-medium leading-relaxed text-sm md:text-base antialiased mb-8">

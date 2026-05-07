@@ -30,7 +30,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start space-y-4">
           <h4 className="text-[#d0a860] text-xl md:text-3xl font-semibold tracking-[0.06em]">Contact Us</h4>
           <ul className="text-white/80 space-y-2 text-sm md:text-base list-none p-0 flex flex-col items-center md:items-start font-medium">
-            <li className="flex items-start gap-3 text-left">
+            <li className="flex items-start text-center gap-3 text-left">
               <i className="fas fa-map-marker-alt text-[#d0a860] text-lg mt-1 shrink-0"></i>
               <span className="max-w-[280px] md:max-w-[320px]">Office# 104, Mezzanine Floor, Embassy Gardens, Sector C1, Bahria Enclave, Islamabad</span>
             </li>

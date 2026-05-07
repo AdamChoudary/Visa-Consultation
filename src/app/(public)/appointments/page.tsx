@@ -68,10 +68,15 @@ export default function AppointmentPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
-            {appointmentTypes.map((type, i) => (
+            {[
+              { title: "Student Visa", desc: "Expert guidance for university admissions and study permit applications.", icon: "fa-graduation-cap" },
+              { title: "Visit Visa", desc: "Assistance for tourist and family visit visas for all major destinations.", icon: "fa-passport" },
+              { title: "Immigration & PR", desc: "Comprehensive support for permanent residency and skilled migration.", icon: "fa-id-card" },
+              { title: "Work Permit", desc: "Dedicated solutions for employer-sponsored and independent work visas.", icon: "fa-briefcase" }
+            ].map((type, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
-                  <i className="fas fa-calendar-check"></i>
+                  <i className={`fas ${type.icon}`}></i>
                 </div>
                 <h3 className="text-white text-base font-bold mb-4 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{type.title}</h3>
                 <p className="text-white/30 font-medium leading-relaxed text-[13px] md:text-sm antialiased">{type.desc}</p>

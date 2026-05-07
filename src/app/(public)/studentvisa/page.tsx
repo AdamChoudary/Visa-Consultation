@@ -77,14 +77,14 @@ export default function StudentVisaPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
             {[
-              { t: "University Selection", d: "Finding the right institution that fits your career goals." },
-              { t: "CAS & I-20 Support", d: "Streamlined assistance for your enrollment documentation." },
-              { t: "Financial Guidance", d: "Helping you prepare the necessary funds and proof." },
-              { t: "Interview Prep", d: "Mock sessions to build your confidence for the embassy." }
+              { t: "University Selection", d: "Finding the right institution that fits your career goals.", i: "fa-university" },
+              { t: "CAS & I-20 Support", d: "Streamlined assistance for your enrollment documentation.", i: "fa-file-invoice" },
+              { t: "Financial Guidance", d: "Helping you prepare the necessary funds and proof.", i: "fa-coins" },
+              { t: "Interview Prep", d: "Mock sessions to build your confidence for the embassy.", i: "fa-user-check" }
             ].map((service, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
-                  <i className="fas fa-graduation-cap"></i>
+                  <i className={`fas ${service.i}`}></i>
                 </div>
                 <h3 className="text-white text-base font-bold mb-4 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{service.t}</h3>
                 <p className="text-white/30 font-medium leading-relaxed text-[13px] md:text-sm antialiased">{service.d}</p>
