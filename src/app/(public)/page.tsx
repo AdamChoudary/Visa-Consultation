@@ -160,10 +160,41 @@ export default function Home() {
             className="w-0 group-hover/volume:w-24 group-hover/volume:mr-2 transition-all duration-300 accent-[#d0a860] cursor-pointer opacity-0 group-hover/volume:opacity-100"
           />
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20 cursor-pointer group"
+          onClick={() => document.getElementById('mission')?.scrollIntoView({ behavior: 'smooth' })}
+        >
+          <div className="w-[1px] h-12 bg-gradient-to-b from-[#d0a860]/40 to-transparent relative overflow-hidden">
+            <motion.div
+              animate={{
+                y: [0, 48],
+                opacity: [0, 1, 0]
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent via-[#d0a860] to-transparent"
+            />
+          </div>
+          <motion.span 
+            animate={{ opacity: [0.4, 0.7, 0.4] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="text-[9px] uppercase tracking-[0.4em] text-[#d0a860] font-light group-hover:text-[#d0a860] transition-colors"
+          >
+            Explore
+          </motion.span>
+        </motion.div>
       </section>
 
       {/* 2. QUOTE / MISSION SECTION */}
-      <section className="py-12 md:py-20 container mx-auto px-4 md:px-6">
+      <section id="mission" className="py-12 md:py-20 container mx-auto px-4 md:px-6">
         <div className="max-w-7xl mx-auto border-2 border-[#d0a860] rounded-xl p-6 md:p-16 text-center bg-[#0f1921]/50 backdrop-blur-sm reveal">
           <h2
             className="text-[#d0a860] text-lg md:text-4xl font-medium mb-6 md:mb-8 leading-tight reveal"
