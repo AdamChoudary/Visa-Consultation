@@ -30,19 +30,19 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start space-y-4">
           <h4 className="text-[#d0a860] text-xl md:text-3xl font-semibold tracking-[0.06em]">Contact Us</h4>
           <ul className="text-white/80 space-y-2 text-sm md:text-base list-none p-0 flex flex-col items-center md:items-start font-medium">
-            <li className="flex items-start gap-4 text-center md:text-left">
+            <li className="flex items-start gap-3 text-left">
               <i className="fas fa-map-marker-alt text-[#d0a860] text-lg mt-1 shrink-0"></i>
               <span className="max-w-[280px] md:max-w-[320px]">Office# 104, Mezzanine Floor, Embassy Gardens, Sector C1, Bahria Enclave, Islamabad</span>
             </li>
-            <li className="flex items-center gap-4">
+            <li className="flex items-center gap-3 text-left">
               <i className="fas fa-phone-alt text-[#d0a860] text-lg shrink-0"></i>
               <span className="text-base md:text-lg">+92 333 5965199</span>
             </li>
-            <li className="flex items-center gap-4">
+            <li className="flex items-center gap-3 text-left">
               <i className="fas fa-envelope text-[#d0a860] text-lg shrink-0"></i>
               <span className="lowercase">info@thevisaconsultancy.com</span>
             </li>
-            <li className="flex items-center gap-4">
+            <li className="flex items-center gap-3 text-left">
               <i className="fas fa-clock text-[#d0a860] text-lg shrink-0"></i>
               <span>Mon – Sat | 11:00 AM – 7:00 PM</span>
             </li> 
