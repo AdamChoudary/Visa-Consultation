@@ -136,6 +136,7 @@ export default function Contact() {
                   <option value="immigration">Immigration / PR</option>
                   <option value="family">Family Reunion</option>
                   <option value="appointment">Appointments</option>
+                  <option value="other">Other Services</option>
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#d0a850]">
                   <i className="fas fa-chevron-down text-lg"></i>
@@ -184,6 +185,18 @@ export default function Contact() {
               </div>
             )}
 
+            {visaType === "work" && (
+              <div className="space-y-6 animate-fade-in bg-white/[0.02] p-5 md:p-8 rounded-2xl border border-white/5">
+                <h3 className="text-white text-lg font-bold uppercase tracking-widest">Work Visa Details</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                  <input type="text" name="work_country" placeholder="Preferred Country" className="w-full bg-[#0b1218] border border-white/10 rounded-xl p-3 md:p-4 text-white outline-none text-sm" />
+                  <input type="text" name="work_profession" placeholder="Current Occupation" className="w-full bg-[#0b1218] border border-white/10 rounded-xl p-3 md:p-4 text-white outline-none text-sm" />
+                  <input type="number" name="work_experience" placeholder="Years of Experience" className="w-full bg-[#0b1218] border border-white/10 rounded-xl p-3 md:p-4 text-white outline-none text-sm" />
+                  <input type="text" name="work_skills" placeholder="Key Skills / Trade" className="w-full bg-[#0b1218] border border-white/10 rounded-xl p-3 md:p-4 text-white outline-none text-sm" />
+                </div>
+              </div>
+            )}
+
             {visaType === "immigration" && (
               <div className="space-y-6 animate-fade-in bg-white/[0.02] p-5 md:p-8 rounded-2xl border border-white/5">
                 <h3 className="text-white text-lg font-bold uppercase tracking-widest">Immigration / PR Details</h3>
@@ -193,6 +206,50 @@ export default function Contact() {
                   <input type="text" name="imm_profession" placeholder="Occupation" className="w-full bg-[#0b1218] border border-white/10 rounded-xl p-3 md:p-4 text-white outline-none text-sm" />
                   <input type="number" name="imm_experience" placeholder="Work Experience (Years)" className="w-full bg-[#0b1218] border border-white/10 rounded-xl p-3 md:p-4 text-white outline-none text-sm" />
                 </div>
+              </div>
+            )}
+
+            {visaType === "family" && (
+              <div className="space-y-6 animate-fade-in bg-white/[0.02] p-5 md:p-8 rounded-2xl border border-white/5">
+                <h3 className="text-white text-lg font-bold uppercase tracking-widest">Family Reunion Details</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                  <input type="text" name="family_country" placeholder="Sponsoring Country" className="w-full bg-[#0b1218] border border-white/10 rounded-xl p-3 md:p-4 text-white outline-none text-sm" />
+                  <input type="text" name="family_relation" placeholder="Relationship with Sponsor" className="w-full bg-[#0b1218] border border-white/10 rounded-xl p-3 md:p-4 text-white outline-none text-sm" />
+                  <select name="sponsor_status" className="w-full bg-[#0b1218] border border-white/10 rounded-xl p-3 md:p-4 text-white outline-none text-sm" defaultValue="">
+                    <option value="" disabled>Sponsor's Status</option>
+                    <option>Citizen</option>
+                    <option>PR Holder</option>
+                    <option>Work Permit</option>
+                  </select>
+                </div>
+              </div>
+            )}
+
+            {visaType === "appointment" && (
+              <div className="space-y-6 animate-fade-in bg-white/[0.02] p-5 md:p-8 rounded-2xl border border-white/5">
+                <h3 className="text-white text-lg font-bold uppercase tracking-widest">Appointment Details</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                  <select name="appointment_reason" className="w-full bg-[#0b1218] border border-white/10 rounded-xl p-3 md:p-4 text-white outline-none text-sm" defaultValue="">
+                    <option value="" disabled>Reason for Appointment</option>
+                    <option>Initial Consultation</option>
+                    <option>Case Review</option>
+                    <option>Document Verification</option>
+                    <option>Embassy Interview Prep</option>
+                  </select>
+                  <select name="urgency" className="w-full bg-[#0b1218] border border-white/10 rounded-xl p-3 md:p-4 text-white outline-none text-sm" defaultValue="">
+                    <option value="" disabled>Urgency Level</option>
+                    <option>Normal</option>
+                    <option>Urgent</option>
+                    <option>High Priority</option>
+                  </select>
+                </div>
+              </div>
+            )}
+
+            {visaType === "other" && (
+              <div className="space-y-6 animate-fade-in bg-white/[0.02] p-5 md:p-8 rounded-2xl border border-white/5">
+                <h3 className="text-white text-lg font-bold uppercase tracking-widest">Other Service Details</h3>
+                <textarea name="other_service_details" placeholder="Please specify the service you are looking for..." className="w-full bg-[#0b1218] border border-white/10 rounded-xl p-3 md:p-4 text-white outline-none text-sm" rows={3}></textarea>
               </div>
             )}
           </div>

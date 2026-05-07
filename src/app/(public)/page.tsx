@@ -163,33 +163,22 @@ export default function Home() {
 
         {/* Scroll Indicator */}
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20 cursor-pointer group"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 cursor-pointer group"
           onClick={() => document.getElementById('mission')?.scrollIntoView({ behavior: 'smooth' })}
         >
-          <div className="w-[1px] h-12 bg-gradient-to-b from-[#d0a860]/40 to-transparent relative overflow-hidden">
+          <div className="w-5 h-8 rounded-full border border-[#d0a860] flex justify-center pt-2">
             <motion.div
-              animate={{
-                y: [0, 48],
-                opacity: [0, 1, 0]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent via-[#d0a860] to-transparent"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              className="w-0.5 h-1.5 bg-[#d0a860] rounded-full"
             />
           </div>
-          <motion.span 
-            animate={{ opacity: [0.4, 0.7, 0.4] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-[9px] uppercase tracking-[0.4em] text-[#d0a860] font-light group-hover:text-[#d0a860] transition-colors"
-          >
-            Explore
-          </motion.span>
+          <span className="text-[9px] uppercase tracking-[0.2em] text-[#d0a860] font-bold opacity-80 group-hover:opacity-100 transition-opacity">
+            Scroll Down
+          </span>
         </motion.div>
       </section>
 
