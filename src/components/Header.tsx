@@ -8,6 +8,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileVisaOpen, setMobileVisaOpen] = useState(false);
+  const [mobileLangTestOpen, setMobileLangTestOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState('EN');
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
   const visaServices = [
     { name: 'Student Visa', href: '/studentvisa' },
@@ -155,53 +159,93 @@ export default function Header() {
               {/* Drawer Content */}
               <div className="flex-1 overflow-y-auto px-8 py-10">
                 <nav className="flex flex-col gap-10">
-                  <div className="flex flex-col gap-6">
-                    <Link href="/" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] text-2xl font-bold no-underline transition-colors">Home</Link>
-                    <Link href="/partners" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] text-2xl font-bold no-underline transition-colors">Partners</Link>
-                    <Link href="/clients" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] text-2xl font-bold no-underline transition-colors">Clients</Link>
-                    <Link href="/blogs" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] text-2xl font-bold no-underline transition-colors">Blogs</Link>
-                  </div>
-
-                  <div className="h-[1px] w-12 bg-[#d0a850]/30"></div>
-
-                  <div className="space-y-8">
-                    <div className="flex items-center gap-3">
-                      <div className="h-[1px] flex-1 bg-white/5"></div>
-                      <span className="text-[#d0a850] text-[10px] font-black uppercase tracking-[0.5em]">Visa Services</span>
-                      <div className="h-[1px] flex-1 bg-white/5"></div>
-                    </div>
-
-                    <div className="grid grid-cols-1 gap-4">
-                      {visaServices.map((service, idx) => (
-                        <div key={idx} className="space-y-3">
-                          {service.subItems ? (
-                            <>
-                              <span className="text-white/40 text-[10px] font-bold uppercase tracking-widest block">{service.name}</span>
-                              <div className="grid grid-cols-2 gap-2 ml-2">
-                                {service.subItems.map((sub, subIdx) => (
+                  <div className="flex flex-col gap-2">
+                    {/* Home, Partners, Clients, Blogs - Clean Links */}
+                    <Link href="/" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] py-4 text-xl font-bold no-underline transition-colors border-b border-white/5 flex justify-between items-center">
+                      Home
+                    </Link>
+                    
+                    {/* Visa Services Accordion */}
+                    <div className="border-b border-white/5">
+                      <button 
+                        onClick={() => setMobileVisaOpen(!mobileVisaOpen)}
+                        className="w-full flex items-center justify-between py-5 text-white hover:text-[#d0a850] text-xl font-bold bg-transparent border-none cursor-pointer group"
+                      >
+                        <span className={mobileVisaOpen ? 'text-[#d0a850]' : ''}>Visa Services</span>
+                        <motion.i 
+                          animate={{ rotate: mobileVisaOpen ? 180 : 0 }}
+                          className={`fas fa-chevron-down text-sm ${mobileVisaOpen ? 'text-[#d0a850]' : 'text-white/20'}`}
+                        ></motion.i>
+                      </button>
+                      
+                      <AnimatePresence>
+                        {mobileVisaOpen && (
+                          <motion.div 
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden bg-white/[0.02] rounded-xl mb-4"
+                          >
+                            <div className="py-2 flex flex-col">
+                              {visaServices.map((service, idx) => (
+                                service.subItems ? (
+                                  <div key={idx} className="px-4">
+                                    <button 
+                                      onClick={() => setMobileLangTestOpen(!mobileLangTestOpen)}
+                                      className="w-full flex items-center justify-between py-4 text-white/80 hover:text-[#d0a850] text-sm font-bold bg-transparent border-none cursor-pointer"
+                                    >
+                                      <span>{service.name}</span>
+                                      <motion.i 
+                                        animate={{ rotate: mobileLangTestOpen ? 180 : 0 }}
+                                        className="fas fa-caret-down text-xs opacity-40"
+                                      ></motion.i>
+                                    </button>
+                                    
+                                    <AnimatePresence>
+                                      {mobileLangTestOpen && (
+                                        <motion.div 
+                                          initial={{ height: 0, opacity: 0 }}
+                                          animate={{ height: 'auto', opacity: 1 }}
+                                          exit={{ height: 0, opacity: 0 }}
+                                          className="overflow-hidden border-l border-[#d0a850]/20 ml-2 mb-2"
+                                        >
+                                          {service.subItems.map((sub, subIdx) => (
+                                            <Link 
+                                              key={subIdx} 
+                                              href={sub.href} 
+                                              onClick={() => setMenuOpen(false)} 
+                                              className="block px-6 py-3 text-white/60 hover:text-[#d0a850] text-xs font-medium no-underline"
+                                            >
+                                              {sub.name}
+                                            </Link>
+                                          ))}
+                                        </motion.div>
+                                      )}
+                                    </AnimatePresence>
+                                  </div>
+                                ) : (
                                   <Link 
-                                    key={subIdx} 
-                                    href={sub.href} 
+                                    key={idx} 
+                                    href={service.href} 
                                     onClick={() => setMenuOpen(false)} 
-                                    className="text-white hover:text-[#d0a850] text-xs font-medium no-underline py-1"
+                                    className="px-8 py-4 text-white/70 hover:text-[#d0a850] hover:bg-white/5 text-sm font-medium no-underline transition-all"
                                   >
-                                    {sub.name}
+                                    {service.name}
                                   </Link>
-                                ))}
-                              </div>
-                            </>
-                          ) : (
-                            <Link 
-                              href={service.href} 
-                              onClick={() => setMenuOpen(false)} 
-                              className="text-white hover:text-[#d0a850] text-base font-medium no-underline block"
-                            >
-                              {service.name}
-                            </Link>
-                          )}
-                        </div>
-                      ))}
+                                )
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
+
+                    <Link href="/partners" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] py-5 text-xl font-bold no-underline transition-colors border-b border-white/5">Partners</Link>
+                    <Link href="/clients" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] py-5 text-xl font-bold no-underline transition-colors border-b border-white/5">Clients</Link>
+                    <Link href="/blogs" onClick={() => setMenuOpen(false)} className="text-white hover:text-[#d0a850] py-5 text-xl font-bold no-underline transition-colors border-b border-white/5">Blogs</Link>
+                    
+       
+                    
                   </div>
                 </nav>
               </div>
