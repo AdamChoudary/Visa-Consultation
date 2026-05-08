@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "Partners | The Visa Consultancy",
@@ -8,9 +9,8 @@ export default function Partners() {
   const partners = [
     {
       name: "Bin Araba Real Estates",
-      image: "/images/binarab.jpg",
+      image: "/page images/Bin Arab.png",
       desc: "A professional real estate company offering residential and commercial property solutions with transparent dealings and premium investment opportunities.",
-      url: "https://www.binarabrealestates.com",
       socials: [
         { icon: "fa-facebook-f", link: "https://www.facebook.com/BINARABrealestate" },
         { icon: "fa-tiktok", link: "https://www.tiktok.com/@bin.arab90" },
@@ -19,9 +19,8 @@ export default function Partners() {
     },
     {
       name: "Remarks Studio",
-      image: "/images/remarkstudio.jpg",
+      image: "/page images/remark studio.png",
       desc: "A creative digital marketing agency specializing in branding, social media marketing, video editing, and digital growth strategies.",
-      url: "#",
       socials: [
         { icon: "fa-facebook-f", link: "https://www.facebook.com/remarkstudio1" },
         { icon: "fa-tiktok", link: "https://www.tiktok.com/@remark.studio" },
@@ -30,9 +29,8 @@ export default function Partners() {
     },
     {
       name: "The Printing Company",
-      image: "/images/theprintingcompany.jpg",
+      image: "/page images/Printing company.png",
       desc: "Providing professional printing services including brochures, business cards, banners, and complete branding materials.",
-      url: "#",
       socials: [
         { icon: "fa-facebook-f", link: "https://www.facebook.com/theprintingcompany1" },
         { icon: "fa-tiktok", link: "https://www.tiktok.com/@theprintingcompany1" },
@@ -42,7 +40,7 @@ export default function Partners() {
   ];
 
   return (
-    <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+    <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[30vh] md:min-h-[40vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
@@ -71,42 +69,16 @@ export default function Partners() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
-            {[
-              {
-                name: "Bin Araba Real Estates",
-                mainIcon: "fa-building",
-                desc: "A professional real estate company offering residential and commercial property solutions with transparent dealings and premium investment opportunities.",
-                socials: [
-                  { icon: "fa-facebook-f", link: "https://www.facebook.com/BINARABrealestate" },
-                  { icon: "fa-tiktok", link: "https://www.tiktok.com/@bin.arab90" },
-                  { icon: "fa-instagram", link: "https://www.instagram.com/bin.arab.real.estate" }
-                ]
-              },
-              {
-                name: "Remarks Studio",
-                mainIcon: "fa-paint-brush",
-                desc: "A creative digital marketing agency specializing in branding, social media marketing, video editing, and digital growth strategies.",
-                socials: [
-                  { icon: "fa-facebook-f", link: "https://www.facebook.com/remarkstudio1" },
-                  { icon: "fa-tiktok", link: "https://www.tiktok.com/@remark.studio" },
-                  { icon: "fa-instagram", link: "https://www.instagram.com/remark_studios" }
-                ]
-              },
-              {
-                name: "The Printing Company",
-                mainIcon: "fa-print",
-                desc: "Providing professional printing services including brochures, business cards, banners, and complete branding materials.",
-                socials: [
-                  { icon: "fa-facebook-f", link: "https://www.facebook.com/theprintingcompany1" },
-                  { icon: "fa-tiktok", link: "https://www.tiktok.com/@theprintingcompany1" },
-                  { icon: "fa-instagram", link: "https://www.instagram.com/the_printing_company1" }
-                ]
-              }
-            ].map((partner, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
+            {partners.map((partner, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
-                <div className="w-16 h-16 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-3xl mb-8 md:mb-10 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
-                  <i className={`fas ${partner.mainIcon}`}></i>
+                <div className="relative w-full aspect-video rounded-xl bg-white/5 overflow-hidden mb-8 md:mb-10 group-hover:bg-[#d0a850]/10 transition-all border border-white/5 group-hover:border-[#d0a850]/30">
+                  <Image
+                    src={partner.image}
+                    alt={partner.name}
+                    fill
+                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <h3 className="text-white text-base md:text-lg font-bold mb-6 md:mb-8 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{partner.name}</h3>
                 <p className="text-white/30 font-medium leading-relaxed text-sm md:text-base antialiased mb-8">
@@ -123,6 +95,7 @@ export default function Partners() {
             ))}
           </div>
         </section>
+
 
         {/* 3. CTA */}
         <section className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto">

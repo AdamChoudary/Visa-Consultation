@@ -78,7 +78,7 @@ export default function Home() {
   return (
     <main className="bg-[#0f1921] min-h-screen selection:bg-[#d0a850] selection:text-black">
       {/* 1. HERO SECTION */}
-      <section className="relative w-full h-[85vh] overflow-hidden bg-[#0f1921]">
+      <section className="relative w-full h-[calc(100vh-64px)] md:h-[calc(100vh-96px)] overflow-hidden bg-[#0f1921]">
         <video 
           ref={videoRef}
           autoPlay 
@@ -86,7 +86,7 @@ export default function Home() {
           loop 
           playsInline 
           preload="metadata"
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover object-top opacity-60"
         >
           <source src="/VC video1.mp4" type="video/mp4" />
         </video>

@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.variable} ${playfair.variable} min-h-screen flex flex-col bg-[#0f1921]`}>
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow pt-[64px] md:pt-[96px]">{children}</main>
         <Footer />
       </body>
     </html>
