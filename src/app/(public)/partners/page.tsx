@@ -9,7 +9,7 @@ export default function Partners() {
   const partners = [
     {
       name: "Bin Araba Real Estates",
-      image: "/page images/Bin Arab.png",
+      image: "/page images/bin arab2.jpg",
       desc: "A professional real estate company offering residential and commercial property solutions with transparent dealings and premium investment opportunities.",
       socials: [
         { icon: "fa-facebook-f", link: "https://www.facebook.com/BINARABrealestate" },
@@ -19,7 +19,7 @@ export default function Partners() {
     },
     {
       name: "Remarks Studio",
-      image: "/page images/remark studio.png",
+      image: "/page images/remark studio2.jpg",
       desc: "A creative digital marketing agency specializing in branding, social media marketing, video editing, and digital growth strategies.",
       socials: [
         { icon: "fa-facebook-f", link: "https://www.facebook.com/remarkstudio1" },
@@ -29,7 +29,7 @@ export default function Partners() {
     },
     {
       name: "The Printing Company",
-      image: "/page images/Printing company.png",
+      image: "/page images/printing company.jpg",
       desc: "Providing professional printing services including brochures, business cards, banners, and complete branding materials.",
       socials: [
         { icon: "fa-facebook-f", link: "https://www.facebook.com/theprintingcompany1" },
@@ -77,7 +77,7 @@ export default function Partners() {
                     src={partner.image}
                     alt={partner.name}
                     fill
-                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <h3 className="text-white text-base md:text-lg font-bold mb-6 md:mb-8 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{partner.name}</h3>

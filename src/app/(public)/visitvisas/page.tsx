@@ -7,10 +7,10 @@ export const metadata = {
 
 export default function VisitVisasPage() {
   const destinations = [
-    { name: "Schengen", img: "/images/SchengenVisit.jpg", desc: "Explore 27 European countries with a single visa. We handle all documentation and embassy appointments." },
-    { name: "USA", img: "/images/USVisit.jpg", desc: "B1/B2 visa support for tourism and business. Expert guidance for DS-160 and interview preparation." },
-    { name: "UK", img: "/images/UKVisit.jpg", desc: "Visit the United Kingdom for tourism or family. Complete support for standard visitor visa applications." },
-    { name: "Canada", img: "/images/CanadaVisit.jpg", desc: "Explore the beauty of Canada. Assistance with visitor visas and super visas for parents/grandparents." }
+    { name: "Schengen", img: "/page images/shengen visit.jpg", desc: "Explore 27 European countries with a single visa. We handle all documentation and embassy appointments." },
+    { name: "USA", img: "/page images/usa visit.jpg", desc: "B1/B2 visa support for tourism and business. Expert guidance for DS-160 and interview preparation." },
+    { name: "UK", img: "/page images/uk visit.jpg", desc: "Visit the United Kingdom for tourism or family. Complete support for standard visitor visa applications." },
+    { name: "Canada", img: "/page images/canada visit.jpg", desc: "Explore the beauty of Canada. Assistance with visitor visas and super visas for parents/grandparents." }
   ];
 
   return (

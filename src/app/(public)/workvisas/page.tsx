@@ -7,14 +7,14 @@ export const metadata = {
 
 export default function WorkVisasPage() {
   const jobs = [
-    { name: "Skilled Worker", img: "/images/SkilledWorker.jpg", desc: "Expert guidance for Tier 2 and other skilled migration pathways for professionals." },
-    { name: "Domestic Workers", img: "/images/DomesticWorker.jpg", desc: "Specialized support for domestic worker visas with full legal compliance." },
-    { name: "Hospitality", img: "/images/HospitalityJob.jpg", desc: "Unlock opportunities in the global hospitality sector with our placement support." },
-    { name: "Healthcare", img: "/images/HealthcareJob.jpg", desc: "Dedicated pathways for doctors, nurses, and allied healthcare professionals." }
+    { name: "Skilled Worker", img: "/page images/workvisa/skilled.jpg", desc: "Expert guidance for Tier 2 and other skilled migration pathways for professionals." },
+    { name: "Domestic Workers", img: "/page images/workvisa/domestic.jpg", desc: "Specialized support for domestic worker visas with full legal compliance." },
+    { name: "Hospitality", img: "/page images/workvisa/hospitality.jpg", desc: "Unlock opportunities in the global hospitality sector with our placement support." },
+    { name: "Healthcare", img: "/page images/workvisa/healthcare.jpg", desc: "Dedicated pathways for doctors, nurses, and allied healthcare professionals." }
   ];
 
   return (
-    <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+    <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[40vh] md:min-h-[50vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">

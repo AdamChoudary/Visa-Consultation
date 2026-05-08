@@ -11,13 +11,73 @@ export default function StudentVisaPage() {
       name: "United Kingdom", 
       title: "British Excellence", 
       desc: "Access world-class education at prestigious UK universities. We handle your CAS, financial evidence, and embassy submission with precision.", 
-      img: "/images/StudentVisaUK.jpeg" 
+      img: "/page images/studentvisa/uk.jpg" 
+    },
+    { 
+      name: "USA", 
+      title: "American Dream", 
+      desc: "Explore endless opportunities at top-tier American universities. Comprehensive support for I-20, SEVIS, and F-1 visa interviews.", 
+      img: "/page images/studentvisa/usa.jpg" 
+    },
+    { 
+      name: "Canada", 
+      title: "The Great North", 
+      desc: "Benefit from a world-class education system and post-graduation work opportunities. Expert guidance for study permits and provincial certifications.", 
+      img: "/page images/studentvisa/canada.jpg" 
+    },
+    { 
+      name: "Germany", 
+      title: "Engineering Mastery", 
+      desc: "Study at renowned technical universities with affordable tuition. We assist with APS certification, blocked accounts, and visa documentation.", 
+      img: "/page images/studentvisa/germany.jpg" 
+    },
+    { 
+      name: "France", 
+      title: "Cultural Hub", 
+      desc: "Experience academic excellence in the heart of Europe. Support for Campus France procedures and long-stay student visa applications.", 
+      img: "/page images/studentvisa/france.jpg" 
+    },
+    { 
+      name: "Italy", 
+      title: "Art & Heritage", 
+      desc: "Pursue degrees in art, fashion, and technology at historic institutions. Assistance with Universitaly registration and pre-enrollment.", 
+      img: "/page images/studentvisa/italy.jpg" 
+    },
+    { 
+      name: "Spain", 
+      title: "Mediterranean Spark", 
+      desc: "Vibrant campus life and prestigious business schools. Complete guidance for NIE, financial proof, and health insurance requirements.", 
+      img: "/page images/studentvisa/spain.jpg" 
+    },
+    { 
+      name: "Portugal", 
+      title: "Atlantic Gateway", 
+      desc: "High-quality education with a welcoming atmosphere. Support for university admissions and D4/D5 student visa processes.", 
+      img: "/page images/studentvisa/portugal.jpg" 
+    },
+    { 
+      name: "Sweden", 
+      title: "Innovation Leader", 
+      desc: "Focus on sustainability and creative thinking at top Nordic universities. Guidance for residence permits and tuition fee structures.", 
+      img: "/page images/studentvisa/sweden.jpg" 
+    },
+    { 
+      name: "Finland", 
+      title: "Northern Lights", 
+      desc: "Study in the world's happiest country with an innovative education system. Expert help for residence permits and scholarship applications.", 
+      img: "/page images/studentvisa/finland.jpg" 
+    },
+    { 
+      name: "Lithuania", 
+      title: "European Gem", 
+      desc: "Modern education at an affordable cost in a safe, growing economy. Comprehensive support for TRP and university enrollment.", 
+      img: "/page images/studentvisa/lithuania.jpg" 
     },
     { 
       name: "Australia", 
       title: "The Southern Cross", 
-      desc: "Complete assistance for university admissions, GTE/SOP preparation, and financial proof guidance. Australia offers a vibrant lifestyle and world-class academic opportunities.", 
-      img: "/images/StudentVisaAustralia.jpg" 
+      desc: "Experience a world-class lifestyle and academic excellence. Expert guidance for GTE, SOP preparation, and financial proof requirements.", 
+      img: "/page images/studentvisa/australia.jpg" 
     }
   ];
 
@@ -118,8 +178,8 @@ export default function StudentVisaPage() {
                     src={region.img} 
                     alt={region.name} 
                     width={800} 
-                    height={500} 
-                    className="w-full h-[250px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110" 
+                    height={600} 
+                    className="w-full aspect-[4/3] object-cover transition-transform duration-1000 group-hover:scale-110" 
                   />
                 </div>
               </div>
