@@ -3,6 +3,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Work Visas | The Visa Consultancy",
+  description: "Advance your career on a global stage. We provide end-to-end support for work permits, skilled migration, and relocation documentation.",
 };
 
 export default function WorkVisasPage() {

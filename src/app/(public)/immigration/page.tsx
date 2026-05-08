@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaUserTie, FaIdCard, FaChartLine, FaUsers } from "react-icons/fa";
 
 export const metadata = {
   title: "Immigration | The Visa Consultancy",
+  description: "Your path to a new life starts here. Expert guidance for skilled migration, business visas, and permanent residency programs (PR) worldwide.",
 };
 
 export default function ImmigrationPage() {
@@ -62,14 +64,14 @@ export default function ImmigrationPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
             {[
-              { t: "Skilled Worker", d: "Professional guidance for skilled migration programs based on education and experience.", i: "fa-user-tie" },
-              { t: "Permanent Residency", d: "Complete PR assistance including profile evaluation and points calculation.", i: "fa-id-card" },
-              { t: "Business & Investor", d: "Pathways for entrepreneurs seeking overseas business expansion.", i: "fa-chart-line" },
-              { t: "Family Sponsorship", d: "Spouse and family reunification programs with full documentation support.", i: "fa-users" }
+              { t: "Skilled Worker", d: "Professional guidance for skilled migration programs based on education and experience.", i: <FaUserTie /> },
+              { t: "Permanent Residency", d: "Complete PR assistance including profile evaluation and points calculation.", i: <FaIdCard /> },
+              { t: "Business & Investor", d: "Pathways for entrepreneurs seeking overseas business expansion.", i: <FaChartLine /> },
+              { t: "Family Sponsorship", d: "Spouse and family reunification programs with full documentation support.", i: <FaUsers /> }
             ].map((program, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
-                  <i className={`fas ${program.i}`}></i>
+                  {program.i}
                 </div>
                 <h3 className="text-white text-base font-bold mb-4 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{program.t}</h3>
                 <p className="text-white/30 font-medium leading-relaxed text-[13px] md:text-sm antialiased">{program.d}</p>

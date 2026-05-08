@@ -1,15 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaCheckDouble, FaDesktop, FaChartLine } from "react-icons/fa";
 
 export const metadata = {
   title: "PTE Preparation | The Visa Consultancy",
+  description: "The leading computer-based English test trusted by universities and governments worldwide. Get your results in as little as 48 hours with our expert guidance.",
 };
 
 export default function PteTest() {
   const sections = [
-    { title: "Prerequisites", icon: "fa-check-double", items: ["Valid Identification", "Age Requirement (16+)", "Test Fee Payment"] },
-    { title: "Test Formats", icon: "fa-desktop", items: ["PTE Academic", "PTE Core (Canada)", "PTE Academic Online"] },
-    { title: "Target Score", icon: "fa-chart-line", items: ["Strategic Guidance", "Expert Connections", "Booking Assistance"] }
+    { title: "Prerequisites", icon: <FaCheckDouble />, items: ["Valid Identification", "Age Requirement (16+)", "Test Fee Payment"] },
+    { title: "Test Formats", icon: <FaDesktop />, items: ["PTE Academic", "PTE Core (Canada)", "PTE Academic Online"] },
+    { title: "Target Score", icon: <FaChartLine />, items: ["Strategic Guidance", "Expert Connections", "Booking Assistance"] }
   ];
 
   return (
@@ -41,7 +43,7 @@ export default function PteTest() {
               <div className="relative z-10 w-full max-w-md lg:max-w-xl">
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border-2 border-[#d0a850] shadow-2xl">
                   <Image 
-                    src="/images/pte.jpg" 
+                    src="/page images/language-test/pte.jpg" 
                     alt="PTE Academic" 
                     width={800} 
                     height={1000} 
@@ -70,7 +72,7 @@ export default function PteTest() {
             {sections.map((section, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
-                  <i className={`fas ${section.icon}`}></i>
+                  {section.icon}
                 </div>
                 <h3 className="text-white text-base font-bold mb-6 md:mb-8 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{section.title}</h3>
                 <ul className="space-y-3 md:space-y-4 text-white/30 font-medium list-none p-0">
@@ -107,7 +109,7 @@ export default function PteTest() {
             <div className="flex-1 w-full relative group">
               <div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10 transition-all duration-1000">
                 <Image 
-                  src="/images/pte.jpg" 
+                  src="/page images/language-test/pte.jpg" 
                   alt="PTE Academic Success" 
                   width={800} 
                   height={500} 

@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaFacebook, FaTiktok, FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaTiktok, FaInstagram, FaWhatsapp, FaLinkedin, FaVolumeMute, FaVolumeUp, FaGraduationCap, FaBriefcase, FaGlobe, FaUserFriends } from "react-icons/fa";
 
 export default function Home() {
   const [isMuted, setIsMuted] = useState(true);
@@ -64,16 +64,6 @@ export default function Home() {
       }
     }
   };
-
-  const destinations = [
-    { n: "UK", img: "/images/StudentVisaUK.jpeg" },
-    { n: "USA", img: "/images/USAvisitVisa.jpeg" },
-    { n: "CANADA", img: "/images/CanadaWorkVisa.jpg" },
-    { n: "EUROPE", img: "/images/schengenVisitVisa.jpeg" },
-    { n: "DUBAI", img: "/images/DubaiVisitVisa.jpeg" },
-    { n: "AUSTRALIA", img: "/images/StudentVisaAustralia.jpg" }
-  ];
-
 
   return (
     <main className="bg-[#0f1921] min-h-screen selection:bg-[#d0a850] selection:text-black">
@@ -144,7 +134,7 @@ export default function Home() {
             onClick={toggleMute}
             className="w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-[#d0a860] hover:text-black transition-all"
           >
-            <i className={`fas ${isMuted ? 'fa-volume-mute' : 'fa-volume-up'} text-sm`}></i>
+            {isMuted ? <FaVolumeMute className="text-sm" /> : <FaVolumeUp className="text-sm" />}
           </button>
           <input 
             type="range" 
@@ -192,17 +182,17 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {[
-            { t: "Study Visa", d: "Study in Top Universities", i: "fa-graduation-cap", l: "/studentvisa" },
-            { t: "Work Visa", d: "Work Abroad Legally", i: "fa-briefcase", l: "/workvisas" },
-            { t: "Visit Visa", d: "Travel the World", i: "fa-globe", l: "/visitvisas" },
-            { t: "Immigration & PR", d: "Settle in a New Country", i: "fa-user-friends", l: "/immigration" }
+            { t: "Study Visa", d: "Study in Top Universities", i: <FaGraduationCap />, l: "/studentvisa" },
+            { t: "Work Visa", d: "Work Abroad Legally", i: <FaBriefcase />, l: "/workvisas" },
+            { t: "Visit Visa", d: "Travel the World", i: <FaGlobe />, l: "/visitvisas" },
+            { t: "Immigration & PR", d: "Settle in a New Country", i: <FaUserFriends />, l: "/immigration" }
           ].map((service, idx) => (
             <div 
               key={idx} 
               className={`reveal bg-white rounded-xl p-8 flex flex-col items-center text-center shadow-2xl border-4 border-[#d0a850] hover:scale-105 transition-all delay-${(idx + 1) * 100}`}
             >
               <div className="text-6xl text-[#0f1921] mb-6">
-                <i className={`fas ${service.i}`}></i>
+                {service.i}
               </div>
               <h3 className="text-2xl font-semibold uppercase tracking-widest mb-1 text-[#0f1921]">{service.t}</h3>
               <div className="h-[1px] w-12 bg-gray-300 my-4"></div>

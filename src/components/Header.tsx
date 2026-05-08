@@ -1,17 +1,16 @@
-"use client"
+"use client";
 
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaChevronDown, FaCaretDown, FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileVisaOpen, setMobileVisaOpen] = useState(false);
   const [mobileLangTestOpen, setMobileLangTestOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState('EN');
-  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
   const visaServices = [
     { name: 'Student Visa', href: '/studentvisa' },
@@ -63,7 +62,7 @@ export default function Header() {
               onMouseLeave={() => setDropdownOpen(false)}
             >
               <button className="text-white hover:text-[#d0a850] transition-colors text-sm font-bold uppercase tracking-widest bg-transparent border-none cursor-pointer flex items-center gap-2">
-                Visa Services <i className={`fas fa-chevron-down text-[10px] transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}></i>
+                Visa Services <FaChevronDown className={`text-[10px] transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               
               {/* Dropdown Menu */}
@@ -74,7 +73,7 @@ export default function Header() {
                       <div key={idx} className="relative group/sub">
                         <div className="w-full text-left flex items-center justify-between px-6 py-3 text-white hover:bg-[#d0a850] hover:text-black transition-colors text-xs font-bold uppercase tracking-widest cursor-pointer">
                           {service.name}
-                          <i className="fas fa-caret-down -rotate-90 group-hover/sub:text-black"></i>
+                          <FaCaretDown className="-rotate-90 group-hover/sub:text-black" />
                         </div>
                         
                         {/* Sub-Dropdown Menu */}
@@ -119,7 +118,7 @@ export default function Header() {
             className="lg:hidden text-white text-2xl bg-transparent border-none focus:outline-none p-2 z-[60]" 
             onClick={() => setMenuOpen(true)}
           >
-            <i className="fas fa-bars"></i>
+            <FaBars />
           </button>
         )}
       </div>
@@ -152,7 +151,7 @@ export default function Header() {
                   onClick={() => setMenuOpen(false)}
                   className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
                 >
-                  <i className="fas fa-times text-xl"></i>
+                  <FaTimes className="text-xl" />
                 </button>
               </div>
 
@@ -172,10 +171,11 @@ export default function Header() {
                         className="w-full flex items-center justify-start gap-3 py-5 text-white hover:text-[#d0a850] text-xl font-bold bg-transparent border-none cursor-pointer group"
                       >
                         <span className={mobileVisaOpen ? 'text-[#d0a850]' : ''}>Visa Services</span>
-                        <motion.i 
+                        <motion.div 
                           animate={{ rotate: mobileVisaOpen ? 180 : 0 }}
-                          className={`fas fa-chevron-down text-sm ${mobileVisaOpen ? 'text-[#d0a850]' : 'text-white/20'}`}
-                        ></motion.i>
+                        >
+                          <FaChevronDown className={`text-sm ${mobileVisaOpen ? 'text-[#d0a850]' : 'text-white/20'}`} />
+                        </motion.div>
                       </button>
                       
                       <AnimatePresence>
@@ -195,10 +195,11 @@ export default function Header() {
                                       className="w-full flex items-center justify-start gap-2 py-4 text-white/80 hover:text-[#d0a850] text-sm font-bold bg-transparent border-none cursor-pointer"
                                     >
                                       <span>{service.name}</span>
-                                      <motion.i 
+                                      <motion.div 
                                         animate={{ rotate: mobileLangTestOpen ? 180 : 0 }}
-                                        className="fas fa-caret-down text-xs opacity-40"
-                                      ></motion.i>
+                                      >
+                                        <FaCaretDown className="text-xs opacity-40" />
+                                      </motion.div>
                                     </button>
                                     
                                     <AnimatePresence>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { sendEmailAction } from "@/app/actions/email";
+import { FaChevronDown } from "react-icons/fa";
 
 export default function Contact() {
   const [visaType, setVisaType] = useState("");
@@ -76,7 +77,7 @@ export default function Contact() {
                     <option>Widowed</option>
                   </select>
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#d0a850]">
-                    <i className="fas fa-chevron-down text-xs"></i>
+                    <FaChevronDown className="text-xs" />
                   </div>
                 </div>
               </div>
@@ -114,7 +115,7 @@ export default function Contact() {
                   <option>No</option>
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#d0a850]">
-                  <i className="fas fa-chevron-down text-xs"></i>
+                  <FaChevronDown className="text-xs" />
                 </div>
               </div>
             </div>
@@ -139,7 +140,7 @@ export default function Contact() {
                   <option value="other">Other Services</option>
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#d0a850]">
-                  <i className="fas fa-chevron-down text-lg"></i>
+                  <FaChevronDown className="text-lg" />
                 </div>
               </div>
             </div>

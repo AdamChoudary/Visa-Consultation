@@ -1,14 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
+import { FaIdCard, FaLaptopHouse, FaBullseye, FaLaptopCode, FaGraduationCap } from "react-icons/fa";
 
 export const metadata = {
   title: "Duolingo Preparation | The Visa Consultancy",
+  description: "The modern, convenient way to prove your English proficiency. Accepted by thousands of universities worldwide, taken from your home.",
 };
 
 export default function Duolingo() {
   const sections = [
-    { title: "Prerequisites", icon: "fa-id-card", items: ["Valid Passport/ID", "Online Account", "Fast Activation"] },
-    { title: "Test Format", icon: "fa-laptop-house", items: ["100% Online Test", "Adaptive Questions", "Results in 48 Hours"] },
-    { title: "Target Score", icon: "fa-bullseye", items: ["Score Analysis", "Preparation Guidance", "Application Support"] }
+    { title: "Prerequisites", icon: <FaIdCard />, items: ["Valid Passport/ID", "Online Account", "Fast Activation"] },
+    { title: "Test Format", icon: <FaLaptopHouse />, items: ["100% Online Test", "Adaptive Questions", "Results in 48 Hours"] },
+    { title: "Target Score", icon: <FaBullseye />, items: ["Score Analysis", "Preparation Guidance", "Application Support"] }
   ];
 
   return (
@@ -38,12 +41,15 @@ export default function Duolingo() {
 
             <div className="flex-1 w-full relative animate-fade-in flex justify-center lg:justify-end" style={{ animationDelay: '0.2s' }}>
               <div className="relative z-10 w-full max-w-md lg:max-w-xl">
-                <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border-2 border-[#d0a850] shadow-2xl bg-white/5 p-8 md:p-16 flex flex-col items-center justify-center space-y-8">
-                  <i className="fas fa-laptop-code text-7xl md:text-9xl text-[#d0a850]"></i>
-                  <div className="w-full space-y-3 md:space-y-4">
-                    <div className="h-2 w-full bg-[#d0a850]/20 rounded-full"></div>
-                    <div className="h-2 w-3/4 bg-[#d0a850]/10 rounded-full mx-auto"></div>
-                  </div>
+                <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border-2 border-[#d0a850] shadow-2xl">
+                  <Image 
+                    src="/page images/language-test/duolingo.jpg" 
+                    alt="Duolingo English Test" 
+                    width={800} 
+                    height={1000} 
+                    className="w-full h-auto object-cover" 
+                    priority
+                  />
                 </div>
               </div>
             </div>
@@ -66,7 +72,7 @@ export default function Duolingo() {
             {sections.map((section, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
-                  <i className={`fas ${section.icon}`}></i>
+                  {section.icon}
                 </div>
                 <h3 className="text-white text-base font-bold mb-6 md:mb-8 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{section.title}</h3>
                 <ul className="space-y-3 md:space-y-4 text-white/30 font-medium list-none p-0">
@@ -101,8 +107,14 @@ export default function Duolingo() {
                </div>
             </div>
             <div className="flex-1 w-full relative group">
-              <div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10 transition-all duration-1000 bg-white/5 p-12 md:p-24 flex items-center justify-center">
-                <i className="fas fa-graduation-cap text-8xl md:text-[12rem] text-[#d0a850]/20 group-hover:text-[#d0a850]/40 transition-all duration-700"></i>
+              <div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10 transition-all duration-1000">
+                <Image 
+                  src="/page images/language-test/duolingo.jpg" 
+                  alt="Duolingo Success" 
+                  width={800} 
+                  height={500} 
+                  className="w-full h-[250px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110" 
+                />
               </div>
             </div>
           </div>

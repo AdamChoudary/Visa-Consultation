@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaCheck, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaFacebook, FaTiktok, FaYoutube } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -18,11 +19,11 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start space-y-4">
           <h4 className="text-[#d0a860] text-xl md:text-3xl font-semibold tracking-[0.06em]">Our Services</h4>
           <ul className="text-white/80 space-y-2 text-sm md:text-base flex flex-col items-center md:items-start list-none p-0 font-medium">
-            <li className="flex items-center gap-3"><i className="fas fa-check text-[10px] text-[#d0a860]"></i> Study Visa Assistance</li>
-            <li className="flex items-center gap-3"><i className="fas fa-check text-[10px] text-[#d0a860]"></i> Work Permit Processing</li>
-            <li className="flex items-center gap-3"><i className="fas fa-check text-[10px] text-[#d0a860]"></i> Immigration & PR Programs</li>
-            <li className="flex items-center gap-3"><i className="fas fa-check text-[10px] text-[#d0a860]"></i> Business & Investor Visas</li>
-            <li className="flex items-center gap-3"><i className="fas fa-check text-[10px] text-[#d0a860]"></i> Complete Documentation Support</li>
+            <li className="flex items-center gap-3"><FaCheck className="text-[10px] text-[#d0a860]" /> Study Visa Assistance</li>
+            <li className="flex items-center gap-3"><FaCheck className="text-[10px] text-[#d0a860]" /> Work Permit Processing</li>
+            <li className="flex items-center gap-3"><FaCheck className="text-[10px] text-[#d0a860]" /> Immigration & PR Programs</li>
+            <li className="flex items-center gap-3"><FaCheck className="text-[10px] text-[#d0a860]" /> Business & Investor Visas</li>
+            <li className="flex items-center gap-3"><FaCheck className="text-[10px] text-[#d0a860]" /> Complete Documentation Support</li>
           </ul>
         </div> 
 
@@ -31,31 +32,31 @@ export default function Footer() {
           <h4 className="text-[#d0a860] text-xl md:text-3xl font-semibold tracking-[0.06em]">Contact Us</h4>
           <ul className="text-white/80 space-y-2 text-sm md:text-base list-none p-0 flex flex-col items-center md:items-start font-medium">
             <li className="flex items-start text-center gap-3 text-left">
-              <i className="fas fa-map-marker-alt text-[#d0a860] text-lg mt-1 shrink-0"></i>
+              <FaMapMarkerAlt className="text-[#d0a860] text-lg mt-1 shrink-0" />
               <span className="max-w-[280px] md:max-w-[320px]">Office# 104, Mezzanine Floor, Embassy Gardens, Sector C1, Bahria Enclave, Islamabad</span>
             </li>
             <li className="flex items-center gap-3 text-left">
-              <i className="fas fa-phone-alt text-[#d0a860] text-lg shrink-0"></i>
+              <FaPhoneAlt className="text-[#d0a860] text-lg shrink-0" />
               <span className="text-base md:text-lg">+92 333 5965199</span>
             </li>
             <li className="flex items-center gap-3 text-left">
-              <i className="fas fa-envelope text-[#d0a860] text-lg shrink-0"></i>
+              <FaEnvelope className="text-[#d0a860] text-lg shrink-0" />
               <span className="lowercase">info@thevisaconsultancy.com</span>
             </li>
             <li className="flex items-center gap-3 text-left">
-              <i className="fas fa-clock text-[#d0a860] text-lg shrink-0"></i>
+              <FaClock className="text-[#d0a860] text-lg shrink-0" />
               <span>Mon – Sat | 11:00 AM – 7:00 PM</span>
             </li> 
             
             <li className="flex items-center gap-6 mt-4 pt-4 border-t border-white/5 w-full justify-center md:justify-start">
               <a href="https://www.facebook.com/share/1AVzHjEm71/" target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
-                <i className="fab fa-facebook"></i>
+                <FaFacebook />
               </a>
               <a href="https://www.tiktok.com/@the.visa.consulta6" target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
-                <i className="fab fa-tiktok"></i>
+                <FaTiktok />
               </a>
               <a href="https://www.youtube.com/@TheVisaConsultancy1" target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
-                <i className="fab fa-youtube"></i>
+                <FaYoutube />
               </a>
             </li>
           </ul>  

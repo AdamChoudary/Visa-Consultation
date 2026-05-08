@@ -1,15 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaPassport, FaFileAlt, FaStar } from "react-icons/fa";
 
 export const metadata = {
   title: "IELTS Preparation | The Visa Consultancy",
+  description: "Prepare for the world's most popular English language proficiency test with expert guidance. Accepted by 11,000+ organizations worldwide.",
 };
 
 export default function Ielts() {
   const sections = [
-    { title: "Prerequisites", icon: "fa-passport", items: ["Valid Passport", "Official Registration", "Exam Fee Payment"] },
-    { title: "Test Formats", icon: "fa-file-alt", items: ["IELTS Academic", "IELTS General Training", "Computer/Paper Based"] },
-    { title: "Achieve Target", icon: "fa-star", items: ["Band Requirement Analysis", "Preparation Guidance", "Booking Assistance"] }
+    { title: "Prerequisites", icon: <FaPassport />, items: ["Valid Passport", "Official Registration", "Exam Fee Payment"] },
+    { title: "Test Formats", icon: <FaFileAlt />, items: ["IELTS Academic", "IELTS General Training", "Computer/Paper Based"] },
+    { title: "Achieve Target", icon: <FaStar />, items: ["Band Requirement Analysis", "Preparation Guidance", "Booking Assistance"] }
   ];
 
   return (
@@ -41,7 +43,7 @@ export default function Ielts() {
               <div className="relative z-10 w-full max-w-md lg:max-w-xl">
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border-2 border-[#d0a850] shadow-2xl">
                   <Image 
-                    src="/images/ielts.jpg" 
+                    src="/page images/language-test/ielts.jpg" 
                     alt="IELTS Preparation" 
                     width={800} 
                     height={1000} 
@@ -70,7 +72,7 @@ export default function Ielts() {
             {sections.map((section, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
-                  <i className={`fas ${section.icon}`}></i>
+                  {section.icon}
                 </div>
                 <h3 className="text-white text-base font-bold mb-6 md:mb-8 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{section.title}</h3>
                 <ul className="space-y-3 md:space-y-4 text-white/30 font-medium list-none p-0">
@@ -107,7 +109,7 @@ export default function Ielts() {
             <div className="flex-1 w-full relative group">
               <div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10 transition-all duration-1000">
                 <Image 
-                  src="/images/ielts.jpg" 
+                  src="/page images/language-test/ielts.jpg" 
                   alt="IELTS Proficiency" 
                   width={800} 
                   height={500} 

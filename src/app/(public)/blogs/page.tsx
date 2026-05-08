@@ -5,6 +5,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Blogs | The Visa Consultancy",
+  description: "Stay updated with the latest visa news, immigration policies, and travel tips from our expert consultants. Read our latest insights and articles.",
 };
 
 export default async function BlogsPage() {

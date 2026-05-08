@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { FaUserGraduate, FaBriefcase, FaPassport, FaPlane } from "react-icons/fa";
 
 export const metadata = {
   title: "Clients | The Visa Consultancy",
+  description: "Read about our success stories and milestones in helping students, professionals, and families achieve their international goals.",
 };
 
 export default function Clients() {
@@ -9,22 +11,22 @@ export default function Clients() {
     {
       title: "Student Visa Success",
       desc: "Successfully assisted hundreds of students in securing admissions and visas for top-tier universities in the UK, Canada, Australia, and Europe.",
-      icon: "fa-user-graduate"
+      icon: <FaUserGraduate />
     },
     {
       title: "Work Permit Approvals",
       desc: "Guided skilled professionals across engineering, healthcare, and IT sectors in obtaining overseas employment visas and employer-sponsored work permits.",
-      icon: "fa-briefcase"
+      icon: <FaBriefcase />
     },
     {
       title: "Immigration & PR",
       desc: "Helped families and individuals achieve permanent residency and settlement abroad with transparent documentation and points-based assessment support.",
-      icon: "fa-passport"
+      icon: <FaPassport />
     },
     {
       title: "Visit Visa Solutions",
       desc: "High success rate in securing visit visas for leisure, business, and family reunification in Schengen countries, USA, and UK.",
-      icon: "fa-plane"
+      icon: <FaPlane />
     }
   ];
 
@@ -62,7 +64,7 @@ export default function Clients() {
             {successes.map((item, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-16 h-16 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-3xl mb-8 md:mb-10 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
-                  <i className={`fas ${item.icon}`}></i>
+                  {item.icon}
                 </div>
                 <h3 className="text-white text-base md:text-lg font-bold mb-6 md:mb-8 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{item.title}</h3>
                 <p className="text-white/30 font-medium leading-relaxed text-sm md:text-base antialiased">

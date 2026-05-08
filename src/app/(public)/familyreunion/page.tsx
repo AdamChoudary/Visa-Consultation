@@ -3,14 +3,15 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Family Reunion | The Visa Consultancy",
+  description: "Bringing loved ones together across borders. We specialize in complex family reunion visas for Europe, USA, Canada, and Australia with legal precision and care.",
 };
 
 export default function FamilyReunionPage() {
   const regions = [
-    { name: "Europe", img: "/images/FamilyEurope.jpg", desc: "Expert support for spouse and family reunion visas across the EU and UK." },
-    { name: "USA", img: "/images/FamilyUSA.jpg", desc: "Bringing families to America through IR-1, CR-1, and K-3 visa pathways." },
-    { name: "Canada", img: "/images/FamilyCanada.jpg", desc: "Dedicated assistance for Canadian family sponsorship programs." },
-    { name: "Australia", img: "/images/FamilyAustralia.jpg", desc: "Partner and parent visa solutions for Australia." }
+    { name: "Europe", img: "/page images/familyreunion/europe.jpg", desc: "Expert support for spouse and family reunion visas across the EU and UK." },
+    { name: "USA", img: "/page images/familyreunion/usa.jpg", desc: "Bringing families to America through IR-1, CR-1, and K-3 visa pathways." },
+    { name: "Canada", img: "/page images/familyreunion/canada.jpg", desc: "Dedicated assistance for Canadian family sponsorship programs." },
+    { name: "Australia", img: "/page images/familyreunion/australia.jpg", desc: "Partner and parent visa solutions for Australia." }
   ];
 
   return (

@@ -1,18 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaGraduationCap, FaPassport, FaIdCard, FaBriefcase } from "react-icons/fa";
 
 export const metadata = {
   title: "Book Appointment | The Visa Consultancy",
+  description: "Secure your global future with a personalized consultation. Book a meeting with our experts for student, visit, or work visas and immigration support.",
 };
 
 export default function AppointmentPage() {
-  const appointmentTypes = [
-    { title: "Student Visa", desc: "Expert guidance for university admissions and study permit applications." },
-    { title: "Visit Visa", desc: "Assistance for tourist and family visit visas for all major destinations." },
-    { title: "Immigration & PR", desc: "Comprehensive support for permanent residency and skilled migration." },
-    { title: "Work Permit", desc: "Dedicated solutions for employer-sponsored and independent work visas." }
-  ];
-
   return (
     <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
       <div className="container mx-auto px-4 md:px-6">
@@ -69,14 +64,14 @@ export default function AppointmentPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
             {[
-              { title: "Student Visa", desc: "Expert guidance for university admissions and study permit applications.", icon: "fa-graduation-cap" },
-              { title: "Visit Visa", desc: "Assistance for tourist and family visit visas for all major destinations.", icon: "fa-passport" },
-              { title: "Immigration & PR", desc: "Comprehensive support for permanent residency and skilled migration.", icon: "fa-id-card" },
-              { title: "Work Permit", desc: "Dedicated solutions for employer-sponsored and independent work visas.", icon: "fa-briefcase" }
+              { title: "Student Visa", desc: "Expert guidance for university admissions and study permit applications.", icon: <FaGraduationCap /> },
+              { title: "Visit Visa", desc: "Assistance for tourist and family visit visas for all major destinations.", icon: <FaPassport /> },
+              { title: "Immigration & PR", desc: "Comprehensive support for permanent residency and skilled migration.", icon: <FaIdCard /> },
+              { title: "Work Permit", desc: "Dedicated solutions for employer-sponsored and independent work visas.", icon: <FaBriefcase /> }
             ].map((type, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
-                  <i className={`fas ${type.icon}`}></i>
+                  {type.icon}
                 </div>
                 <h3 className="text-white text-base font-bold mb-4 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{type.title}</h3>
                 <p className="text-white/30 font-medium leading-relaxed text-[13px] md:text-sm antialiased">{type.desc}</p>

@@ -1,15 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaClipboardCheck, FaGlobeAmericas, FaTrophy } from "react-icons/fa";
 
 export const metadata = {
   title: "TOEFL Preparation | The Visa Consultancy",
+  description: "The key academic requirement for students aiming for higher education in North America. Accepted by 11,000+ universities worldwide. Get expert guidance today.",
 };
 
 export default function ToeflTest() {
   const sections = [
-    { title: "Prerequisites", icon: "fa-clipboard-check", items: ["Valid Passport", "Official ETS Registration", "Exam Fee Payment"] },
-    { title: "Test Formats", icon: "fa-globe-americas", items: ["TOEFL iBT®", "Home Edition", "Paper-Based (PBT)"] },
-    { title: "Target Score", icon: "fa-trophy", items: ["University Analysis", "Tutor Referrals", "Registration Assistance"] }
+    { title: "Prerequisites", icon: <FaClipboardCheck />, items: ["Valid Passport", "Official ETS Registration", "Exam Fee Payment"] },
+    { title: "Test Formats", icon: <FaGlobeAmericas />, items: ["TOEFL iBT®", "Home Edition", "Paper-Based (PBT)"] },
+    { title: "Target Score", icon: <FaTrophy />, items: ["University Analysis", "Tutor Referrals", "Registration Assistance"] }
   ];
 
   return (
@@ -41,7 +43,7 @@ export default function ToeflTest() {
               <div className="relative z-10 w-full max-w-md lg:max-w-xl">
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border-2 border-[#d0a850] shadow-2xl">
                   <Image 
-                    src="/images/toeflBanner.jpg.jpeg" 
+                    src="/page images/language-test/toefl.jpg" 
                     alt="TOEFL Proficiency" 
                     width={800} 
                     height={1000} 
@@ -70,7 +72,7 @@ export default function ToeflTest() {
             {sections.map((section, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
-                  <i className={`fas ${section.icon}`}></i>
+                  {section.icon}
                 </div>
                 <h3 className="text-white text-base font-bold mb-6 md:mb-8 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{section.title}</h3>
                 <ul className="space-y-3 md:space-y-4 text-white/30 font-medium list-none p-0">
@@ -107,7 +109,7 @@ export default function ToeflTest() {
             <div className="flex-1 w-full relative group">
               <div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10 transition-all duration-1000">
                 <Image 
-                  src="/images/toeflBanner.jpg.jpeg" 
+                  src="/page images/language-test/toefl.jpg" 
                   alt="TOEFL Academic Success" 
                   width={800} 
                   height={500} 

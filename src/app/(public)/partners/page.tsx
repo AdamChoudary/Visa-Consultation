@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FaFacebookF, FaTiktok, FaInstagram } from "react-icons/fa";
 
 export const metadata = {
   title: "Partners | The Visa Consultancy",
+  description: "Explore our global network of trusted institutional partners including real estate, creative studios, and branding experts.",
 };
 
 export default function Partners() {
@@ -12,9 +14,9 @@ export default function Partners() {
       image: "/page images/bin arab2.jpg",
       desc: "A professional real estate company offering residential and commercial property solutions with transparent dealings and premium investment opportunities.",
       socials: [
-        { icon: "fa-facebook-f", link: "https://www.facebook.com/BINARABrealestate" },
-        { icon: "fa-tiktok", link: "https://www.tiktok.com/@bin.arab90" },
-        { icon: "fa-instagram", link: "https://www.instagram.com/bin.arab.real.estate" }
+        { icon: <FaFacebookF />, link: "https://www.facebook.com/BINARABrealestate" },
+        { icon: <FaTiktok />, link: "https://www.tiktok.com/@bin.arab90" },
+        { icon: <FaInstagram />, link: "https://www.instagram.com/bin.arab.real.estate" }
       ]
     },
     {
@@ -22,9 +24,9 @@ export default function Partners() {
       image: "/page images/remark studio2.jpg",
       desc: "A creative digital marketing agency specializing in branding, social media marketing, video editing, and digital growth strategies.",
       socials: [
-        { icon: "fa-facebook-f", link: "https://www.facebook.com/remarkstudio1" },
-        { icon: "fa-tiktok", link: "https://www.tiktok.com/@remark.studio" },
-        { icon: "fa-instagram", link: "https://www.instagram.com/remark_studios" }
+        { icon: <FaFacebookF />, link: "https://www.facebook.com/remarkstudio1" },
+        { icon: <FaTiktok />, link: "https://www.tiktok.com/@remark.studio" },
+        { icon: <FaInstagram />, link: "https://www.instagram.com/remark_studios" }
       ]
     },
     {
@@ -32,9 +34,9 @@ export default function Partners() {
       image: "/page images/printing company.jpg",
       desc: "Providing professional printing services including brochures, business cards, banners, and complete branding materials.",
       socials: [
-        { icon: "fa-facebook-f", link: "https://www.facebook.com/theprintingcompany1" },
-        { icon: "fa-tiktok", link: "https://www.tiktok.com/@theprintingcompany1" },
-        { icon: "fa-instagram", link: "https://www.instagram.com/the_printing_company1" }
+        { icon: <FaFacebookF />, link: "https://www.facebook.com/theprintingcompany1" },
+        { icon: <FaTiktok />, link: "https://www.tiktok.com/@theprintingcompany1" },
+        { icon: <FaInstagram />, link: "https://www.instagram.com/the_printing_company1" }
       ]
     }
   ];
@@ -65,7 +67,7 @@ export default function Partners() {
                <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase tracking-tight">Institutional <br className="hidden md:block"/>Excellence</h2>
             </div>
             <p className="text-white/40 max-w-sm text-sm font-medium leading-relaxed">
-              Our network spans across continents, bringing global standards to your doorstep.
+               Our network spans across continents, bringing global standards to your doorstep.
             </p>
           </div>
 
@@ -86,8 +88,8 @@ export default function Partners() {
                 </p>
                 <div className="flex gap-4">
                   {partner.socials.map((soc, idx) => (
-                    <a key={idx} href={soc.link} target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#d0a850] transition-colors">
-                      <i className={`fab ${soc.icon}`}></i>
+                    <a key={idx} href={soc.link} target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-[#d0a850] transition-colors text-xl">
+                      {soc.icon}
                     </a>
                   ))}
                 </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Visit Visas | The Visa Consultancy",
+  description: "Seamless travel experiences for tourism, business, and short-term visits. Expert support for Schengen, USA, UK, and Canada visit visa applications.",
 };
 
 export default function VisitVisasPage() {
