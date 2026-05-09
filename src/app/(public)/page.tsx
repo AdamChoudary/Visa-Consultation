@@ -73,15 +73,21 @@ export default function Home() {
           ].map((service, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl p-6 md:p-8 flex flex-col items-center text-center shadow-2xl border-4 border-[#d0a850] hover:scale-105 transition-all"
+              className="bg-[#fdfcf0] relative overflow-hidden rounded-xl p-6 md:p-8 flex flex-col items-center text-center shadow-2xl border-4 border-[#d0a850] hover:scale-105 transition-all group"
             >
-              <div className="text-4xl md:text-6xl text-[#0f1921] mb-4 md:mb-6">
+              {/* Professional Fine Micro-Diamond Watermark */}
+              <div 
+                className="absolute inset-0 opacity-[0.5] pointer-events-none" 
+                style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M15 0l15 15-15 15L0 15z' stroke='%23d0a850' stroke-width='0.5' stroke-opacity='0.3'/%3E%3C/g%3E%3C/svg%3E")` }}
+              ></div>
+
+              <div className="text-4xl md:text-6xl text-[#0f1921] mb-4 md:mb-6 relative z-10">
                 {service.i}
               </div>
-              <h3 className="text-xl md:text-2xl font-semibold uppercase tracking-widest mb-1 text-[#0f1921]">{service.t}</h3>
-              <div className="h-[1px] w-12 bg-gray-300 my-3 md:my-4"></div>
-              <p className="text-gray-600 font-bold text-[10px] md:text-xs uppercase mb-3 flex-grow">{service.d}</p>
-              <Link href={service.l} className="bg-[#d0a860] hover:bg-[#b89445] text-black font-bold py-2 px-6 rounded-md uppercase text-xs md:text-sm tracking-wider transition-colors inline-block no-underline">
+              <h3 className="text-xl md:text-2xl font-semibold uppercase tracking-widest mb-1 text-[#0f1921] relative z-10">{service.t}</h3>
+              <div className="h-[1px] w-12 bg-gray-300 my-3 md:my-4 relative z-10"></div>
+              <p className="text-gray-600 font-bold text-[10px] md:text-xs uppercase mb-3 flex-grow relative z-10">{service.d}</p>
+              <Link href={service.l} className="bg-[#d0a860] hover:bg-[#b89445] text-black font-bold py-2 px-6 rounded-md uppercase text-xs md:text-sm tracking-wider transition-colors inline-block no-underline relative z-10">
                 Learn More
               </Link>
             </div>
