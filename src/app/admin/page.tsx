@@ -14,53 +14,100 @@ export default async function AdminDashboard() {
   const usersCount = await prisma.user.count();
 
   return (
-    <div className="min-h-screen bg-[#0f1921] text-white pt-24 pb-12">
-      <main className="container mx-auto px-6">
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-black heading-serif uppercase tracking-widest text-[#d0a850]">Admin Dashboard</h1>
-          <p className="text-gray-400 mt-2 uppercase tracking-widest text-sm font-bold">Welcome back, {session.user?.name}</p>
+    <div className="space-y-12 animate-fade-in">
+      {/* Welcome & Pulse Section */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <span className="w-10 h-[1px] bg-[#d0a850]/40"></span>
+            <span className="text-[#d0a850] text-[10px] font-black uppercase tracking-[0.4em]">Strategic Overview</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-black heading-serif uppercase tracking-tight text-white leading-none">
+            Intelligence <span className="text-[#d0a850]">Hub</span>
+          </h1>
+          <p className="text-gray-500 mt-4 text-xs font-bold uppercase tracking-widest">
+            Logged in as: <span className="text-white">{session.user?.name}</span>
+          </p>
+        </div>
+        
+        <div className="bg-white/[0.03] border border-white/5 px-6 py-3 rounded-full flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-[#d0a850] animate-pulse"></div>
+            <span className="text-[10px] font-black uppercase tracking-widest text-gray-400">System Live</span>
+          </div>
+          <div className="h-4 w-[1px] bg-white/10"></div>
+          <span className="text-[10px] font-black uppercase tracking-widest text-[#d0a850]">Session Secured</span>
+        </div>
+      </div>
+
+      {/* Quick Metrics Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="bg-[#16222c] border border-white/5 p-8 rounded-[2rem] relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-24 h-24 bg-[#d0a850]/5 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-transform duration-1000"></div>
+          <div className="relative z-10 space-y-2">
+            <p className="text-gray-500 text-[10px] font-black uppercase tracking-widest">Global Insights</p>
+            <h4 className="text-4xl font-black text-white">{blogsCount}</h4>
+            <p className="text-[#d0a850] text-[9px] font-bold uppercase tracking-tighter">Published Reports</p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Create Blog Card */}
-          <div className="bg-white/[0.03] border border-white/10 p-6 rounded-2xl hover:border-[#d0a850]/30 transition-all group">
-            <div className="w-12 h-12 bg-[#d0a850]/10 text-[#d0a850] flex items-center justify-center rounded-xl mb-6 border border-[#d0a850]/20">
-              <i className="fas fa-plus text-xl"></i>
-            </div>
-            <h3 className="text-xl font-semibold mb-2 text-white">Create Blog</h3>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">Publish a new article to share latest visa news and updates.</p>
-            <Link href="/admin/blogs/create" className="inline-block bg-[#d0a850] text-black px-6 py-2 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-[#b89445] transition-all no-underline">
-              Write Post
+        <div className="bg-[#16222c] border border-white/5 p-8 rounded-[2rem] relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-transform duration-1000"></div>
+          <div className="relative z-10 space-y-2">
+            <p className="text-gray-500 text-[10px] font-black uppercase tracking-widest">Active Staff</p>
+            <h4 className="text-4xl font-black text-white">{usersCount}</h4>
+            <p className="text-blue-400 text-[9px] font-bold uppercase tracking-tighter">Authorized Admins</p>
+          </div>
+        </div>
+
+        <div className="md:col-span-2 bg-gradient-to-br from-[#d0a850] to-[#b89445] p-8 rounded-[2rem] flex items-center justify-between group cursor-pointer hover:shadow-[0_20px_50px_rgba(208,168,80,0.2)] transition-all">
+          <div className="space-y-2">
+            <p className="text-black/60 text-[10px] font-black uppercase tracking-widest">New intelligence</p>
+            <h4 className="text-2xl font-black text-black uppercase leading-tight">Draft New Article</h4>
+            <Link href="/admin/blogs/create" className="text-black inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest mt-4 no-underline border-b border-black/20 pb-1">
+              Open Editor &rarr;
             </Link>
           </div>
-
-          {/* Manage Blogs Card */}
-          <div className="bg-white/[0.03] border border-white/10 p-6 rounded-2xl hover:border-blue-500/30 transition-all group">
-            <div className="w-12 h-12 bg-blue-500/10 text-blue-400 flex items-center justify-center rounded-xl mb-6 border border-blue-500/20">
-              <i className="fas fa-list text-xl"></i>
-            </div>
-            <h3 className="text-xl font-semibold mb-2 text-white">Manage Blogs</h3>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">Currently: <span className="text-[#d0a850] font-bold">{blogsCount} Articles</span>. Edit or delete existing posts.</p>
-            <Link href="/admin/blogs" className="inline-block border border-blue-500/50 text-blue-400 px-6 py-2 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-blue-500 hover:text-white transition-all no-underline">
-              View All Blogs
-            </Link>
+          <div className="w-16 h-16 rounded-full bg-black/10 flex items-center justify-center text-black text-2xl group-hover:rotate-12 transition-transform">
+            <i className="fas fa-feather-alt"></i>
           </div>
+        </div>
+      </div>
 
-          {/* Manage Users Card (Superadmin only) */}
-          {session?.user?.role === 'superadmin' && (
-            <div className="bg-white/[0.03] border border-white/10 p-6 rounded-2xl hover:border-green-500/30 transition-all group">
-              <div className="w-12 h-12 bg-green-500/10 text-green-400 flex items-center justify-center rounded-xl mb-6 border border-green-500/20">
-                <i className="fas fa-users text-xl"></i>
+      {/* Strategic Actions Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+        <Link href="/admin/blogs" className="group no-underline block">
+          <div className="bg-white/[0.02] border border-white/10 p-10 rounded-[3rem] hover:bg-white/[0.04] hover:border-[#d0a850]/30 transition-all space-y-6">
+            <div className="w-14 h-14 rounded-2xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] border border-[#d0a850]/20 text-xl group-hover:scale-110 transition-transform">
+              <i className="fas fa-folder-open"></i>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-white uppercase tracking-tight mb-3">Archive Management</h3>
+              <p className="text-gray-500 text-sm leading-relaxed max-w-sm">Manage, edit, and audit all strategic insights published on the Gazette platform.</p>
+            </div>
+            <div className="text-[#d0a850] text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
+              View Database <i className="fas fa-chevron-right text-[8px]"></i>
+            </div>
+          </div>
+        </Link>
+
+        {session?.user?.role === 'superadmin' && (
+          <Link href="/admin/users" className="group no-underline block">
+            <div className="bg-white/[0.02] border border-white/10 p-10 rounded-[3rem] hover:bg-white/[0.04] hover:border-blue-500/30 transition-all space-y-6">
+              <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 border border-blue-500/20 text-xl group-hover:scale-110 transition-transform">
+                <i className="fas fa-user-shield"></i>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-white">Manage Users</h3>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">Currently: <span className="text-[#d0a850] font-bold">{usersCount} Admins</span>. Control portal access.</p>
-              <Link href="/admin/users" className="inline-block border border-green-500/50 text-green-400 px-6 py-2 rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-green-500 hover:text-white transition-all no-underline">
-                User management
-              </Link>
+              <div>
+                <h3 className="text-2xl font-bold text-white uppercase tracking-tight mb-3">Security & Access</h3>
+                <p className="text-gray-500 text-sm leading-relaxed max-w-sm">Control administrative identities and define organizational permissions for the portal.</p>
+              </div>
+              <div className="text-blue-400 text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
+                Manage Access <i className="fas fa-chevron-right text-[8px]"></i>
+              </div>
             </div>
-          )}
-        </div>
-      </main>
+          </Link>
+        )}
+      </div>
     </div>
   );
 }

@@ -28,6 +28,8 @@ model Blog {
   title     String
   slug      String   @unique
   content   String
+  imageUrl  String?
+  category  String?  @default("News")
   status    String   @default("draft") // "draft" or "published"
   createdAt DateTime @default(now())
   authorId  Int

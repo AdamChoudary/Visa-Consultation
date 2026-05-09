@@ -12,6 +12,8 @@ export async function createBlog(formData: FormData) {
   const title = formData.get("title") as string;
   const content = formData.get("content") as string;
   const status = formData.get("status") as string;
+  const imageUrl = formData.get("imageUrl") as string;
+  const category = formData.get("category") as string;
   
   if (!title || !content) {
     return { error: "Title and content are required." };
@@ -25,6 +27,8 @@ export async function createBlog(formData: FormData) {
         title,
         slug,
         content,
+        imageUrl,
+        category: category || "News",
         status: status || "draft",
         authorId: session.user.id,
       },
@@ -47,6 +51,8 @@ export async function updateBlog(id: number, formData: FormData) {
   const title = formData.get("title") as string;
   const content = formData.get("content") as string;
   const status = formData.get("status") as string;
+  const imageUrl = formData.get("imageUrl") as string;
+  const category = formData.get("category") as string;
 
   if (!title || !content) {
     return { error: "Title and content are required." };
@@ -61,6 +67,8 @@ export async function updateBlog(id: number, formData: FormData) {
         title,
         slug,
         content,
+        imageUrl,
+        category,
         status,
       },
     });

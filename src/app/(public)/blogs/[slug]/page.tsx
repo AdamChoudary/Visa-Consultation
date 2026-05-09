@@ -17,34 +17,61 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   }
 
   return (
-    <article className="bg-[#0f1921] pt-32 pb-24 min-h-screen text-white">
-      <div className="container mx-auto px-6 max-w-4xl">
-        <Link href="/blogs" className="text-[#d0a850] hover:text-white transition-colors mb-12 inline-flex items-center gap-2 group no-underline font-bold uppercase tracking-widest text-xs">
-          <span className="group-hover:-translate-x-1 transition-transform">&larr;</span> Back to all articles
-        </Link>
+    <article className="bg-[#0f1921] min-h-screen text-white pb-24">
+      {/* Simple Header Section */}
+      <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden mb-12 md:mb-20">
+        <img 
+          src={blog.imageUrl || "/page images/language-test/ielts.jpg"} 
+          alt={blog.title}
+          className="w-full h-full object-cover opacity-60"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f1921] to-transparent"></div>
         
-        <div className="mb-16 animate-fade-in">
-          <div className="flex items-center flex-wrap gap-4 text-gray-400 mb-8 text-xs uppercase tracking-widest font-bold">
-            <span className="bg-[#d0a850]/10 text-[#d0a850] px-4 py-1 rounded-full border border-[#d0a850]/20">Visa Insights</span>
-            <time>{new Date(blog.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-            <span>•</span>
-            <span>By {blog.author?.name}</span>
+        <div className="absolute bottom-0 left-0 w-full pb-12 md:pb-20">
+          <div className="container mx-auto px-6 max-w-4xl">
+            <Link href="/blogs" className="text-[#d0a850] hover:text-white transition-colors mb-6 inline-flex items-center gap-2 no-underline font-bold uppercase tracking-widest text-[10px]">
+              &larr; Back to Insights
+            </Link>
+            <div className="flex items-center gap-4 text-gray-400 text-[10px] md:text-xs uppercase tracking-widest font-bold mb-6">
+              <span className="text-[#d0a850]">{blog.category || "Visa Insights"}</span>
+              <span>•</span>
+              <time>{new Date(blog.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            </div>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight uppercase heading-serif">
+              {blog.title}
+            </h1>
           </div>
-          <h1 className="text-4xl md:text-7xl font-black leading-[1.1] mb-8 uppercase heading-serif">{blog.title}</h1>
+        </div>
+      </div>
+
+      {/* Main Content Area - Centered & Simple */}
+      <div className="container mx-auto px-6 max-w-3xl">
+        <div className="mb-12 flex items-center gap-4 border-b border-white/5 pb-8">
+          <div className="w-12 h-12 rounded-full bg-[#16222c] border border-white/10 flex items-center justify-center text-[#d0a850] font-bold text-xl">
+            {blog.author?.name?.charAt(0)}
+          </div>
+          <div>
+            <p className="text-white font-bold text-sm uppercase tracking-wider">{blog.author?.name}</p>
+            <p className="text-gray-500 text-[10px] uppercase tracking-widest">Expert Consultant</p>
+          </div>
         </div>
 
         <div 
-          className="prose prose-invert prose-xl max-w-none prose-headings:text-[#d0a850] prose-headings:uppercase prose-headings:tracking-widest prose-a:text-[#d0a850] prose-img:rounded-3xl prose-img:shadow-2xl prose-strong:text-white prose-p:leading-relaxed prose-p:text-gray-300 animate-fade-in font-medium"
-          style={{ animationDelay: '0.2s' }}
+          className="prose prose-invert prose-lg md:prose-xl max-w-none 
+                     prose-headings:text-white prose-headings:uppercase prose-headings:tracking-wider prose-headings:font-bold
+                     prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-8
+                     prose-strong:text-[#d0a850] prose-a:text-[#d0a850] 
+                     prose-img:rounded-2xl prose-img:shadow-xl prose-blockquote:border-[#d0a850]"
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
 
-        <div className="mt-24 p-12 bg-white/5 rounded-[40px] border border-[#d0a850]/20 text-center relative overflow-hidden animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <h3 className="text-3xl md:text-5xl font-black mb-8 uppercase tracking-widest text-[#d0a850]">Planning your next move?</h3>
-          <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
-            Our specialized team provides the expertise you need for a successful visa application. Secure your future with professional guidance today.
+        {/* Clean CTA Section */}
+        <div className="mt-24 p-12 bg-[#16222c] rounded-[2rem] border border-white/5 text-center shadow-2xl">
+          <h3 className="text-2xl md:text-4xl font-bold mb-6 uppercase heading-serif text-white">Need Professional Guidance?</h3>
+          <p className="text-gray-400 mb-10 max-w-xl mx-auto leading-relaxed">
+            Our specialized team is here to help you navigate your visa application with ease and expertise.
           </p>
-          <Link href="/contact" className="btn-gold !px-16 !py-5 !text-xl">
+          <Link href="/contact" className="inline-block bg-[#d0a850] hover:bg-white text-black font-bold py-4 px-12 rounded-full uppercase text-sm tracking-widest transition-all">
             Book Free Consultation
           </Link>
         </div>
