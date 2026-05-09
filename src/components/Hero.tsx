@@ -64,7 +64,7 @@ export default function Hero({ socialLinks }: HeroProps) {
         preload="metadata"
         className="absolute inset-0 w-full h-full object-cover object-top opacity-60 hidden md:block"
       >
-        <source src="/VC video.mp4" type="video/mp4" />
+        <source src="/VC video.optimized.mp4" type="video/mp4" />
       </video>
 
       {/* Mobile Video (Portrait) */}
@@ -77,7 +77,7 @@ export default function Hero({ socialLinks }: HeroProps) {
         preload="metadata"
         className="absolute inset-0 w-full h-full object-cover object-top opacity-70 md:hidden"
       >
-        <source src="/vcv portrait.mp4" type="video/mp4" />
+        <source src="/vcv portrait.optimized.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0f1921]"></div>

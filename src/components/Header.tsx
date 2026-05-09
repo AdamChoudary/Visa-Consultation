@@ -37,7 +37,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-3 no-underline group z-[60]">
           <div className="relative">
             <Image 
-              src="/logo.png" 
+              src="/logo.webp" 
               alt="Logo" 
               width={80} 
               height={80} 

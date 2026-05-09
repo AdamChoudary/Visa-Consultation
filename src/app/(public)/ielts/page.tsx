@@ -43,7 +43,7 @@ export default function Ielts() {
               <div className="relative z-10 w-full max-w-md lg:max-w-xl">
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border-2 border-[#d0a850] shadow-2xl">
                   <Image 
-                    src="/page images/language-test/ielts.jpg" 
+                    src="/page images/language-test/ielts.webp" 
                     alt="IELTS Preparation" 
                     width={800} 
                     height={1000} 
@@ -109,7 +109,7 @@ export default function Ielts() {
             <div className="flex-1 w-full relative group">
               <div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10 transition-all duration-1000">
                 <Image 
-                  src="/page images/language-test/ielts.jpg" 
+                  src="/page images/language-test/ielts.webp" 
                   alt="IELTS Proficiency" 
                   width={800} 
                   height={500} 

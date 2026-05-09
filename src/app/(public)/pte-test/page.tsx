@@ -43,7 +43,7 @@ export default function PteTest() {
               <div className="relative z-10 w-full max-w-md lg:max-w-xl">
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border-2 border-[#d0a850] shadow-2xl">
                   <Image 
-                    src="/page images/language-test/pte.jpg" 
+                    src="/page images/language-test/pte.webp" 
                     alt="PTE Academic" 
                     width={800} 
                     height={1000} 
@@ -109,7 +109,7 @@ export default function PteTest() {
             <div className="flex-1 w-full relative group">
               <div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10 transition-all duration-1000">
                 <Image 
-                  src="/page images/language-test/pte.jpg" 
+                  src="/page images/language-test/pte.webp" 
                   alt="PTE Academic Success" 
                   width={800} 
                   height={500} 

@@ -8,10 +8,10 @@ export const metadata = {
 
 export default function WorkVisasPage() {
   const jobs = [
-    { name: "Skilled Worker", img: "/page images/workvisa/skilled.jpg", desc: "Expert guidance for Tier 2 and other skilled migration pathways for professionals." },
-    { name: "Domestic Workers", img: "/page images/workvisa/domestic.jpg", desc: "Specialized support for domestic worker visas with full legal compliance." },
-    { name: "Hospitality", img: "/page images/workvisa/hospitality.jpg", desc: "Unlock opportunities in the global hospitality sector with our placement support." },
-    { name: "Healthcare", img: "/page images/workvisa/healthcare.jpg", desc: "Dedicated pathways for doctors, nurses, and allied healthcare professionals." }
+    { name: "Skilled Worker", img: "/page images/workvisa/skilled.webp", desc: "Expert guidance for Tier 2 and other skilled migration pathways for professionals." },
+    { name: "Domestic Workers", img: "/page images/workvisa/domestic.webp", desc: "Specialized support for domestic worker visas with full legal compliance." },
+    { name: "Hospitality", img: "/page images/workvisa/hospitality.webp", desc: "Unlock opportunities in the global hospitality sector with our placement support." },
+    { name: "Healthcare", img: "/page images/workvisa/healthcare.webp", desc: "Dedicated pathways for doctors, nurses, and allied healthcare professionals." }
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function WorkVisasPage() {
               <div className="relative z-10 w-full max-w-md lg:max-w-xl">
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border-2 border-[#d0a850] shadow-2xl">
                   <Image 
-                    src="/page images/work1.jpg" 
+                    src="/page images/work1.webp" 
                     alt="Work Visa" 
                     width={800} 
                     height={1000} 

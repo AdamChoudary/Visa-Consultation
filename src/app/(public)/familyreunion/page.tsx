@@ -8,10 +8,10 @@ export const metadata = {
 
 export default function FamilyReunionPage() {
   const regions = [
-    { name: "Europe", img: "/page images/familyreunion/europe.jpg", desc: "Expert support for spouse and family reunion visas across the EU and UK." },
-    { name: "USA", img: "/page images/familyreunion/usa.jpg", desc: "Bringing families to America through IR-1, CR-1, and K-3 visa pathways." },
-    { name: "Canada", img: "/page images/familyreunion/canada.jpg", desc: "Dedicated assistance for Canadian family sponsorship programs." },
-    { name: "Australia", img: "/page images/familyreunion/australia.jpg", desc: "Partner and parent visa solutions for Australia." }
+    { name: "Europe", img: "/page images/familyreunion/europe.webp", desc: "Expert support for spouse and family reunion visas across the EU and UK." },
+    { name: "USA", img: "/page images/familyreunion/usa.webp", desc: "Bringing families to America through IR-1, CR-1, and K-3 visa pathways." },
+    { name: "Canada", img: "/page images/familyreunion/canada.webp", desc: "Dedicated assistance for Canadian family sponsorship programs." },
+    { name: "Australia", img: "/page images/familyreunion/australia.webp", desc: "Partner and parent visa solutions for Australia." }
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function FamilyReunionPage() {
               <div className="relative z-10 w-full max-w-md lg:max-w-xl">
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border-2 border-[#d0a850] shadow-2xl">
                   <Image 
-                    src="/page images/family reunion1.png" 
+                    src="/page images/family reunion1.webp" 
                     alt="Family Reunion" 
                     width={800} 
                     height={1000} 

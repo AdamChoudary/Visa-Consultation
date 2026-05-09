@@ -37,7 +37,7 @@ export default function AppointmentPage() {
               <div className="relative z-10 w-full max-w-md lg:max-w-xl">
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border-2 border-[#d0a850] shadow-2xl">
                   <Image 
-                    src="/page images/appointment1.png" 
+                    src="/page images/appointment1.webp" 
                     alt="Appointments" 
                     width={800} 
                     height={1000} 

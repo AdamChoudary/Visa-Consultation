@@ -48,7 +48,7 @@ export default async function BlogsPage() {
                   {/* Image - Clean Fit */}
                   <div className="relative h-56 md:h-60 overflow-hidden">
                     <img 
-                      src={blog.imageUrl || "/page images/language-test/ielts.jpg"} 
+                      src={blog.imageUrl || "/page images/language-test/ielts.webp"} 
                       alt={blog.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />

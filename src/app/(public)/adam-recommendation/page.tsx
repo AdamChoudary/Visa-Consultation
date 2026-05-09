@@ -78,7 +78,7 @@ export default function Home() {
           preload="metadata"
           className="w-full h-full object-cover object-top opacity-60"
         >
-          <source src="/VC video1.mp4" type="video/mp4" />
+          <source src="/VC video1.optimized.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0f1921]"></div>
 

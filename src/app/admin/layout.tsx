@@ -28,7 +28,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <aside className="w-64 bg-[#0b1218] border-r border-white/5 flex flex-col sticky top-0 h-screen">
             <div className="p-6 border-b border-white/5">
               <Link href="/admin" className="flex items-center gap-3 no-underline group">
-                 <img src="/images/TheVisaConsultancy.png" alt="Logo" className="h-8 transition-transform group-hover:scale-105" />
+                 <img src="/images/TheVisaConsultancy.webp" alt="Logo" className="h-8 transition-transform group-hover:scale-105" />
                  <div className="flex flex-col">
                    <span className="font-bold text-[10px] uppercase tracking-widest text-[#d0a850]">Admin</span>
                    <span className="font-bold text-xs uppercase tracking-tight text-white">Portal</span>

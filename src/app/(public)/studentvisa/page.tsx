@@ -13,73 +13,73 @@ export default function StudentVisaPage() {
       name: "United Kingdom", 
       title: "British Excellence", 
       desc: "Access world-class education at prestigious UK universities. We handle your CAS, financial evidence, and embassy submission with precision.", 
-      img: "/page images/studentvisa/uk.jpg" 
+      img: "/page images/studentvisa/uk.webp" 
     },
     { 
       name: "USA", 
       title: "American Dream", 
       desc: "Explore endless opportunities at top-tier American universities. Comprehensive support for I-20, SEVIS, and F-1 visa interviews.", 
-      img: "/page images/studentvisa/usa.jpg" 
+      img: "/page images/studentvisa/usa.webp" 
     },
     { 
       name: "Canada", 
       title: "The Great North", 
       desc: "Benefit from a world-class education system and post-graduation work opportunities. Expert guidance for study permits and provincial certifications.", 
-      img: "/page images/studentvisa/canada.jpg" 
+      img: "/page images/studentvisa/canada.webp" 
     },
     { 
       name: "Germany", 
       title: "Engineering Mastery", 
       desc: "Study at renowned technical universities with affordable tuition. We assist with APS certification, blocked accounts, and visa documentation.", 
-      img: "/page images/studentvisa/germany.jpg" 
+      img: "/page images/studentvisa/germany.webp" 
     },
     { 
       name: "France", 
       title: "Cultural Hub", 
       desc: "Experience academic excellence in the heart of Europe. Support for Campus France procedures and long-stay student visa applications.", 
-      img: "/page images/studentvisa/france.jpg" 
+      img: "/page images/studentvisa/france.webp" 
     },
     { 
       name: "Italy", 
       title: "Art & Heritage", 
       desc: "Pursue degrees in art, fashion, and technology at historic institutions. Assistance with Universitaly registration and pre-enrollment.", 
-      img: "/page images/studentvisa/italy.jpg" 
+      img: "/page images/studentvisa/italy.webp" 
     },
     { 
       name: "Spain", 
       title: "Mediterranean Spark", 
       desc: "Vibrant campus life and prestigious business schools. Complete guidance for NIE, financial proof, and health insurance requirements.", 
-      img: "/page images/studentvisa/spain.jpg" 
+      img: "/page images/studentvisa/spain.webp" 
     },
     { 
       name: "Portugal", 
       title: "Atlantic Gateway", 
       desc: "High-quality education with a welcoming atmosphere. Support for university admissions and D4/D5 student visa processes.", 
-      img: "/page images/studentvisa/portugal.jpg" 
+      img: "/page images/studentvisa/portugal.webp" 
     },
     { 
       name: "Sweden", 
       title: "Innovation Leader", 
       desc: "Focus on sustainability and creative thinking at top Nordic universities. Guidance for residence permits and tuition fee structures.", 
-      img: "/page images/studentvisa/sweden.jpg" 
+      img: "/page images/studentvisa/sweden.webp" 
     },
     { 
       name: "Finland", 
       title: "Northern Lights", 
       desc: "Study in the world's happiest country with an innovative education system. Expert help for residence permits and scholarship applications.", 
-      img: "/page images/studentvisa/finland.jpg" 
+      img: "/page images/studentvisa/finland.webp" 
     },
     { 
       name: "Lithuania", 
       title: "European Gem", 
       desc: "Modern education at an affordable cost in a safe, growing economy. Comprehensive support for TRP and university enrollment.", 
-      img: "/page images/studentvisa/lithuania.jpg" 
+      img: "/page images/studentvisa/lithuania.webp" 
     },
     { 
       name: "Australia", 
       title: "The Southern Cross", 
       desc: "Experience a world-class lifestyle and academic excellence. Expert guidance for GTE, SOP preparation, and financial proof requirements.", 
-      img: "/page images/studentvisa/australia.jpg" 
+      img: "/page images/studentvisa/australia.webp" 
     }
   ];
 
@@ -112,7 +112,7 @@ export default function StudentVisaPage() {
               <div className="relative z-10 w-full max-w-md lg:max-w-xl">
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border-2 border-[#d0a850] shadow-2xl">
                   <Image 
-                    src="/page images/study1.png" 
+                    src="/page images/study1.webp" 
                     alt="Student Visa" 
                     width={800} 
                     height={1000} 

@@ -97,7 +97,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                   <span className="text-[#d0a850] text-[10px] font-black uppercase tracking-[0.5em]">Consultancy Asset</span>
                 </div>
                 <img 
-                  src={blog.imageUrl || "/page images/language-test/ielts.jpg"} 
+                  src={blog.imageUrl || "/page images/language-test/ielts.webp"} 
                   alt={blog.title}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[2s] relative z-10"
                 />

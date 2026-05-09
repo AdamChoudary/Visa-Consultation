@@ -11,7 +11,7 @@ export default function Partners() {
   const partners = [
     {
       name: "Bin Araba Real Estates",
-      image: "/page images/bin arab2.jpg",
+      image: "/page images/bin arab2.webp",
       desc: "A professional real estate company offering residential and commercial property solutions with transparent dealings and premium investment opportunities.",
       socials: [
         { icon: <FaFacebookF />, link: "https://www.facebook.com/BINARABrealestate" },
@@ -21,7 +21,7 @@ export default function Partners() {
     },
     {
       name: "Remarks Studio",
-      image: "/page images/remark studio2.jpg",
+      image: "/page images/remark studio2.webp",
       desc: "A creative digital marketing agency specializing in branding, social media marketing, video editing, and digital growth strategies.",
       socials: [
         { icon: <FaFacebookF />, link: "https://www.facebook.com/remarkstudio1" },
@@ -31,7 +31,7 @@ export default function Partners() {
     },
     {
       name: "The Printing Company",
-      image: "/page images/printing company.jpg",
+      image: "/page images/printing company.webp",
       desc: "Providing professional printing services including brochures, business cards, banners, and complete branding materials.",
       socials: [
         { icon: <FaFacebookF />, link: "https://www.facebook.com/theprintingcompany1" },

@@ -21,7 +21,7 @@ export default function LoginPage() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#d0a850]/5 rounded-full blur-[100px] -mr-32 -mt-32"></div>
 
         <div className="text-center mb-12 relative z-10">
-          <img src="/images/TheVisaConsultancy.png" alt="Logo" className="h-12 w-auto inline-block mb-10 drop-shadow-[0_0_15px_rgba(208,168,80,0.4)]" />
+          <img src="/images/TheVisaConsultancy.webp" alt="Logo" className="h-12 w-auto inline-block mb-10 drop-shadow-[0_0_15px_rgba(208,168,80,0.4)]" />
           <div className="space-y-3">
             <h2 className="text-2xl md:text-3xl font-bold heading-serif text-white uppercase tracking-[0.2em]">
               Strategic <span className="text-[#d0a850]">Command</span>

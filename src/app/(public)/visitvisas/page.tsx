@@ -8,10 +8,10 @@ export const metadata = {
 
 export default function VisitVisasPage() {
   const destinations = [
-    { name: "Schengen", img: "/page images/shengen visit.jpg", desc: "Explore 27 European countries with a single visa. We handle all documentation and embassy appointments." },
-    { name: "USA", img: "/page images/usa visit.jpg", desc: "B1/B2 visa support for tourism and business. Expert guidance for DS-160 and interview preparation." },
-    { name: "UK", img: "/page images/uk visit.jpg", desc: "Visit the United Kingdom for tourism or family. Complete support for standard visitor visa applications." },
-    { name: "Canada", img: "/page images/canada visit.jpg", desc: "Explore the beauty of Canada. Assistance with visitor visas and super visas for parents/grandparents." }
+    { name: "Schengen", img: "/page images/shengen visit.webp", desc: "Explore 27 European countries with a single visa. We handle all documentation and embassy appointments." },
+    { name: "USA", img: "/page images/usa visit.webp", desc: "B1/B2 visa support for tourism and business. Expert guidance for DS-160 and interview preparation." },
+    { name: "UK", img: "/page images/uk visit.webp", desc: "Visit the United Kingdom for tourism or family. Complete support for standard visitor visa applications." },
+    { name: "Canada", img: "/page images/canada visit.webp", desc: "Explore the beauty of Canada. Assistance with visitor visas and super visas for parents/grandparents." }
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function VisitVisasPage() {
               <div className="relative z-10 w-full max-w-md lg:max-w-xl">
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden border-2 border-[#d0a850] shadow-2xl">
                   <Image 
-                    src="/page images/visit1.png" 
+                    src="/page images/visit1.webp" 
                     alt="Visit Visas" 
                     width={800} 
                     height={1000} 
