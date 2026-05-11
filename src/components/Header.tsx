@@ -3,26 +3,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { FaChevronDown, FaCaretDown, FaBars, FaTimes } from 'react-icons/fa';
+import { siteConfig } from '@/config/site';
 
-const visaServices = [
-  { name: 'Student Visa', href: '/studentvisa' },
-  { name: 'Visit Visas', href: '/visitvisas' },
-  { name: 'Immigration', href: '/immigration' },
-  { name: 'Appointments', href: '/appointments' },
-  { name: 'Work Visas', href: '/workvisas' },
-  { name: 'Family Reunion', href: '/familyreunion' },
-  { 
-    name: 'Language Test', 
-    subItems: [
-      { name: 'TOEFL Test', href: '/toefl-test' },
-      { name: 'PTE Test', href: '/pte-test' },
-      { name: 'IELTS Test', href: '/ielts' },
-      { name: 'Duolingo Test', href: '/duolingo' }
-    ]
-  },
-];
+const visaServices = siteConfig.navigation;
 
 const Header = React.memo(function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -128,7 +113,7 @@ const Header = React.memo(function Header() {
         {menuOpen && (
           <>
             {/* Backdrop */}
-            <motion.div 
+            <m.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -137,7 +122,7 @@ const Header = React.memo(function Header() {
             />
 
             {/* Side Drawer */}
-            <motion.div 
+            <m.div 
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -171,16 +156,16 @@ const Header = React.memo(function Header() {
                         className="w-full flex items-center justify-start gap-3 py-5 text-white hover:text-[#d0a850] text-xl font-bold bg-transparent border-none cursor-pointer group"
                       >
                         <span className={mobileVisaOpen ? 'text-[#d0a850]' : ''}>Visa Services</span>
-                        <motion.div 
+                        <m.div 
                           animate={{ rotate: mobileVisaOpen ? 180 : 0 }}
                         >
                           <FaChevronDown className={`text-sm ${mobileVisaOpen ? 'text-[#d0a850]' : 'text-white/20'}`} />
-                        </motion.div>
+                        </m.div>
                       </button>
                       
                       <AnimatePresence>
                         {mobileVisaOpen && (
-                          <motion.div 
+                          <m.div 
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
@@ -195,16 +180,16 @@ const Header = React.memo(function Header() {
                                       className="w-full flex items-center justify-start gap-2 py-4 text-white/80 hover:text-[#d0a850] text-sm font-bold bg-transparent border-none cursor-pointer"
                                     >
                                       <span>{service.name}</span>
-                                      <motion.div 
+                                      <m.div 
                                         animate={{ rotate: mobileLangTestOpen ? 180 : 0 }}
                                       >
                                         <FaCaretDown className="text-xs opacity-40" />
-                                      </motion.div>
+                                      </m.div>
                                     </button>
                                     
                                     <AnimatePresence>
                                       {mobileLangTestOpen && (
-                                        <motion.div 
+                                        <m.div 
                                           initial={{ height: 0, opacity: 0 }}
                                           animate={{ height: 'auto', opacity: 1 }}
                                           exit={{ height: 0, opacity: 0 }}
@@ -220,7 +205,7 @@ const Header = React.memo(function Header() {
                                               {sub.name}
                                             </Link>
                                           ))}
-                                        </motion.div>
+                                        </m.div>
                                       )}
                                     </AnimatePresence>
                                   </div>
@@ -236,7 +221,7 @@ const Header = React.memo(function Header() {
                                 )
                               ))}
                             </div>
-                          </motion.div>
+                          </m.div>
                         )}
                       </AnimatePresence>
                     </div>
@@ -257,7 +242,7 @@ const Header = React.memo(function Header() {
                   Book Consultation
                 </Link>
               </div>
-            </motion.div>
+            </m.div>
           </>
         )}
       </AnimatePresence>

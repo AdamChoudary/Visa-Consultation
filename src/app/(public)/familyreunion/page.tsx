@@ -6,29 +6,30 @@ export const metadata = {
   description: "Bringing loved ones together across borders. We specialize in complex family reunion visas for Europe, USA, Canada, and Australia with legal precision and care.",
 };
 
+const regions = [
+  { 
+    name: "UK Family Reunion Visa", 
+    img: "/page images/familyreunion/europe.webp", 
+    desc: "Join your spouse, fiancé, children, or dependent family members in the United Kingdom. We assist with financial requirement preparation, relationship documentation, sponsorship support, and complete visa application processing to ensure a smooth reunion." 
+  },
+  { 
+    name: "Canada Family Sponsorship", 
+    img: "/page images/familyreunion/canada.webp", 
+    desc: "Bring your loved ones to Canada through family sponsorship programs. Our experts guide you through eligibility assessment, sponsorship forms, financial proof requirements, and IRCC application submission for successful approval." 
+  },
+  { 
+    name: "USA Family Immigration", 
+    img: "/page images/familyreunion/usa.webp", 
+    desc: "Reunite with your family members in the United States through immediate relative or family preference categories. We assist with petition filing, affidavit of support preparation, document verification, and embassy interview preparation." 
+  },
+  { 
+    name: "Australia Partner & Family Visa", 
+    img: "/page images/familyreunion/australia.webp", 
+    desc: "Join your partner or family members in Australia with confidence. We provide full assistance with relationship evidence preparation, financial documentation, eligibility checks, and visa application processing for smooth approval." 
+  }
+];
+
 export default function FamilyReunionPage() {
-  const regions = [
-    { 
-      name: "UK Family Reunion Visa", 
-      img: "/page images/familyreunion/europe.webp", 
-      desc: "Join your spouse, fiancé, children, or dependent family members in the United Kingdom. We assist with financial requirement preparation, relationship documentation, sponsorship support, and complete visa application processing to ensure a smooth reunion." 
-    },
-    { 
-      name: "Canada Family Sponsorship", 
-      img: "/page images/familyreunion/canada.webp", 
-      desc: "Bring your loved ones to Canada through family sponsorship programs. Our experts guide you through eligibility assessment, sponsorship forms, financial proof requirements, and IRCC application submission for successful approval." 
-    },
-    { 
-      name: "USA Family Immigration", 
-      img: "/page images/familyreunion/usa.webp", 
-      desc: "Reunite with your family members in the United States through immediate relative or family preference categories. We assist with petition filing, affidavit of support preparation, document verification, and embassy interview preparation." 
-    },
-    { 
-      name: "Australia Partner & Family Visa", 
-      img: "/page images/familyreunion/australia.webp", 
-      desc: "Join your partner or family members in Australia with confidence. We provide full assistance with relationship evidence preparation, financial documentation, eligibility checks, and visa application processing for smooth approval." 
-    }
-  ];
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
@@ -64,6 +65,7 @@ export default function FamilyReunionPage() {
                     width={900} 
                     height={1000} 
                     className="w-full h-auto object-cover" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                     priority
                   />
                 </div>
@@ -94,6 +96,7 @@ export default function FamilyReunionPage() {
                     width={600}
                     height={400}
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0f1921] to-transparent opacity-40"></div>
                 </div>

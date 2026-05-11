@@ -6,29 +6,30 @@ export const metadata = {
   description: "Seamless travel experiences for tourism, business, and short-term visits. Expert support for Schengen, USA, UK, and Canada visit visa applications.",
 };
 
+const destinations = [
+  { 
+    name: "Dubai Visit Visa", 
+    img: "/page images/shengen visit.webp", 
+    desc: "Explore Dubai, Abu Dhabi, and beyond! We provide full support for UAE tourist and visit visas, including sponsor documents, hotel bookings, travel itinerary, and visa submission to make your visit seamless and stress-free." 
+  },
+  { 
+    name: "Schengen Visit Visa", 
+    img: "/page images/usa visit.webp", 
+    desc: "Travel across Europe with ease! We provide expert assistance for Schengen visit visas including itinerary planning, invitation letters, travel insurance guidance, and complete embassy documentation to ensure smooth approvals." 
+  },
+  { 
+    name: "UK Visit Visa", 
+    img: "/page images/uk visit.webp", 
+    desc: "Plan your travel to the United Kingdom with ease! We provide full guidance for UK visit visas including invitation letters, financial proof preparation, travel planning, and embassy submissions for tourist or family visits." 
+  },
+  { 
+    name: "USA Visit Visa", 
+    img: "/page images/canada visit.webp", 
+    desc: "Visit the United States with confidence! Our USA Visit Visa services include DS-160 form guidance, embassy interview preparation, financial documentation support, and complete visa application management for tourism, business, or family visits." 
+  }
+];
+
 export default function VisitVisasPage() {
-  const destinations = [
-    { 
-      name: "Dubai Visit Visa", 
-      img: "/page images/shengen visit.webp", 
-      desc: "Explore Dubai, Abu Dhabi, and beyond! We provide full support for UAE tourist and visit visas, including sponsor documents, hotel bookings, travel itinerary, and visa submission to make your visit seamless and stress-free." 
-    },
-    { 
-      name: "Schengen Visit Visa", 
-      img: "/page images/usa visit.webp", 
-      desc: "Travel across Europe with ease! We provide expert assistance for Schengen visit visas including itinerary planning, invitation letters, travel insurance guidance, and complete embassy documentation to ensure smooth approvals." 
-    },
-    { 
-      name: "UK Visit Visa", 
-      img: "/page images/uk visit.webp", 
-      desc: "Plan your travel to the United Kingdom with ease! We provide full guidance for UK visit visas including invitation letters, financial proof preparation, travel planning, and embassy submissions for tourist or family visits." 
-    },
-    { 
-      name: "USA Visit Visa", 
-      img: "/page images/canada visit.webp", 
-      desc: "Visit the United States with confidence! Our USA Visit Visa services include DS-160 form guidance, embassy interview preparation, financial documentation support, and complete visa application management for tourism, business, or family visits." 
-    }
-  ];
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
@@ -64,6 +65,7 @@ export default function VisitVisasPage() {
                     width={800} 
                     height={1000} 
                     className="w-full h-auto object-cover" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                     priority
                   />
                 </div>
@@ -94,6 +96,7 @@ export default function VisitVisasPage() {
                     width={600}
                     height={400}
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0f1921] to-transparent opacity-40"></div>
                 </div>

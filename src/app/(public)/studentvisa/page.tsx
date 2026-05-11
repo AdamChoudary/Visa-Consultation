@@ -7,81 +7,91 @@ export const metadata = {
   description: "Your gateway to international education. Expert guidance for student visas in the UK, USA, Canada, Germany, Australia, and more.",
 };
 
+const regions = [
+  { 
+    name: "United Kingdom", 
+    title: "British Excellence", 
+    desc: "Access world-class education at prestigious UK universities. We handle your CAS, financial evidence, and embassy submission with precision.", 
+    img: "/page images/studentvisa/uk.webp" 
+  },
+  { 
+    name: "USA", 
+    title: "American Dream", 
+    desc: "Explore endless opportunities at top-tier American universities. Comprehensive support for I-20, SEVIS, and F-1 visa interviews.", 
+    img: "/page images/studentvisa/usa.webp" 
+  },
+  { 
+    name: "Canada", 
+    title: "The Great North", 
+    desc: "Benefit from a world-class education system and post-graduation work opportunities. Expert guidance for study permits and provincial certifications.", 
+    img: "/page images/studentvisa/canada.webp" 
+  },
+  { 
+    name: "Germany", 
+    title: "Engineering Mastery", 
+    desc: "Study at renowned technical universities with affordable tuition. We assist with APS certification, blocked accounts, and visa documentation.", 
+    img: "/page images/studentvisa/germany.webp" 
+  },
+  { 
+    name: "France", 
+    title: "Cultural Hub", 
+    desc: "Experience academic excellence in the heart of Europe. Support for Campus France procedures and long-stay student visa applications.", 
+    img: "/page images/studentvisa/france.webp" 
+  },
+  { 
+    name: "Italy", 
+    title: "Art & Heritage", 
+    desc: "Pursue degrees in art, fashion, and technology at historic institutions. Assistance with Universitaly registration and pre-enrollment.", 
+    img: "/page images/studentvisa/italy.webp" 
+  },
+  { 
+    name: "Spain", 
+    title: "Mediterranean Spark", 
+    desc: "Vibrant campus life and prestigious business schools. Complete guidance for NIE, financial proof, and health insurance requirements.", 
+    img: "/page images/studentvisa/spain.webp" 
+  },
+  { 
+    name: "Portugal", 
+    title: "Atlantic Gateway", 
+    desc: "High-quality education with a welcoming atmosphere. Support for university admissions and D4/D5 student visa processes.", 
+    img: "/page images/studentvisa/portugal.webp" 
+  },
+  { 
+    name: "Sweden", 
+    title: "Innovation Leader", 
+    desc: "Focus on sustainability and creative thinking at top Nordic universities. Guidance for residence permits and tuition fee structures.", 
+    img: "/page images/studentvisa/sweden.webp" 
+  },
+  { 
+    name: "Finland", 
+    title: "Northern Lights", 
+    desc: "Study in the world's happiest country with an innovative education system. Expert help for residence permits and scholarship applications.", 
+    img: "/page images/studentvisa/finland.webp" 
+  },
+  { 
+    name: "Lithuania", 
+    title: "European Gem", 
+    desc: "Modern education at an affordable cost in a safe, growing economy. Comprehensive support for TRP and university enrollment.", 
+    img: "/page images/studentvisa/lithuania.webp" 
+  },
+  { 
+    name: "Australia", 
+    title: "The Southern Cross", 
+    desc: "Experience a world-class lifestyle and academic excellence. Expert guidance for GTE, SOP preparation, and financial proof requirements.", 
+    img: "/page images/studentvisa/australia.webp" 
+  }
+];
+
+const consultancyServices = [
+  { t: "Free Educational Counselling & Guidance", d: "Personalized counselling to help students choose the best country based on academic background, career goals, and future opportunities.", i: <FaUniversity /> },
+  { t: "Selection of Universities & Courses", d: "Assistance in selecting accredited and internationally recognized universities. Authentication and verification through trusted platforms.", i: <FaUniversity /> },
+  { t: "Exam & Interview Preparation", d: "Professional coaching for university entry tests, screening tests, and language exams (IELTS/TOEFL). Guidance on scholarships and fee discounts.", i: <FaUserCheck /> },
+  { t: "Digital University Access & Fee Assistance", d: "Direct digital access to universities and sponsors offering fee waivers. Selection of affordable programs with high academic standards.", i: <FaCoins /> },
+  { t: "Clear Documentation Services", d: "Complete support in documentation processing including attestation, verification, and legalization of academic and official documents.", i: <FaFileInvoice /> },
+  { t: "Settlement & Accommodation Support", d: "Assistance in securing university dormitories and private accommodations to ensure a smooth and comfortable transition.", i: <FaUserCheck /> }
+];
+
 export default function StudentVisaPage() {
-  const regions = [
-    { 
-      name: "United Kingdom", 
-      title: "British Excellence", 
-      desc: "Access world-class education at prestigious UK universities. We handle your CAS, financial evidence, and embassy submission with precision.", 
-      img: "/page images/studentvisa/uk.webp" 
-    },
-    { 
-      name: "USA", 
-      title: "American Dream", 
-      desc: "Explore endless opportunities at top-tier American universities. Comprehensive support for I-20, SEVIS, and F-1 visa interviews.", 
-      img: "/page images/studentvisa/usa.webp" 
-    },
-    { 
-      name: "Canada", 
-      title: "The Great North", 
-      desc: "Benefit from a world-class education system and post-graduation work opportunities. Expert guidance for study permits and provincial certifications.", 
-      img: "/page images/studentvisa/canada.webp" 
-    },
-    { 
-      name: "Germany", 
-      title: "Engineering Mastery", 
-      desc: "Study at renowned technical universities with affordable tuition. We assist with APS certification, blocked accounts, and visa documentation.", 
-      img: "/page images/studentvisa/germany.webp" 
-    },
-    { 
-      name: "France", 
-      title: "Cultural Hub", 
-      desc: "Experience academic excellence in the heart of Europe. Support for Campus France procedures and long-stay student visa applications.", 
-      img: "/page images/studentvisa/france.webp" 
-    },
-    { 
-      name: "Italy", 
-      title: "Art & Heritage", 
-      desc: "Pursue degrees in art, fashion, and technology at historic institutions. Assistance with Universitaly registration and pre-enrollment.", 
-      img: "/page images/studentvisa/italy.webp" 
-    },
-    { 
-      name: "Spain", 
-      title: "Mediterranean Spark", 
-      desc: "Vibrant campus life and prestigious business schools. Complete guidance for NIE, financial proof, and health insurance requirements.", 
-      img: "/page images/studentvisa/spain.webp" 
-    },
-    { 
-      name: "Portugal", 
-      title: "Atlantic Gateway", 
-      desc: "High-quality education with a welcoming atmosphere. Support for university admissions and D4/D5 student visa processes.", 
-      img: "/page images/studentvisa/portugal.webp" 
-    },
-    { 
-      name: "Sweden", 
-      title: "Innovation Leader", 
-      desc: "Focus on sustainability and creative thinking at top Nordic universities. Guidance for residence permits and tuition fee structures.", 
-      img: "/page images/studentvisa/sweden.webp" 
-    },
-    { 
-      name: "Finland", 
-      title: "Northern Lights", 
-      desc: "Study in the world's happiest country with an innovative education system. Expert help for residence permits and scholarship applications.", 
-      img: "/page images/studentvisa/finland.webp" 
-    },
-    { 
-      name: "Lithuania", 
-      title: "European Gem", 
-      desc: "Modern education at an affordable cost in a safe, growing economy. Comprehensive support for TRP and university enrollment.", 
-      img: "/page images/studentvisa/lithuania.webp" 
-    },
-    { 
-      name: "Australia", 
-      title: "The Southern Cross", 
-      desc: "Experience a world-class lifestyle and academic excellence. Expert guidance for GTE, SOP preparation, and financial proof requirements.", 
-      img: "/page images/studentvisa/australia.webp" 
-    }
-  ];
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
@@ -117,6 +127,7 @@ export default function StudentVisaPage() {
                     width={800} 
                     height={1000} 
                     className="w-full h-auto object-cover" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                     priority
                   />
                 </div>
@@ -138,14 +149,7 @@ export default function StudentVisaPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
-            {[
-              { t: "Free Educational Counselling & Guidance", d: "Personalized counselling to help students choose the best country based on academic background, career goals, and future opportunities.", i: <FaUniversity /> },
-              { t: "Selection of Universities & Courses", d: "Assistance in selecting accredited and internationally recognized universities. Authentication and verification through trusted platforms.", i: <FaUniversity /> },
-              { t: "Exam & Interview Preparation", d: "Professional coaching for university entry tests, screening tests, and language exams (IELTS/TOEFL). Guidance on scholarships and fee discounts.", i: <FaUserCheck /> },
-              { t: "Digital University Access & Fee Assistance", d: "Direct digital access to universities and sponsors offering fee waivers. Selection of affordable programs with high academic standards.", i: <FaCoins /> },
-              { t: "Clear Documentation Services", d: "Complete support in documentation processing including attestation, verification, and legalization of academic and official documents.", i: <FaFileInvoice /> },
-              { t: "Settlement & Accommodation Support", d: "Assistance in securing university dormitories and private accommodations to ensure a smooth and comfortable transition.", i: <FaUserCheck /> }
-            ].map((service, i) => (
+            {consultancyServices.map((service, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
                   {service.i}
@@ -184,6 +188,7 @@ export default function StudentVisaPage() {
                     width={800} 
                     height={600} 
                     className="w-full aspect-[4/3] object-cover transition-transform duration-1000 group-hover:scale-110" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                   />
                 </div>
               </div>

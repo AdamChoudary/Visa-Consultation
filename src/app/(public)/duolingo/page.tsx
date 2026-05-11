@@ -7,36 +7,37 @@ export const metadata = {
   description: "The modern, convenient way to prove your English proficiency. Accepted by thousands of universities worldwide, taken from your home.",
 };
 
+const sections = [
+  { 
+    title: "Prerequisites & Registration", 
+    icon: <FaIdCard />, 
+    items: [
+      "Valid Passport or ID", 
+      "Official Online Registration", 
+      "Exam Fee Payment"
+    ] 
+  },
+  { 
+    title: "Test Format", 
+    icon: <FaLaptopHouse />, 
+    items: [
+      "Online Test from Home", 
+      "Adaptive Skill-Level Test", 
+      "Certified Results in 48 Hours"
+    ] 
+  },
+  { 
+    title: "Achieve Your Target Score", 
+    icon: <FaBullseye />, 
+    items: [
+      "University Score Analysis", 
+      "Preparation Guidance", 
+      "Registration & Visa Support"
+    ] 
+  }
+];
+
 export default function Duolingo() {
-  const sections = [
-    { 
-      title: "Prerequisites & Registration", 
-      icon: <FaIdCard />, 
-      items: [
-        "Valid Passport or ID", 
-        "Official Online Registration", 
-        "Exam Fee Payment"
-      ] 
-    },
-    { 
-      title: "Test Format", 
-      icon: <FaLaptopHouse />, 
-      items: [
-        "Online Test from Home", 
-        "Adaptive Skill-Level Test", 
-        "Certified Results in 48 Hours"
-      ] 
-    },
-    { 
-      title: "Achieve Your Target Score", 
-      icon: <FaBullseye />, 
-      items: [
-        "University Score Analysis", 
-        "Preparation Guidance", 
-        "Registration & Visa Support"
-      ] 
-    }
-  ];
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
@@ -72,6 +73,7 @@ export default function Duolingo() {
                     width={800} 
                     height={1000} 
                     className="w-full h-auto object-cover" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                     priority
                   />
                 </div>
@@ -138,6 +140,7 @@ export default function Duolingo() {
                   width={800} 
                   height={500} 
                   className="w-full h-[250px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110" 
+                  sizes="(max-width: 768px) 100vw, 800px"
                 />
               </div>
             </div>

@@ -9,23 +9,31 @@ export const metadata = {
   description: "Your journey abroad starts here. Expert consultancy for study, work, and visit visas.",
 };
 
-export default function Home() {
-  const socialLinks = [
-    { href: "https://wa.me/923335965199", icon: <FaWhatsapp />, color: "#25D366", label: "WhatsApp" },
-    { href: "https://www.facebook.com/thevisaconsultancy1", icon: <FaFacebook />, color: "#1877F2", label: "Facebook" },
-    { href: "https://www.tiktok.com/@the.visa.consulta6", icon: <FaTiktok />, color: "#FE2C55", label: "TikTok" },
-    { href: "https://www.instagram.com/the_visa_consultancy", icon: <FaInstagram />, color: "#E4405F", label: "Instagram" },
-    { href: "https://www.linkedin.com/company/the-visa-consultancy", icon: <FaLinkedin />, color: "#0077B5", label: "LinkedIn" },
-  ];
+const socialLinks = [
+  { href: "https://wa.me/923335965199", icon: <FaWhatsapp />, color: "#25D366", label: "WhatsApp" },
+  { href: "https://www.facebook.com/thevisaconsultancy1", icon: <FaFacebook />, color: "#1877F2", label: "Facebook" },
+  { href: "https://www.tiktok.com/@the.visa.consulta6", icon: <FaTiktok />, color: "#FE2C55", label: "TikTok" },
+  { href: "https://www.instagram.com/the_visa_consultancy", icon: <FaInstagram />, color: "#E4405F", label: "Instagram" },
+  { href: "https://www.linkedin.com/company/the-visa-consultancy", icon: <FaLinkedin />, color: "#0077B5", label: "LinkedIn" },
+];
 
-  const destinations = [
-    { n: "Canada", img: "https://flagcdn.com/w320/ca.png" },
-    { n: "United Kingdom", img: "https://flagcdn.com/w320/gb.png" },
-    { n: "Australia", img: "https://flagcdn.com/w320/au.png" },
-    { n: "United States", img: "https://flagcdn.com/w320/us.png" },
-    { n: "Europe", img: "https://flagcdn.com/w320/eu.png" },
-    { n: "UAE", img: "https://flagcdn.com/w320/ae.png" }
-  ];
+const destinations = [
+  { n: "Canada", img: "https://flagcdn.com/w320/ca.png" },
+  { n: "United Kingdom", img: "https://flagcdn.com/w320/gb.png" },
+  { n: "Australia", img: "https://flagcdn.com/w320/au.png" },
+  { n: "United States", img: "https://flagcdn.com/w320/us.png" },
+  { n: "Europe", img: "https://flagcdn.com/w320/eu.png" },
+  { n: "UAE", img: "https://flagcdn.com/w320/ae.png" }
+];
+
+const visaServices = [
+  { t: "Study Visa", d: "Study in Top Universities", i: <FaGraduationCap />, l: "/studentvisa" },
+  { t: "Work Visa", d: "Work Abroad Legally", i: <FaBriefcase />, l: "/workvisas" },
+  { t: "Visit Visa", d: "Travel the World", i: <FaGlobe />, l: "/visitvisas" },
+  { t: "Immigration & PR", d: "Settle in a New Country", i: <FaUserFriends />, l: "/immigration" }
+];
+
+export default function Home() {
 
   return (
     <main className="bg-[#0f1921] min-h-screen selection:bg-[#d0a850] selection:text-black overflow-x-hidden">
@@ -65,12 +73,7 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
-          {[
-            { t: "Study Visa", d: "Study in Top Universities", i: <FaGraduationCap />, l: "/studentvisa" },
-            { t: "Work Visa", d: "Work Abroad Legally", i: <FaBriefcase />, l: "/workvisas" },
-            { t: "Visit Visa", d: "Travel the World", i: <FaGlobe />, l: "/visitvisas" },
-            { t: "Immigration & PR", d: "Settle in a New Country", i: <FaUserFriends />, l: "/immigration" }
-          ].map((service, idx) => (
+          {visaServices.map((service, idx) => (
             <div
               key={idx}
               className="bg-[#fdfcf0] relative overflow-hidden rounded-xl p-6 md:p-8 flex flex-col items-center text-center shadow-2xl border-4 border-[#d0a850] hover:scale-105 transition-all group"
@@ -118,6 +121,7 @@ export default function Home() {
                     alt={dest.n} 
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500" 
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 20vw, 200px"
                   />
                 </div>
                 <div className="bg-white py-2 text-center border-t border-gray-100">

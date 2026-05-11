@@ -7,6 +7,27 @@ export const metadata = {
   description: "Secure your global future with a personalized consultation. Book a meeting with our experts for student, visit, or work visas and immigration support.",
 };
 
+const appointmentTypes = [
+  { title: "Student Visa Consultation", desc: "Book a session to discuss study visa options, eligibility, and documentation guidance.", icon: <FaGraduationCap /> },
+  { title: "Visit Visa Consultation", desc: "Schedule an appointment to understand visit visa requirements, destinations, and submission process.", icon: <FaPassport /> },
+  { title: "Immigration Consultation", desc: "Professional guidance for PR, skilled worker programs, and family sponsorship options.", icon: <FaIdCard /> },
+  { title: "Business & Investor Appointments", desc: "Discuss business immigration pathways and investor visa programs for overseas expansion.", icon: <FaBriefcase /> }
+];
+
+const bookingProcess = [
+  { step: "01", title: "Select Appointment Type", desc: "Choose the visa service you want to book: student, visit, immigration, or business consultation." },
+  { step: "02", title: "Choose Date & Time", desc: "Pick a convenient date and time from our available slots for your appointment." },
+  { step: "03", title: "Provide Details", desc: "Fill in your personal information including name, email, contact number, and visa requirements." },
+  { step: "04", title: "Confirmation & Reminder", desc: "Receive confirmation and reminders for your appointment to ensure a smooth consultation." }
+];
+
+const consultancyBenefits = [
+  { title: "Professional Guidance", desc: "Consult with experienced advisors for accurate visa information and smooth processing." },
+  { title: "Flexible Scheduling", desc: "Choose appointment slots that fit your availability and convenience." },
+  { title: "Expert Documentation", desc: "We assist with pre-appointment preparation and required documents to save your time." },
+  { title: "Trusted Support", desc: "Our team ensures seamless communication and support before, during, and after your appointment." }
+];
+
 export default function AppointmentPage() {
   return (
     <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
@@ -42,6 +63,7 @@ export default function AppointmentPage() {
                     width={800} 
                     height={1000} 
                     className="w-full h-auto object-cover" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                     priority
                   />
                 </div>
@@ -63,12 +85,7 @@ export default function AppointmentPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
-            {[
-              { title: "Student Visa Consultation", desc: "Book a session to discuss study visa options, eligibility, and documentation guidance.", icon: <FaGraduationCap /> },
-              { title: "Visit Visa Consultation", desc: "Schedule an appointment to understand visit visa requirements, destinations, and submission process.", icon: <FaPassport /> },
-              { title: "Immigration Consultation", desc: "Professional guidance for PR, skilled worker programs, and family sponsorship options.", icon: <FaIdCard /> },
-              { title: "Business & Investor Appointments", desc: "Discuss business immigration pathways and investor visa programs for overseas expansion.", icon: <FaBriefcase /> }
-            ].map((type, i) => (
+            {appointmentTypes.map((type, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
                   {type.icon}
@@ -88,12 +105,7 @@ export default function AppointmentPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-16">
-            {[
-              { step: "01", title: "Select Appointment Type", desc: "Choose the visa service you want to book: student, visit, immigration, or business consultation." },
-              { step: "02", title: "Choose Date & Time", desc: "Pick a convenient date and time from our available slots for your appointment." },
-              { step: "03", title: "Provide Details", desc: "Fill in your personal information including name, email, contact number, and visa requirements." },
-              { step: "04", title: "Confirmation & Reminder", desc: "Receive confirmation and reminders for your appointment to ensure a smooth consultation." }
-            ].map((item, i) => (
+            {bookingProcess.map((item, i) => (
               <div key={i} className="relative space-y-6 md:space-y-8 group">
                 <div className="flex items-center gap-6">
                   <span className="text-3xl md:text-4xl font-bold text-white/10 group-hover:text-[#d0a850] transition-colors duration-500">{item.step}</span>
@@ -116,12 +128,7 @@ export default function AppointmentPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-            {[
-              { title: "Professional Guidance", desc: "Consult with experienced advisors for accurate visa information and smooth processing." },
-              { title: "Flexible Scheduling", desc: "Choose appointment slots that fit your availability and convenience." },
-              { title: "Expert Documentation", desc: "We assist with pre-appointment preparation and required documents to save your time." },
-              { title: "Trusted Support", desc: "Our team ensures seamless communication and support before, during, and after your appointment." }
-            ].map((benefit, i) => (
+            {consultancyBenefits.map((benefit, i) => (
               <div key={i} className="space-y-4">
                 <div className="w-8 h-8 rounded-full border border-[#d0a850]/30 flex items-center justify-center text-[#d0a850] text-xs font-bold">
                   {i + 1}

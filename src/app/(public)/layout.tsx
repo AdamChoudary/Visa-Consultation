@@ -2,6 +2,9 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { LazyMotion } from "framer-motion";
+
+const loadFeatures = () => import("@/lib/framer-features").then((res) => res.default);
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,9 +30,11 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/logo.webp" />
       </head>
       <body className={`${inter.variable} ${playfair.variable} min-h-screen flex flex-col bg-[#0f1921]`}>
-        <Header />
-        <main className="flex-grow pt-[64px] md:pt-[96px]">{children}</main>
-        <Footer />
+        <LazyMotion features={loadFeatures}>
+          <Header />
+          <main className="flex-grow pt-[64px] md:pt-[96px]">{children}</main>
+          <Footer />
+        </LazyMotion>
       </body>
     </html>
   );

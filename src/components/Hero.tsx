@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useCallback } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { FaFacebook, FaTiktok, FaInstagram, FaWhatsapp, FaLinkedin, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
 interface HeroProps {
@@ -68,20 +68,20 @@ const Hero = React.memo(function Hero({ socialLinks }: HeroProps) {
 
       {/* Hero Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
           {/* This space was empty in original, but preserved for consistency */}
-        </motion.div>
+        </m.div>
       </div>
 
       {/* Floating Social Links */}
       <div className="fixed right-8 top-1/2 -translate-y-1/2 z-[100] hidden lg:flex flex-col gap-6">
         {socialLinks.map((link, idx) => (
-          <motion.a
+          <m.a
             key={idx}
             href={link.href}
             target="_blank"
@@ -90,7 +90,7 @@ const Hero = React.memo(function Hero({ socialLinks }: HeroProps) {
             className="w-12 h-12 rounded-xl bg-[#0f1921]/80 border border-white/5 backdrop-blur-xl flex items-center justify-center text-white/40 text-lg transition-all"
           >
             {link.icon}
-          </motion.a>
+          </m.a>
         ))}
       </div>
 
@@ -114,7 +114,7 @@ const Hero = React.memo(function Hero({ socialLinks }: HeroProps) {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div
+      <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
@@ -122,7 +122,7 @@ const Hero = React.memo(function Hero({ socialLinks }: HeroProps) {
         onClick={scrollToMission}
       >
         <div className="w-5 h-8 rounded-full border border-[#d0a860] flex justify-center pt-2">
-          <motion.div
+          <m.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             className="w-0.5 h-1.5 bg-[#d0a860] rounded-full"
@@ -131,7 +131,7 @@ const Hero = React.memo(function Hero({ socialLinks }: HeroProps) {
         <span className="text-[9px] uppercase tracking-[0.2em] text-[#d0a860] font-bold opacity-80 group-hover:opacity-100 transition-opacity">
           Scroll Down
         </span>
-      </motion.div>
+      </m.div>
     </section>
   );
 });

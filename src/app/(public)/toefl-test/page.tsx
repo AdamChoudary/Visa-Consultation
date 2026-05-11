@@ -7,37 +7,38 @@ export const metadata = {
   description: "The key academic requirement for students aiming for higher education in North America. Accepted by 11,000+ universities worldwide. Get expert guidance today.",
 };
 
+const sections = [
+  { 
+    title: "Prerequisites & Registration", 
+    icon: <FaClipboardCheck />, 
+    items: [
+      "Valid Passport (exact name match)", 
+      "Official ETS Registration", 
+      "Exam Fee Payment"
+    ] 
+  },
+  { 
+    title: "Available Test Formats", 
+    icon: <FaGlobeAmericas />, 
+    items: [
+      "TOEFL iBT® (Computer-based)", 
+      "Home Edition (Same test at home)", 
+      "Paper-Based (Limited locations)"
+    ] 
+  },
+  { 
+    title: "Achieve Your Target Score", 
+    icon: <FaTrophy />, 
+    items: [
+      "University Score Analysis", 
+      "Expert Tutor Referrals", 
+      "Registration Assistance",
+      "Complete Application Guidance"
+    ] 
+  }
+];
+
 export default function ToeflTest() {
-  const sections = [
-    { 
-      title: "Prerequisites & Registration", 
-      icon: <FaClipboardCheck />, 
-      items: [
-        "Valid Passport (exact name match)", 
-        "Official ETS Registration", 
-        "Exam Fee Payment"
-      ] 
-    },
-    { 
-      title: "Available Test Formats", 
-      icon: <FaGlobeAmericas />, 
-      items: [
-        "TOEFL iBT® (Computer-based)", 
-        "Home Edition (Same test at home)", 
-        "Paper-Based (Limited locations)"
-      ] 
-    },
-    { 
-      title: "Achieve Your Target Score", 
-      icon: <FaTrophy />, 
-      items: [
-        "University Score Analysis", 
-        "Expert Tutor Referrals", 
-        "Registration Assistance",
-        "Complete Application Guidance"
-      ] 
-    }
-  ];
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
@@ -73,6 +74,7 @@ export default function ToeflTest() {
                     width={800} 
                     height={1000} 
                     className="w-full h-auto object-cover" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                     priority
                   />
                 </div>
@@ -139,6 +141,7 @@ export default function ToeflTest() {
                   width={800} 
                   height={500} 
                   className="w-full h-[250px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110" 
+                  sizes="(max-width: 768px) 100vw, 800px"
                 />
               </div>
             </div>

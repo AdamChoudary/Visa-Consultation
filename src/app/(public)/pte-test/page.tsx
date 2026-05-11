@@ -7,37 +7,38 @@ export const metadata = {
   description: "The leading computer-based English test trusted by universities and governments worldwide. Get your results in as little as 48 hours with our expert guidance.",
 };
 
+const sections = [
+  { 
+    title: "Prerequisites: Getting Started", 
+    icon: <FaCheckDouble />, 
+    items: [
+      "Valid Identification (Passport)", 
+      "Age Requirement (16+; consent for 16-17)", 
+      "Test Fee Payment (via Pearson)"
+    ] 
+  },
+  { 
+    title: "Available PTE Tests", 
+    icon: <FaDesktop />, 
+    items: [
+      "PTE Academic (Study, Work, Migration)", 
+      "PTE Academic Online (Home testing)", 
+      "PTE Core (Canadian Immigration / IRCC)"
+    ] 
+  },
+  { 
+    title: "Achieve Your Target Score", 
+    icon: <FaChartLine />, 
+    items: [
+      "Strategic Score Goal Alignment", 
+      "Expert Training Connections", 
+      "Pearson VUE Booking Assistance",
+      "Complete Preparation Guidance"
+    ] 
+  }
+];
+
 export default function PteTest() {
-  const sections = [
-    { 
-      title: "Prerequisites: Getting Started", 
-      icon: <FaCheckDouble />, 
-      items: [
-        "Valid Identification (Passport)", 
-        "Age Requirement (16+; consent for 16-17)", 
-        "Test Fee Payment (via Pearson)"
-      ] 
-    },
-    { 
-      title: "Available PTE Tests", 
-      icon: <FaDesktop />, 
-      items: [
-        "PTE Academic (Study, Work, Migration)", 
-        "PTE Academic Online (Home testing)", 
-        "PTE Core (Canadian Immigration / IRCC)"
-      ] 
-    },
-    { 
-      title: "Achieve Your Target Score", 
-      icon: <FaChartLine />, 
-      items: [
-        "Strategic Score Goal Alignment", 
-        "Expert Training Connections", 
-        "Pearson VUE Booking Assistance",
-        "Complete Preparation Guidance"
-      ] 
-    }
-  ];
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
@@ -73,6 +74,7 @@ export default function PteTest() {
                     width={800} 
                     height={1000} 
                     className="w-full h-auto object-cover" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                     priority
                   />
                 </div>
@@ -139,6 +141,7 @@ export default function PteTest() {
                   width={800} 
                   height={500} 
                   className="w-full h-[250px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110" 
+                  sizes="(max-width: 768px) 100vw, 800px"
                 />
               </div>
             </div>

@@ -7,6 +7,27 @@ export const metadata = {
   description: "Your path to a new life starts here. Expert guidance for skilled migration, business visas, and permanent residency programs (PR) worldwide.",
 };
 
+const programs = [
+  { t: "Skilled Worker Programs", d: "Professional guidance for skilled migration programs based on education, work experience, and language proficiency.", i: <FaUserTie /> },
+  { t: "Permanent Residency (PR)", d: "Complete PR assistance including profile evaluation, points calculation, documentation, and application submission.", i: <FaIdCard /> },
+  { t: "Business & Investor Immigration", d: "Immigration pathways for entrepreneurs and investors seeking overseas business expansion and residency opportunities.", i: <FaChartLine /> },
+  { t: "Family Sponsorship", d: "Spouse, parent, and family reunification programs with full documentation and legal compliance support.", i: <FaUsers /> }
+];
+
+const processItems = [
+  { step: "01", title: "Eligibility Assessment", desc: "We carefully analyze your age, education, work experience, and language skills to determine the most suitable immigration pathway." },
+  { step: "02", title: "Documentation & Profile Building", desc: "Our team prepares complete, embassy-ready documentation to ensure accuracy and compliance with immigration laws." },
+  { step: "03", title: "Application Submission", desc: "We handle the full submission process including online filing, biometrics scheduling, and follow-ups." },
+  { step: "04", title: "Visa Approval & Settlement Guidance", desc: "After approval, we guide you with pre-departure planning and settlement assistance." }
+];
+
+const benefits = [
+  { title: "Transparent Process", desc: "No hidden charges and complete step-by-step clarity." },
+  { title: "High Success Rate", desc: "Strong profile building to increase approval chances." },
+  { title: "Experienced Consultants", desc: "Professional team with strong knowledge of immigration laws." },
+  { title: "Client-Focused Support", desc: "Personalized guidance tailored to your goals." }
+];
+
 export default function ImmigrationPage() {
   return (
     <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
@@ -42,6 +63,7 @@ export default function ImmigrationPage() {
                     width={800} 
                     height={1000} 
                     className="w-full h-auto object-cover" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                     priority
                   />
                 </div>
@@ -63,12 +85,7 @@ export default function ImmigrationPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
-            {[
-              { t: "Skilled Worker Programs", d: "Professional guidance for skilled migration programs based on education, work experience, and language proficiency.", i: <FaUserTie /> },
-              { t: "Permanent Residency (PR)", d: "Complete PR assistance including profile evaluation, points calculation, documentation, and application submission.", i: <FaIdCard /> },
-              { t: "Business & Investor Immigration", d: "Immigration pathways for entrepreneurs and investors seeking overseas business expansion and residency opportunities.", i: <FaChartLine /> },
-              { t: "Family Sponsorship", d: "Spouse, parent, and family reunification programs with full documentation and legal compliance support.", i: <FaUsers /> }
-            ].map((program, i) => (
+            {programs.map((program, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
                   {program.i}
@@ -88,12 +105,7 @@ export default function ImmigrationPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-16">
-            {[
-              { step: "01", title: "Eligibility Assessment", desc: "We carefully analyze your age, education, work experience, and language skills to determine the most suitable immigration pathway." },
-              { step: "02", title: "Documentation & Profile Building", desc: "Our team prepares complete, embassy-ready documentation to ensure accuracy and compliance with immigration laws." },
-              { step: "03", title: "Application Submission", desc: "We handle the full submission process including online filing, biometrics scheduling, and follow-ups." },
-              { step: "04", title: "Visa Approval & Settlement Guidance", desc: "After approval, we guide you with pre-departure planning and settlement assistance." }
-            ].map((item, i) => (
+            {processItems.map((item, i) => (
               <div key={i} className="relative space-y-6 md:space-y-8 group">
                 <div className="flex items-center gap-6">
                   <span className="text-3xl md:text-4xl font-bold text-white/10 group-hover:text-[#d0a850] transition-colors duration-500">{item.step}</span>
@@ -116,12 +128,7 @@ export default function ImmigrationPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-            {[
-              { title: "Transparent Process", desc: "No hidden charges and complete step-by-step clarity." },
-              { title: "High Success Rate", desc: "Strong profile building to increase approval chances." },
-              { title: "Experienced Consultants", desc: "Professional team with strong knowledge of immigration laws." },
-              { title: "Client-Focused Support", desc: "Personalized guidance tailored to your goals." }
-            ].map((benefit, i) => (
+            {benefits.map((benefit, i) => (
               <div key={i} className="space-y-4">
                 <div className="w-8 h-8 rounded-full border border-[#d0a850]/30 flex items-center justify-center text-[#d0a850] text-xs font-bold">
                   {i + 1}

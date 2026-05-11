@@ -7,42 +7,43 @@ export const metadata = {
   description: "Prepare for the world's most popular English language proficiency test with expert guidance. Accepted by 11,000+ organizations worldwide.",
 };
 
+const sections = [
+  { 
+    title: "Prerequisites & Registration", 
+    icon: <FaPassport />, 
+    items: [
+      "Valid Passport (matching registration)", 
+      "Official IELTS Portal Booking", 
+      "Exam Fee Payment Confirmation"
+    ] 
+  },
+  { 
+    title: "Available Test Formats", 
+    icon: <FaFileAlt />, 
+    items: [
+      "IELTS Academic (for Students)", 
+      "IELTS General (for Work/Migration)", 
+      "Computer or Paper-Based options"
+    ] 
+  },
+  { 
+    title: "Achieve Your Target Band", 
+    icon: <FaStar />, 
+    items: [
+      "University Band Requirement Analysis", 
+      "Professional Preparation Guidance", 
+      "Test Booking & Visa Support"
+    ] 
+  }
+];
+
 export default function Ielts() {
-  const sections = [
-    { 
-      title: "Prerequisites & Registration", 
-      icon: <FaPassport />, 
-      items: [
-        "Valid Passport (matching registration)", 
-        "Official IELTS Portal Booking", 
-        "Exam Fee Payment Confirmation"
-      ] 
-    },
-    { 
-      title: "Available Test Formats", 
-      icon: <FaFileAlt />, 
-      items: [
-        "IELTS Academic (for Students)", 
-        "IELTS General (for Work/Migration)", 
-        "Computer or Paper-Based options"
-      ] 
-    },
-    { 
-      title: "Achieve Your Target Band", 
-      icon: <FaStar />, 
-      items: [
-        "University Band Requirement Analysis", 
-        "Professional Preparation Guidance", 
-        "Test Booking & Visa Support"
-      ] 
-    }
-  ];
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
-        <section className="min-h-[50vh] md:min-h-[60vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto md:pt-32">
+        <section className="min-h-[50vh] md:min-h-[60vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto ">
           <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
             <div className="flex-1 space-y-8 md:space-y-10 animate-fade-in text-center lg:text-left">
                <div className="space-y-4">
@@ -72,6 +73,7 @@ export default function Ielts() {
                     width={800} 
                     height={1000} 
                     className="w-full h-auto object-cover" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                     priority
                   />
                 </div>
@@ -138,6 +140,7 @@ export default function Ielts() {
                   width={800} 
                   height={500} 
                   className="w-full h-[250px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110" 
+                  sizes="(max-width: 768px) 100vw, 800px"
                 />
               </div>
             </div>

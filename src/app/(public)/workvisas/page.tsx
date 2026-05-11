@@ -6,29 +6,30 @@ export const metadata = {
   description: "Advance your career on a global stage. We provide end-to-end support for work permits, skilled migration, and relocation documentation.",
 };
 
+const jobs = [
+  { 
+    name: "Dubai Work Visa", 
+    img: "/page images/workvisa/skilled.webp", 
+    desc: "Secure employment in Dubai with full guidance. We assist with employer sponsorship, contract verification, and immigration documentation for a smooth process." 
+  },
+  { 
+    name: "UK Work Visa", 
+    img: "/page images/workvisa/domestic.webp", 
+    desc: "Explore UK career opportunities. Our services include points-based eligibility assessment, document preparation, and sponsorship guidance." 
+  },
+  { 
+    name: "USA Work Visa", 
+    img: "/page images/workvisa/hospitality.webp", 
+    desc: "Obtain US employment authorization. Full support for H-1B, L-1, and other work visas including DS-160 prep and interview guidance." 
+  },
+  { 
+    name: "Canada Work Visa", 
+    img: "/page images/workvisa/healthcare.webp", 
+    desc: "Start your journey in Canada. We guide you through LMIA documentation, employer requirements, and successful embassy submission." 
+  }
+];
+
 export default function WorkVisasPage() {
-  const jobs = [
-    { 
-      name: "Dubai Work Visa", 
-      img: "/page images/workvisa/skilled.webp", 
-      desc: "Secure employment in Dubai with full guidance. We assist with employer sponsorship, contract verification, and immigration documentation for a smooth process." 
-    },
-    { 
-      name: "UK Work Visa", 
-      img: "/page images/workvisa/domestic.webp", 
-      desc: "Explore UK career opportunities. Our services include points-based eligibility assessment, document preparation, and sponsorship guidance." 
-    },
-    { 
-      name: "USA Work Visa", 
-      img: "/page images/workvisa/hospitality.webp", 
-      desc: "Obtain US employment authorization. Full support for H-1B, L-1, and other work visas including DS-160 prep and interview guidance." 
-    },
-    { 
-      name: "Canada Work Visa", 
-      img: "/page images/workvisa/healthcare.webp", 
-      desc: "Start your journey in Canada. We guide you through LMIA documentation, employer requirements, and successful embassy submission." 
-    }
-  ];
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
@@ -64,6 +65,7 @@ export default function WorkVisasPage() {
                     width={800} 
                     height={1000} 
                     className="w-full h-auto object-cover" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                     priority
                   />
                 </div>
@@ -94,6 +96,7 @@ export default function WorkVisasPage() {
                     width={600}
                     height={400}
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0f1921] to-transparent opacity-40"></div>
                 </div>

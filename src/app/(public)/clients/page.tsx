@@ -6,29 +6,30 @@ export const metadata = {
   description: "Read about our success stories and milestones in helping students, professionals, and families achieve their international goals.",
 };
 
+const successes = [
+  {
+    title: "Student Visa Success",
+    desc: "Successfully assisted hundreds of students in securing admissions and visas for top-tier universities in the UK, Canada, Australia, and Europe.",
+    icon: <FaUserGraduate />
+  },
+  {
+    title: "Work Permit Approvals",
+    desc: "Guided skilled professionals across engineering, healthcare, and IT sectors in obtaining overseas employment visas and employer-sponsored work permits.",
+    icon: <FaBriefcase />
+  },
+  {
+    title: "Immigration & PR",
+    desc: "Helped families and individuals achieve permanent residency and settlement abroad with transparent documentation and points-based assessment support.",
+    icon: <FaPassport />
+  },
+  {
+    title: "Visit Visa Solutions",
+    desc: "High success rate in securing visit visas for leisure, business, and family reunification in Schengen countries, USA, and UK.",
+    icon: <FaPlane />
+  }
+];
+
 export default function Clients() {
-  const successes = [
-    {
-      title: "Student Visa Success",
-      desc: "Successfully assisted hundreds of students in securing admissions and visas for top-tier universities in the UK, Canada, Australia, and Europe.",
-      icon: <FaUserGraduate />
-    },
-    {
-      title: "Work Permit Approvals",
-      desc: "Guided skilled professionals across engineering, healthcare, and IT sectors in obtaining overseas employment visas and employer-sponsored work permits.",
-      icon: <FaBriefcase />
-    },
-    {
-      title: "Immigration & PR",
-      desc: "Helped families and individuals achieve permanent residency and settlement abroad with transparent documentation and points-based assessment support.",
-      icon: <FaPassport />
-    },
-    {
-      title: "Visit Visa Solutions",
-      desc: "High success rate in securing visit visas for leisure, business, and family reunification in Schengen countries, USA, and UK.",
-      icon: <FaPlane />
-    }
-  ];
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
