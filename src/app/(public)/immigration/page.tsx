@@ -35,7 +35,7 @@ export default function ImmigrationPage() {
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[40vh] md:min-h-[50vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
-          <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24 md:pt-24">
+          <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24 pt-12">
             <div className="flex-1 space-y-8 md:space-y-10 animate-fade-in text-center lg:text-left">
                <div className="space-y-4">
                  <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] block">Permanent Residency</span>
