@@ -99,21 +99,21 @@ export default function StudentVisaPage() {
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[50vh] md:min-h-[60vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
-          <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
-            <div className="flex-1 space-y-8 md:space-y-10 animate-fade-in text-center lg:text-left">
+          <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24 pt-24 ">
+            <div className="flex-1 space-y-8  animate-fade-in text-center lg:text-left">
                <div className="space-y-4">
                  <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] block">Academic Excellence</span>
-                 <h1 className="text-4xl md:text-8xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
+                 <h1 className="text-4xl md:text-5xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
                    Student Visa <br className="hidden md:block"/> <span className="text-[#d0a850]">Global Future</span> <br className="hidden md:block"/> Starts Here
                  </h1>
                </div>
                
-               <p className="text-base md:text-xl text-white/40 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
+               <p className="text-base md:text-md text-white/40 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
                  Start your global education journey with our digitally market-embedded visa options and solutions. From the Arab world to Europe, United Kingdom, and Australia to America and Canada, the opportunity to reach your destination will be assisted by our company representatives with responsibility and trust. From documentation to final approval, we simplify the entire visa process and ensure you move forward with confidence.
                </p>
 
                <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 pt-4">
-                 <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-10 md:px-12 py-4 md:py-5 rounded-full font-bold uppercase text-[14px] md:text-[14px] tracking-[0.3em] hover:bg-white hover:text-black transition-all no-underline shadow-2xl shadow-[#d0a850]/10">
+                 <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-10 py-4 rounded-full font-bold uppercase text-[14px] md:text-[14px] tracking-[0.3em] hover:bg-white hover:text-black transition-all no-underline shadow-2xl shadow-[#d0a850]/10">
                    Free Consultation
                  </Link>
                </div>
