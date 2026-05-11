@@ -9,21 +9,21 @@ export const metadata = {
 };
 
 const appointmentTypes = [
-  { title: "Student Visa Consultation", desc: "Book a session to discuss study visa options, eligibility, and documentation guidance.", icon: <FaGraduationCap /> },
-  { title: "Visit Visa Consultation", desc: "Schedule an appointment to understand visit visa requirements, destinations, and submission process.", icon: <FaPassport /> },
-  { title: "Immigration Consultation", desc: "Professional guidance for PR, skilled worker programs, and family sponsorship options.", icon: <FaIdCard /> },
-  { title: "Business & Investor Appointments", desc: "Discuss business immigration pathways and investor visa programs for overseas expansion.", icon: <FaBriefcase /> }
+  { title: "Student Visa Appointment", desc: "Book your dedicated slot to review study visa eligibility and finalize your academic documentation with our experts.", icon: <FaGraduationCap /> },
+  { title: "Visit Visa Appointment", desc: "Secure an appointment for a comprehensive review of your visit visa requirements and travel itinerary planning.", icon: <FaPassport /> },
+  { title: "Immigration Appointment", desc: "Schedule a one-on-one session for professional guidance on PR pathways, skilled worker programs, and documentation.", icon: <FaIdCard /> },
+  { title: "Business & Investor Appointment", desc: "Confirm your appointment to discuss tailored business immigration strategies and global investment visa programs.", icon: <FaBriefcase /> }
 ];
 
 const bookingProcess = [
-  { step: "01", title: "Select Appointment Type", desc: "Choose the visa service you want to book: student, visit, immigration, or business consultation." },
+  { step: "01", title: "Select Appointment Type", desc: "Choose the visa service you want to book: student, visit, immigration, or business appointment." },
   { step: "02", title: "Choose Date & Time", desc: "Pick a convenient date and time from our available slots for your appointment." },
   { step: "03", title: "Provide Details", desc: "Fill in your personal information including name, email, contact number, and visa requirements." },
-  { step: "04", title: "Confirmation & Reminder", desc: "Receive confirmation and reminders for your appointment to ensure a smooth consultation." }
+  { step: "04", title: "Confirmation & Reminder", desc: "Receive confirmation and reminders for your appointment to ensure a smooth process." }
 ];
 
 const consultancyBenefits = [
-  { title: "Professional Guidance", desc: "Consult with experienced advisors for accurate visa information and smooth processing." },
+  { title: "Professional Guidance", desc: "Access experienced advisors for accurate visa information and smooth application processing." },
   { title: "Flexible Scheduling", desc: "Choose appointment slots that fit your availability and convenience." },
   { title: "Expert Documentation", desc: "We assist with pre-appointment preparation and required documents to save your time." },
   { title: "Trusted Support", desc: "Our team ensures seamless communication and support before, during, and after your appointment." }
@@ -45,7 +45,7 @@ export default function AppointmentPage() {
                </div>
                
                <p className="text-base md:text-xl text-white/40 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
-                 Schedule an appointment with our expert consultants for a personalized visa consultation. Choose the service type, date, and time convenient for you, and we will guide you through the process.
+                 Schedule an appointment with our expert advisors for a detailed strategy session. Choose the service type, date, and time convenient for you, and we will guide you through the process.
                </p>
 
                <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 pt-4">
@@ -156,7 +156,7 @@ export default function AppointmentPage() {
           <div className="bg-white/[0.02] border border-white/5 rounded-2xl md:rounded-[40px] p-8 md:p-24 text-center space-y-8 md:space-y-12">
              <div className="space-y-4">
                <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Secure your slot</span>
-               <h2 className="text-3xl md:text-7xl font-bold text-white heading-serif uppercase tracking-tight leading-tight">Ready to <span className="text-[#d0a850]">Consult?</span></h2>
+               <h2 className="text-3xl md:text-7xl font-bold text-white heading-serif uppercase tracking-tight leading-tight">Ready to <span className="text-[#d0a850]">Book?</span></h2>
              </div>
              <p className="text-base md:text-lg text-white/40 font-medium max-w-2xl mx-auto">
                Our expert advisors are ready to guide you. Book your preferred time today.
