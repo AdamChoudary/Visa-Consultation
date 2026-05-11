@@ -9,27 +9,51 @@ export const metadata = {
 
 export default function Ielts() {
   const sections = [
-    { title: "Prerequisites", icon: <FaPassport />, items: ["Valid Passport", "Official Registration", "Exam Fee Payment"] },
-    { title: "Test Formats", icon: <FaFileAlt />, items: ["IELTS Academic", "IELTS General Training", "Computer/Paper Based"] },
-    { title: "Achieve Target", icon: <FaStar />, items: ["Band Requirement Analysis", "Preparation Guidance", "Booking Assistance"] }
+    { 
+      title: "Prerequisites & Registration", 
+      icon: <FaPassport />, 
+      items: [
+        "Valid Passport (matching registration)", 
+        "Official IELTS Portal Booking", 
+        "Exam Fee Payment Confirmation"
+      ] 
+    },
+    { 
+      title: "Available Test Formats", 
+      icon: <FaFileAlt />, 
+      items: [
+        "IELTS Academic (for Students)", 
+        "IELTS General (for Work/Migration)", 
+        "Computer or Paper-Based options"
+      ] 
+    },
+    { 
+      title: "Achieve Your Target Band", 
+      icon: <FaStar />, 
+      items: [
+        "University Band Requirement Analysis", 
+        "Professional Preparation Guidance", 
+        "Test Booking & Visa Support"
+      ] 
+    }
   ];
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
-        <section className="min-h-[50vh] md:min-h-[60vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
+        <section className="min-h-[50vh] md:min-h-[60vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto md:pt-32">
           <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
             <div className="flex-1 space-y-8 md:space-y-10 animate-fade-in text-center lg:text-left">
                <div className="space-y-4">
                  <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] block">Language Proficiency</span>
-                 <h1 className="text-4xl md:text-8xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
+                 <h1 className="text-4xl md:text-6xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
                    English <br className="hidden md:block"/> <span className="text-[#d0a850]">IELTS Test</span>
                  </h1>
                </div>
                
-               <p className="text-base md:text-xl text-white/40 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
-                 The world's most popular English language proficiency test. Accepted by 11,000+ organizations worldwide for education and migration.
+               <p className="text-base md:text-md text-white/40 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
+                 For students planning to study, work, or migrate to countries such as the UK, Canada, Australia, and New Zealand, the IELTS test is one of the most recognized English language proficiency exams worldwide.
                </p>
 
                <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 pt-4">
@@ -60,8 +84,8 @@ export default function Ielts() {
         <section className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end mb-12 md:mb-20 gap-8 text-center lg:text-left">
             <div className="max-w-2xl space-y-4">
-               <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Global Standard</span>
-               <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase tracking-tight">Test <br className="hidden md:block"/>Structure</h2>
+               <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Our Services</span>
+               <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase tracking-tight">IELTS <br className="hidden md:block"/>Services</h2>
             </div>
             <p className="text-white/40 max-w-sm text-sm font-medium leading-relaxed">
               Unlock international opportunities with comprehensive IELTS guidance and support.
@@ -93,11 +117,11 @@ export default function Ielts() {
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-32">
             <div className="flex-1 space-y-8 md:space-y-12 text-center lg:text-left">
                <div className="space-y-4">
-                 <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Achieve Excellence</span>
-                 <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase leading-[1.2] md:leading-[1.1] tracking-tight">Expert <br className="hidden md:block"/> <span className="text-[#d0a850]">Proficiency</span></h2>
+                 <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Achieve Your Target Band</span>
+                 <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase leading-[1.2] md:leading-[1.1] tracking-tight">Achieve <br className="hidden md:block"/> <span className="text-[#d0a850]">Target Bands</span></h2>
                </div>
-               <p className="text-base md:text-lg text-white/50 leading-relaxed font-medium">
-                 We provide complete preparation guidance and test booking assistance to help you achieve your target band for university admission or migration.
+               <p className="text-base md:text-md text-white/50 leading-relaxed font-medium">
+                 Maximize your chances for top universities and migration goals. We provide expert band requirement analysis, professional preparation guidance, and complete study visa application support.
                </p>
                <div className="pt-4 md:pt-8">
                  <Link href="/contact" className="inline-flex items-center gap-6 group/link no-underline">

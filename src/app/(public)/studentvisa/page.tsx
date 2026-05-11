@@ -93,17 +93,17 @@ export default function StudentVisaPage() {
                <div className="space-y-4">
                  <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] block">Academic Excellence</span>
                  <h1 className="text-4xl md:text-8xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
-                   Student <br className="hidden md:block"/> <span className="text-[#d0a850]">Visas</span>
+                   Student Visa <br className="hidden md:block"/> <span className="text-[#d0a850]">Global Future</span> <br className="hidden md:block"/> Starts Here
                  </h1>
                </div>
                
-               <p className="text-base md:text-xl text-white/40 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
-                 Your gateway to international education. We simplify the complex visa process so you can focus on your academic future.
+               <p className="text-base md:text-xl text-white/40 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0">
+                 Start your global education journey with our digitally market-embedded visa options and solutions. From the Arab world to Europe, United Kingdom, and Australia to America and Canada, the opportunity to reach your destination will be assisted by our company representatives with responsibility and trust. From documentation to final approval, we simplify the entire visa process and ensure you move forward with confidence.
                </p>
 
                <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 pt-4">
                  <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-10 md:px-12 py-4 md:py-5 rounded-full font-bold uppercase text-[14px] md:text-[14px] tracking-[0.3em] hover:bg-white hover:text-black transition-all no-underline shadow-2xl shadow-[#d0a850]/10">
-                   Start Application
+                   Free Consultation
                  </Link>
                </div>
             </div>
@@ -129,20 +129,22 @@ export default function StudentVisaPage() {
         <section className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end mb-12 md:mb-20 gap-8 text-center lg:text-left">
             <div className="max-w-2xl space-y-4">
-               <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">What we do</span>
-               <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase tracking-tight">Our Expert <br className="hidden md:block"/>Services</h2>
+               <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Our Services</span>
+               <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase tracking-tight">Our Educational <br className="hidden md:block"/>Consultancy Services</h2>
             </div>
             <p className="text-white/40 max-w-sm text-sm font-medium leading-relaxed">
               Tailored solutions for every student's unique journey towards international education.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
             {[
-              { t: "University Selection", d: "Finding the right institution that fits your career goals.", i: <FaUniversity /> },
-              { t: "CAS & I-20 Support", d: "Streamlined assistance for your enrollment documentation.", i: <FaFileInvoice /> },
-              { t: "Financial Guidance", d: "Helping you prepare the necessary funds and proof.", i: <FaCoins /> },
-              { t: "Interview Prep", d: "Mock sessions to build your confidence for the embassy.", i: <FaUserCheck /> }
+              { t: "Free Educational Counselling & Guidance", d: "Personalized counselling to help students choose the best country based on academic background, career goals, and future opportunities.", i: <FaUniversity /> },
+              { t: "Selection of Universities & Courses", d: "Assistance in selecting accredited and internationally recognized universities. Authentication and verification through trusted platforms.", i: <FaUniversity /> },
+              { t: "Exam & Interview Preparation", d: "Professional coaching for university entry tests, screening tests, and language exams (IELTS/TOEFL). Guidance on scholarships and fee discounts.", i: <FaUserCheck /> },
+              { t: "Digital University Access & Fee Assistance", d: "Direct digital access to universities and sponsors offering fee waivers. Selection of affordable programs with high academic standards.", i: <FaCoins /> },
+              { t: "Clear Documentation Services", d: "Complete support in documentation processing including attestation, verification, and legalization of academic and official documents.", i: <FaFileInvoice /> },
+              { t: "Settlement & Accommodation Support", d: "Assistance in securing university dormitories and private accommodations to ensure a smooth and comfortable transition.", i: <FaUserCheck /> }
             ].map((service, i) => (
               <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">

@@ -8,10 +8,26 @@ export const metadata = {
 
 export default function VisitVisasPage() {
   const destinations = [
-    { name: "Schengen", img: "/page images/shengen visit.webp", desc: "Explore 27 European countries with a single visa. We handle all documentation and embassy appointments." },
-    { name: "USA", img: "/page images/usa visit.webp", desc: "B1/B2 visa support for tourism and business. Expert guidance for DS-160 and interview preparation." },
-    { name: "UK", img: "/page images/uk visit.webp", desc: "Visit the United Kingdom for tourism or family. Complete support for standard visitor visa applications." },
-    { name: "Canada", img: "/page images/canada visit.webp", desc: "Explore the beauty of Canada. Assistance with visitor visas and super visas for parents/grandparents." }
+    { 
+      name: "Dubai Visit Visa", 
+      img: "/page images/shengen visit.webp", 
+      desc: "Explore Dubai, Abu Dhabi, and beyond! We provide full support for UAE tourist and visit visas, including sponsor documents, hotel bookings, travel itinerary, and visa submission to make your visit seamless and stress-free." 
+    },
+    { 
+      name: "Schengen Visit Visa", 
+      img: "/page images/usa visit.webp", 
+      desc: "Travel across Europe with ease! We provide expert assistance for Schengen visit visas including itinerary planning, invitation letters, travel insurance guidance, and complete embassy documentation to ensure smooth approvals." 
+    },
+    { 
+      name: "UK Visit Visa", 
+      img: "/page images/uk visit.webp", 
+      desc: "Plan your travel to the United Kingdom with ease! We provide full guidance for UK visit visas including invitation letters, financial proof preparation, travel planning, and embassy submissions for tourist or family visits." 
+    },
+    { 
+      name: "USA Visit Visa", 
+      img: "/page images/canada visit.webp", 
+      desc: "Visit the United States with confidence! Our USA Visit Visa services include DS-160 form guidance, embassy interview preparation, financial documentation support, and complete visa application management for tourism, business, or family visits." 
+    }
   ];
 
   return (
@@ -19,22 +35,22 @@ export default function VisitVisasPage() {
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[40vh] md:min-h-[50vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
-          <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+          <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24 md:pt-32">
             <div className="flex-1 space-y-8 md:space-y-10 animate-fade-in text-center lg:text-left">
                <div className="space-y-4">
                  <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] block">Explore the World</span>
-                 <h1 className="text-4xl md:text-8xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
-                   Visit <br className="hidden md:block"/> <span className="text-[#d0a850]">Visas</span>
+                 <h1 className="text-4xl md:text-5xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
+                   Visit Visa <br className="hidden md:block"/> <span className="text-[#d0a850]">Explore the World</span> With Ease
                  </h1>
                </div>
                
                <p className="text-base md:text-xl text-white/40 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
-                 Seamless travel experiences for tourism, business, and short-term visits. We handle the paperwork so you can focus on your journey.
+                 Amid the busiest life, visiting a new destination with affordability becomes important for a good change for every single individual around the globe. Whether it's a solo trip, with friends or family, comfort plays a deciding role for any place.
                </p>
 
                <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 pt-4">
                  <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-10 md:px-12 py-4 md:py-5 rounded-full font-bold uppercase text-[14px] md:text-[14px] tracking-[0.3em] hover:bg-white hover:text-black transition-all no-underline shadow-2xl shadow-[#d0a850]/10">
-                   Plan Your Trip
+                   Free Consultation
                  </Link>
                </div>
             </div>
@@ -60,8 +76,8 @@ export default function VisitVisasPage() {
         <section className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end mb-12 md:mb-20 gap-8 text-center lg:text-left">
             <div className="max-w-2xl space-y-4">
-               <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Popular Choice</span>
-               <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase tracking-tight">Top <br className="hidden md:block"/>Destinations</h2>
+               <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Explore Our</span>
+               <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase tracking-tight">Visit Visa <br className="hidden md:block"/>Services</h2>
             </div>
             <p className="text-white/40 max-w-sm text-sm font-medium leading-relaxed">
               Explore the most sought-after travel destinations with our comprehensive visa support services.
@@ -81,9 +97,9 @@ export default function VisitVisasPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0f1921] to-transparent opacity-40"></div>
                 </div>
-                <div className="p-8 md:p-10 space-y-4">
+                <div className="p-8 md:p-10 space-y-4 flex-1">
                   <h3 className="text-white text-base font-bold uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{dest.name}</h3>
-                  <p className="text-white/30 font-medium leading-relaxed text-sm antialiased line-clamp-3">{dest.desc}</p>
+                  <p className="text-white/30 font-medium leading-relaxed text-sm antialiased">{dest.desc}</p>
                 </div>
               </div>
             ))}

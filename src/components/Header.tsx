@@ -6,29 +6,29 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronDown, FaCaretDown, FaBars, FaTimes } from 'react-icons/fa';
 
-export default function Header() {
+const visaServices = [
+  { name: 'Student Visa', href: '/studentvisa' },
+  { name: 'Visit Visas', href: '/visitvisas' },
+  { name: 'Immigration', href: '/immigration' },
+  { name: 'Appointments', href: '/appointments' },
+  { name: 'Work Visas', href: '/workvisas' },
+  { name: 'Family Reunion', href: '/familyreunion' },
+  { 
+    name: 'Language Test', 
+    subItems: [
+      { name: 'TOEFL Test', href: '/toefl-test' },
+      { name: 'PTE Test', href: '/pte-test' },
+      { name: 'IELTS Test', href: '/ielts' },
+      { name: 'Duolingo Test', href: '/duolingo' }
+    ]
+  },
+];
+
+const Header = React.memo(function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileVisaOpen, setMobileVisaOpen] = useState(false);
   const [mobileLangTestOpen, setMobileLangTestOpen] = useState(false);
-
-  const visaServices = [
-    { name: 'Student Visa', href: '/studentvisa' },
-    { name: 'Visit Visas', href: '/visitvisas' },
-    { name: 'Immigration', href: '/immigration' },
-    { name: 'Appointments', href: '/appointments' },
-    { name: 'Work Visas', href: '/workvisas' },
-    { name: 'Family Reunion', href: '/familyreunion' },
-    { 
-      name: 'Language Test', 
-      subItems: [
-        { name: 'TOEFL Test', href: '/toefl-test' },
-        { name: 'PTE Test', href: '/pte-test' },
-        { name: 'IELTS Test', href: '/ielts' },
-        { name: 'Duolingo Test', href: '/duolingo' }
-      ]
-    },
-  ];
 
   return (
     <header className="bg-[#0f1921] py-3 fixed top-0 left-0 w-full z-50 border-b border-white/5">
@@ -263,4 +263,6 @@ export default function Header() {
       </AnimatePresence>
     </header>
   );
-}
+});
+
+export default Header;

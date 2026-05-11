@@ -9,9 +9,34 @@ export const metadata = {
 
 export default function PteTest() {
   const sections = [
-    { title: "Prerequisites", icon: <FaCheckDouble />, items: ["Valid Identification", "Age Requirement (16+)", "Test Fee Payment"] },
-    { title: "Test Formats", icon: <FaDesktop />, items: ["PTE Academic", "PTE Core (Canada)", "PTE Academic Online"] },
-    { title: "Target Score", icon: <FaChartLine />, items: ["Strategic Guidance", "Expert Connections", "Booking Assistance"] }
+    { 
+      title: "Prerequisites: Getting Started", 
+      icon: <FaCheckDouble />, 
+      items: [
+        "Valid Identification (Passport)", 
+        "Age Requirement (16+; consent for 16-17)", 
+        "Test Fee Payment (via Pearson)"
+      ] 
+    },
+    { 
+      title: "Available PTE Tests", 
+      icon: <FaDesktop />, 
+      items: [
+        "PTE Academic (Study, Work, Migration)", 
+        "PTE Academic Online (Home testing)", 
+        "PTE Core (Canadian Immigration / IRCC)"
+      ] 
+    },
+    { 
+      title: "Achieve Your Target Score", 
+      icon: <FaChartLine />, 
+      items: [
+        "Strategic Score Goal Alignment", 
+        "Expert Training Connections", 
+        "Pearson VUE Booking Assistance",
+        "Complete Preparation Guidance"
+      ] 
+    }
   ];
 
   return (
@@ -19,21 +44,21 @@ export default function PteTest() {
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[50vh] md:min-h-[60vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
-          <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+          <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-24 ">
             <div className="flex-1 space-y-8 md:space-y-10 animate-fade-in text-center lg:text-left">
                <div className="space-y-4">
                  <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] block">Computer-Based Excellence</span>
-                 <h1 className="text-4xl md:text-8xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
+                 <h1 className="text-4xl md:text-6xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
                    PTE <br className="hidden md:block"/> <span className="text-[#d0a850]">Academic</span>
                  </h1>
                </div>
                
-               <p className="text-base md:text-xl text-white/40 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
-                 The leading computer-based English test trusted by universities and governments worldwide. Get your results in as little as 48 hours.
+               <p className="text-base md:text-md text-white/40 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
+                 The PTE (Pearson Test of English) is a leading computer-based English language test, trusted by universities, colleges, and governments worldwide. Renowned for its speed and accuracy, PTE delivers results in as little as 48 hours.
                </p>
 
                <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 pt-4">
-                 <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-10 md:px-12 py-4 md:py-5 rounded-full font-bold uppercase text-[14px] md:text-[14px] tracking-[0.3em] hover:bg-white hover:text-black transition-all no-underline shadow-2xl shadow-[#d0a850]/10">
+                 <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-10 py-4 rounded-full font-bold uppercase text-[14px] md:text-[14px] tracking-[0.3em] hover:bg-white hover:text-black transition-all no-underline shadow-2xl shadow-[#d0a850]/10">
                    Book Your Test
                  </Link>
                </div>
@@ -94,10 +119,10 @@ export default function PteTest() {
             <div className="flex-1 space-y-8 md:space-y-12 text-center lg:text-left">
                <div className="space-y-4">
                  <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Fast & Accurate</span>
-                 <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase leading-[1.2] md:leading-[1.1] tracking-tight">Strategic <br className="hidden md:block"/> <span className="text-[#d0a850]">Success</span></h2>
+                 <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase leading-[1.2] md:leading-[1.1] tracking-tight">AI-Scored <br className="hidden md:block"/> <span className="text-[#d0a850]">Accuracy</span></h2>
                </div>
                <p className="text-base md:text-lg text-white/50 leading-relaxed font-medium">
-                 We assist with full application guidance and expert scheduling support to ensure your PTE journey is seamless and successful.
+                 Its fully digital format offers an unbiased testing experience. We guide our clients through the specifics of the PTE to help them achieve their required scores for study and migration.
                </p>
                <div className="pt-4 md:pt-8">
                  <Link href="/contact" className="inline-flex items-center gap-6 group/link no-underline">

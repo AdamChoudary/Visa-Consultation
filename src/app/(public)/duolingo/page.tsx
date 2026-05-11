@@ -9,9 +9,33 @@ export const metadata = {
 
 export default function Duolingo() {
   const sections = [
-    { title: "Prerequisites", icon: <FaIdCard />, items: ["Valid Passport/ID", "Online Account", "Fast Activation"] },
-    { title: "Test Format", icon: <FaLaptopHouse />, items: ["100% Online Test", "Adaptive Questions", "Results in 48 Hours"] },
-    { title: "Target Score", icon: <FaBullseye />, items: ["Score Analysis", "Preparation Guidance", "Application Support"] }
+    { 
+      title: "Prerequisites & Registration", 
+      icon: <FaIdCard />, 
+      items: [
+        "Valid Passport or ID", 
+        "Official Online Registration", 
+        "Exam Fee Payment"
+      ] 
+    },
+    { 
+      title: "Test Format", 
+      icon: <FaLaptopHouse />, 
+      items: [
+        "Online Test from Home", 
+        "Adaptive Skill-Level Test", 
+        "Certified Results in 48 Hours"
+      ] 
+    },
+    { 
+      title: "Achieve Your Target Score", 
+      icon: <FaBullseye />, 
+      items: [
+        "University Score Analysis", 
+        "Preparation Guidance", 
+        "Registration & Visa Support"
+      ] 
+    }
   ];
 
   return (
@@ -23,17 +47,17 @@ export default function Duolingo() {
             <div className="flex-1 space-y-8 md:space-y-10 animate-fade-in text-center lg:text-left">
                <div className="space-y-4">
                  <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] block">Modern Proficiency</span>
-                 <h1 className="text-4xl md:text-8xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
-                   Duolingo <br className="hidden md:block"/> <span className="text-[#d0a850]">English</span>
+                 <h1 className="text-4xl md:text-6xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
+                   Duolingo <br className="hidden md:block"/> <span className="text-[#d0a850]">English Test</span>
                  </h1>
                </div>
                
-               <p className="text-base md:text-xl text-white/40 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
-                 The modern, convenient way to prove your English proficiency. Accepted by thousands of universities worldwide, taken from your home.
+               <p className="text-base md:text-md text-white/40 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
+                 The Duolingo English Test (DET) is a modern and convenient way to prove your English proficiency for studying abroad. It is accepted by thousands of universities worldwide, including top destinations in the USA, Canada, and the UK.
                </p>
 
                <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 pt-4">
-                 <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-10 md:px-12 py-4 md:py-5 rounded-full font-bold uppercase text-[14px] md:text-[14px] tracking-[0.3em] hover:bg-white hover:text-black transition-all no-underline shadow-2xl shadow-[#d0a850]/10">
+                 <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-10 py-4 rounded-full font-bold uppercase text-[14px] md:text-[14px] tracking-[0.3em] hover:bg-white hover:text-black transition-all no-underline shadow-2xl shadow-[#d0a850]/10">
                    Start Registration
                  </Link>
                </div>
@@ -94,10 +118,10 @@ export default function Duolingo() {
             <div className="flex-1 space-y-8 md:space-y-12 text-center lg:text-left">
                <div className="space-y-4">
                  <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Fast-Track Future</span>
-                 <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase leading-[1.2] md:leading-[1.1] tracking-tight">Complete <br className="hidden md:block"/> <span className="text-[#d0a850]">Support</span></h2>
+                 <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase leading-[1.2] md:leading-[1.1] tracking-tight">Complete <br className="hidden md:block"/> <span className="text-[#d0a850]">Visa Support</span></h2>
                </div>
                <p className="text-base md:text-lg text-white/50 leading-relaxed font-medium">
-                 We provide complete registration support and university score requirement analysis to ensure your Duolingo results open the right doors for you.
+                 We provide complete registration support, university score requirement analysis, and expert study visa application assistance to ensure your global future is secure.
                </p>
                <div className="pt-4 md:pt-8">
                  <Link href="/contact" className="inline-flex items-center gap-6 group/link no-underline">

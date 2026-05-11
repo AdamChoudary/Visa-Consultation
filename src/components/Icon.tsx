@@ -27,36 +27,36 @@ const socialLinks = [
   },
 ];
 
-const Icon: React.FC = () => {
+const iconVariants: Variants = {
+  hidden: { opacity: 0, y: 30, scale: 0.8 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.3,
+      type: 'spring',
+      stiffness: 300,
+      damping: 25,
+    },
+  }),
+  exit: { opacity: 0, y: 30, scale: 0.8, transition: { duration: 0.2 } },
+};
+
+const hoverEffect: TargetAndTransition = {
+  scale: 1.1,
+  transition: {
+    duration: 0.3,
+    ease: 'easeOut',
+  },
+};
+
+const Icon: React.FC = React.memo(() => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleIcons = () => {
     setIsOpen(!isOpen);
-  };
-
-  const iconVariants: Variants = {
-    hidden: { opacity: 0, y: 30, scale: 0.8 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.3,
-        type: 'spring',
-        stiffness: 300,
-        damping: 25,
-      },
-    }),
-    exit: { opacity: 0, y: 30, scale: 0.8, transition: { duration: 0.2 } },
-  };
-
-  const hoverEffect: TargetAndTransition = {
-    scale: 1.1,
-    transition: {
-      duration: 0.3,
-      ease: 'easeOut',
-    },
   };
 
   return (
@@ -101,6 +101,6 @@ const Icon: React.FC = () => {
       </motion.div>
     </div>
   );
-};
+});
 
 export default Icon;

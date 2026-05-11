@@ -9,9 +9,34 @@ export const metadata = {
 
 export default function ToeflTest() {
   const sections = [
-    { title: "Prerequisites", icon: <FaClipboardCheck />, items: ["Valid Passport", "Official ETS Registration", "Exam Fee Payment"] },
-    { title: "Test Formats", icon: <FaGlobeAmericas />, items: ["TOEFL iBT®", "Home Edition", "Paper-Based (PBT)"] },
-    { title: "Target Score", icon: <FaTrophy />, items: ["University Analysis", "Tutor Referrals", "Registration Assistance"] }
+    { 
+      title: "Prerequisites & Registration", 
+      icon: <FaClipboardCheck />, 
+      items: [
+        "Valid Passport (exact name match)", 
+        "Official ETS Registration", 
+        "Exam Fee Payment"
+      ] 
+    },
+    { 
+      title: "Available Test Formats", 
+      icon: <FaGlobeAmericas />, 
+      items: [
+        "TOEFL iBT® (Computer-based)", 
+        "Home Edition (Same test at home)", 
+        "Paper-Based (Limited locations)"
+      ] 
+    },
+    { 
+      title: "Achieve Your Target Score", 
+      icon: <FaTrophy />, 
+      items: [
+        "University Score Analysis", 
+        "Expert Tutor Referrals", 
+        "Registration Assistance",
+        "Complete Application Guidance"
+      ] 
+    }
   ];
 
   return (
@@ -23,13 +48,13 @@ export default function ToeflTest() {
             <div className="flex-1 space-y-8 md:space-y-10 animate-fade-in text-center lg:text-left">
                <div className="space-y-4">
                  <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] block">Academic Gold Standard</span>
-                 <h1 className="text-4xl md:text-8xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
-                   TOEFL <br className="hidden md:block"/> <span className="text-[#d0a850]">Proficiency</span>
+                 <h1 className="text-4xl md:text-6xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
+                   TOEFL® <br className="hidden md:block"/> <span className="text-[#d0a850]">Proficiency</span>
                  </h1>
                </div>
                
-               <p className="text-base md:text-xl text-white/40 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
-                 The key academic requirement for students aiming for higher education in North America. Accepted by 11,000+ universities worldwide.
+               <p className="text-base md:text-md text-white/40 leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
+                 For students aiming for higher education in North America and other top global destinations, the TOEFL® test is a key academic requirement. It is widely accepted by universities, especially in the United States and Canada, to measure real academic English ability.
                </p>
 
                <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 pt-4">
@@ -94,10 +119,10 @@ export default function ToeflTest() {
             <div className="flex-1 space-y-8 md:space-y-12 text-center lg:text-left">
                <div className="space-y-4">
                  <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Academic Excellence</span>
-                 <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase leading-[1.2] md:leading-[1.1] tracking-tight">Global <br className="hidden md:block"/> <span className="text-[#d0a850]">Standards</span></h2>
+                 <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase leading-[1.2] md:leading-[1.1] tracking-tight">Achieve <br className="hidden md:block"/> <span className="text-[#d0a850]">Target Scores</span></h2>
                </div>
                <p className="text-base md:text-lg text-white/50 leading-relaxed font-medium">
-                 Maximize your chances for top universities. We provide expert guidance and full application support for TOEFL candidates worldwide.
+                 Maximize your chances for top universities. We provide expert guidance, university score analysis, and full registration support for TOEFL candidates worldwide.
                </p>
                <div className="pt-4 md:pt-8">
                  <Link href="/contact" className="inline-flex items-center gap-6 group/link no-underline">

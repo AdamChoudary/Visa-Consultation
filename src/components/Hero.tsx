@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { FaFacebook, FaTiktok, FaInstagram, FaWhatsapp, FaLinkedin, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
@@ -13,48 +13,44 @@ interface HeroProps {
   }[];
 }
 
-export default function Hero({ socialLinks }: HeroProps) {
+const Hero = React.memo(function Hero({ socialLinks }: HeroProps) {
   const [isMuted, setIsMuted] = useState(true);
   const [volume, setVolume] = useState(1);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const mobileVideoRef = useRef<HTMLVideoElement>(null);
 
-  const toggleMute = () => {
-    const videos = [videoRef.current, mobileVideoRef.current];
-    videos.forEach(video => {
-      if (video) {
-        const nextMuted = !video.muted;
-        video.muted = nextMuted;
-        setIsMuted(nextMuted);
-        if (!nextMuted && video.volume === 0) {
-          video.volume = 0.5;
-          setVolume(0.5);
-        }
+  const toggleMute = useCallback(() => {
+    if (videoRef.current) {
+      const nextMuted = !videoRef.current.muted;
+      videoRef.current.muted = nextMuted;
+      setIsMuted(nextMuted);
+      if (!nextMuted && videoRef.current.volume === 0) {
+        videoRef.current.volume = 0.5;
+        setVolume(0.5);
       }
-    });
-  };
+    }
+  }, []);
 
-  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleVolumeChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const val = parseFloat(e.target.value);
     setVolume(val);
-    const videos = [videoRef.current, mobileVideoRef.current];
-    videos.forEach(video => {
-      if (video) {
-        video.volume = val;
-        if (val > 0) {
-          video.muted = false;
-          setIsMuted(false);
-        } else {
-          video.muted = true;
-          setIsMuted(true);
-        }
+    if (videoRef.current) {
+      videoRef.current.volume = val;
+      if (val > 0) {
+        videoRef.current.muted = false;
+        setIsMuted(false);
+      } else {
+        videoRef.current.muted = true;
+        setIsMuted(true);
       }
-    });
-  };
+    }
+  }, []);
+
+  const scrollToMission = useCallback(() => {
+    document.getElementById('mission')?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
 
   return (
     <section className="relative w-full h-[calc(100vh-64px)] md:h-[calc(100vh-96px)] overflow-hidden bg-[#0f1921]">
-      {/* Desktop Video */}
       <video
         ref={videoRef}
         autoPlay
@@ -62,21 +58,9 @@ export default function Hero({ socialLinks }: HeroProps) {
         loop
         playsInline
         preload="metadata"
-        className="absolute inset-0 w-full h-full object-cover object-top opacity-60 hidden md:block"
+        className="absolute inset-0 w-full h-full object-cover object-top opacity-60"
       >
-        <source src="/VC video.optimized.mp4" type="video/mp4" />
-      </video>
-
-      {/* Mobile Video (Portrait) */}
-      <video
-        ref={mobileVideoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        className="absolute inset-0 w-full h-full object-cover object-top opacity-70 md:hidden"
-      >
+        <source src="/VC video.optimized.mp4" type="video/mp4" media="(min-width: 768px)" />
         <source src="/vcv portrait.optimized.mp4" type="video/mp4" />
       </video>
 
@@ -135,7 +119,7 @@ export default function Hero({ socialLinks }: HeroProps) {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 cursor-pointer group"
-        onClick={() => document.getElementById('mission')?.scrollIntoView({ behavior: 'smooth' })}
+        onClick={scrollToMission}
       >
         <div className="w-5 h-8 rounded-full border border-[#d0a860] flex justify-center pt-2">
           <motion.div
@@ -150,4 +134,6 @@ export default function Hero({ socialLinks }: HeroProps) {
       </motion.div>
     </section>
   );
-}
+});
+
+export default Hero;

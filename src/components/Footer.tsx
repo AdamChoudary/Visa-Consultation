@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaCheck, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaFacebook, FaTiktok, FaYoutube } from 'react-icons/fa';
 
-export default function Footer() {
+const Footer = React.memo(function Footer() {
   return (
     <footer className="bg-[#0f1927] pt-16 md:pt-24 pb-8 md:pb-12 mt-0 border-t border-white/5">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 text-center md:text-left">
@@ -71,4 +71,6 @@ export default function Footer() {
 
     </footer>
   );
-}
+});
+
+export default Footer;
