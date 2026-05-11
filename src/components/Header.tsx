@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { m, AnimatePresence } from 'framer-motion';
@@ -9,7 +9,7 @@ import { siteConfig } from '@/config/site';
 
 const visaServices = siteConfig.navigation;
 
-const Header = React.memo(function Header() {
+const Header = memo(function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileVisaOpen, setMobileVisaOpen] = useState(false);
@@ -38,10 +38,19 @@ const Header = React.memo(function Header() {
         {/* Desktop Navigation in Golden Box */}
         <nav className="hidden lg:block border border-[#d0a850] rounded-lg px-8 py-2">
           <ul className="flex items-center gap-10 list-none m-0 p-0">
-            <li><Link href="/" className="text-white hover:text-[#d0a850] transition-colors text-sm font-bold uppercase tracking-widest no-underline">Home</Link></li>
+            <m.li
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <Link href="/" className="text-white hover:text-[#d0a850] transition-colors text-sm font-bold uppercase tracking-widest no-underline">Home</Link>
+            </m.li>
             
             {/* Dropdown for Visa Services */}
-            <li 
+            <m.li 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               className="relative group"
               onMouseEnter={() => setDropdownOpen(true)}
               onMouseLeave={() => setDropdownOpen(false)}
@@ -88,12 +97,36 @@ const Header = React.memo(function Header() {
                   ))}
                 </div>
               </div>
-            </li>
+            </m.li>
 
-            <li><Link href="/partners" className="text-white hover:text-[#d0a850] transition-colors text-sm font-bold uppercase tracking-widest no-underline">Partners</Link></li>
-            <li><Link href="/clients" className="text-white hover:text-[#d0a850] transition-colors text-sm font-bold uppercase tracking-widest no-underline">Clients</Link></li>
-            <li><Link href="/blogs" className="text-white hover:text-[#d0a850] transition-colors text-sm font-bold uppercase tracking-widest no-underline">Blogs</Link></li>
-            <li><Link href="/contact" className="text-white hover:text-[#d0a850] transition-colors text-sm font-bold uppercase tracking-widest no-underline">Contact</Link></li>
+            <m.li
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Link href="/partners" className="text-white hover:text-[#d0a850] transition-colors text-sm font-bold uppercase tracking-widest no-underline">Partners</Link>
+            </m.li>
+            <m.li
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <Link href="/clients" className="text-white hover:text-[#d0a850] transition-colors text-sm font-bold uppercase tracking-widest no-underline">Clients</Link>
+            </m.li>
+            <m.li
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <Link href="/blogs" className="text-white hover:text-[#d0a850] transition-colors text-sm font-bold uppercase tracking-widest no-underline">Blogs</Link>
+            </m.li>
+            <m.li
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <Link href="/contact" className="text-white hover:text-[#d0a850] transition-colors text-sm font-bold uppercase tracking-widest no-underline">Contact</Link>
+            </m.li>
           </ul>
         </nav>
 

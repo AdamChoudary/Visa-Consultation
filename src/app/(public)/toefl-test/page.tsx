@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { StaggerItem } from "@/components/MotionWrappers";
 import { FaClipboardCheck, FaGlobeAmericas, FaTrophy } from "react-icons/fa";
 
 export const metadata = {
@@ -90,14 +91,18 @@ export default function ToeflTest() {
                <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">ETS Official</span>
                <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase tracking-tight">Test <br className="hidden md:block"/>Structure</h2>
             </div>
-            <p className="text-white/40 max-w-sm text-sm font-medium leading-relaxed">
+            <p className="text-white/40 max-sm text-sm font-medium leading-relaxed">
               Unlock academic opportunities in the US and Canada with expert score analysis and registration support.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
             {sections.map((section, i) => (
-              <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
+              <StaggerItem 
+                key={i} 
+                index={i}
+                className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500"
+              >
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
                   {section.icon}
                 </div>
@@ -110,7 +115,7 @@ export default function ToeflTest() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </StaggerItem>
             ))}
           </div>
         </section>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { StaggerItem } from "@/components/MotionWrappers";
 import { FaGraduationCap, FaPassport, FaIdCard, FaBriefcase } from "react-icons/fa";
 
 export const metadata = {
@@ -86,13 +87,17 @@ export default function AppointmentPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
             {appointmentTypes.map((type, i) => (
-              <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
+              <StaggerItem 
+                key={i} 
+                index={i}
+                className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500"
+              >
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
                   {type.icon}
                 </div>
                 <h3 className="text-white text-base font-bold mb-4 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{type.title}</h3>
                 <p className="text-white/30 font-medium leading-relaxed text-[13px] md:text-sm antialiased">{type.desc}</p>
-              </div>
+              </StaggerItem>
             ))}
           </div>
         </section>
@@ -106,7 +111,13 @@ export default function AppointmentPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-16">
             {bookingProcess.map((item, i) => (
-              <div key={i} className="relative space-y-6 md:space-y-8 group">
+              <StaggerItem 
+                key={i} 
+                index={i}
+                x={-20}
+                y={0}
+                className="relative space-y-6 md:space-y-8 group"
+              >
                 <div className="flex items-center gap-6">
                   <span className="text-3xl md:text-4xl font-bold text-white/10 group-hover:text-[#d0a850] transition-colors duration-500">{item.step}</span>
                   <div className="flex-1 h-[1px] bg-white/5 group-hover:bg-[#d0a850]/20 transition-colors"></div>
@@ -115,7 +126,7 @@ export default function AppointmentPage() {
                   <h3 className="text-white text-base md:text-lg font-bold uppercase tracking-widest">{item.title}</h3>
                   <p className="text-white/30 text-[13px] md:text-sm font-medium leading-relaxed">{item.desc}</p>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
           </div>
         </section>
@@ -151,7 +162,7 @@ export default function AppointmentPage() {
                Our expert advisors are ready to guide you. Book your preferred time today.
              </p>
              <Link href="/contact" className="bg-[#d0a850] text-[#0f1921] px-10 md:px-12 py-4 md:py-5 rounded-full font-bold uppercase text-[14px] md:text-[14px] tracking-[0.3em] hover:bg-white hover:text-black transition-all no-underline inline-block shadow-2xl shadow-[#d0a850]/5">
-               Book Appointment
+               Start Booking
              </Link>
           </div>
         </section>

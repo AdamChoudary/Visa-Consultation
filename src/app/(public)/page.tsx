@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { StaggerItem, ScaleIn, FadeIn } from "@/components/MotionWrappers";
 import Hero from "@/components/Hero";
 import { FaFacebook, FaTiktok, FaInstagram, FaWhatsapp, FaLinkedin, FaGraduationCap, FaBriefcase, FaGlobe, FaUserFriends } from "react-icons/fa";
 
@@ -42,7 +43,7 @@ export default function Home() {
 
       {/* 2. QUOTE / MISSION SECTION */}
       <section id="mission" className="py-12 md:py-20 container mx-auto px-4 md:px-6">
-        <div className="max-w-7xl mx-auto border-2 border-[#d0a860] rounded-xl p-6 md:p-16 text-center bg-[#0f1921]/50 backdrop-blur-sm">
+        <FadeIn className="max-w-7xl mx-auto border-2 border-[#d0a860] rounded-xl p-6 md:p-16 text-center bg-[#0f1921]/50 backdrop-blur-sm">
           <h2
             className="text-[#d0a860] text-lg md:text-4xl font-medium mb-6 md:mb-8 leading-tight"
             style={{ fontFamily: "'Playfair Display', serif" }}
@@ -58,7 +59,7 @@ export default function Home() {
             The paper work and process require solutions which our company handles for you to lead to exploring new horizons.
             The free consultation provides an experience of a secure connection and a pleasant journey into the future with transparency and needed professionalism.
           </p>
-        </div>
+        </FadeIn>
       </section>
 
       {/* 3. OUR VISA SERVICES SECTION */}
@@ -74,8 +75,9 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
           {visaServices.map((service, idx) => (
-            <div
+            <StaggerItem
               key={idx}
+              index={idx}
               className="bg-[#fdfcf0] relative overflow-hidden rounded-xl p-6 md:p-8 flex flex-col items-center text-center shadow-2xl border-4 border-[#d0a850] hover:scale-105 transition-all group"
             >
               {/* Professional Fine Micro-Diamond Watermark */}
@@ -93,7 +95,7 @@ export default function Home() {
               <Link href={service.l} className="bg-[#d0a860] hover:bg-[#b89445] text-black font-bold py-2 px-6 rounded-md uppercase text-xs md:text-sm tracking-wider transition-colors inline-block no-underline relative z-10">
                 Learn More
               </Link>
-            </div>
+            </StaggerItem>
           ))}
         </div>
       </section>
@@ -111,7 +113,7 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 max-w-7xl items-center justify-items-center mx-auto">
             {destinations.map((dest, idx) => (
-              <div
+              <ScaleIn
                 key={idx}
                 className="bg-white border-2 md:border-4 border-[#d0a850] rounded-xl overflow-hidden shadow-xl hover:scale-105 w-full h-32 md:h-40 transition-transform group"
               >
@@ -127,7 +129,7 @@ export default function Home() {
                 <div className="bg-white py-2 text-center border-t border-gray-100">
                   <span className="text-[#0f1921] font-black text-[8px] md:text-[10px] uppercase tracking-wider">{dest.n}</span>
                 </div>
-              </div>
+              </ScaleIn>
             ))}
           </div>
         </div>

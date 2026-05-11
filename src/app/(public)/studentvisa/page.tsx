@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { StaggerItem, FadeIn } from "@/components/MotionWrappers";
 import { FaUniversity, FaFileInvoice, FaCoins, FaUserCheck } from "react-icons/fa";
 
 export const metadata = {
@@ -150,20 +151,28 @@ export default function StudentVisaPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
             {consultancyServices.map((service, i) => (
-              <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
+              <StaggerItem 
+                key={i} 
+                index={i}
+                className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500"
+              >
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
                   {service.i}
                 </div>
                 <h3 className="text-white text-base font-bold mb-4 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{service.t}</h3>
                 <p className="text-white/30 font-medium leading-relaxed text-[13px] md:text-sm antialiased">{service.d}</p>
-              </div>
+              </StaggerItem>
             ))}
           </div>
         </section>
 
         {/* 3. REGIONAL CONTENT */}
         {regions.map((region, i) => (
-          <section key={i} className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto">
+          <FadeIn 
+            key={i} 
+            y={40}
+            className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto"
+          >
             <div className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-32`}>
               <div className="flex-1 space-y-8 md:space-y-12 text-center lg:text-left">
                  <div className="space-y-4">
@@ -193,7 +202,7 @@ export default function StudentVisaPage() {
                 </div>
               </div>
             </div>
-          </section>
+          </FadeIn>
         ))}
 
         {/* 4. GLOBAL CTA */}

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { StaggerItem, ScaleIn } from "@/components/MotionWrappers";
 import { FaFacebookF, FaTiktok, FaInstagram } from "react-icons/fa";
 
 export const metadata = {
@@ -74,7 +75,11 @@ export default function Partners() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
             {partners.map((partner, i) => (
-              <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
+              <StaggerItem 
+                key={i} 
+                index={i}
+                className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500"
+              >
                 <div className="relative w-full aspect-video rounded-xl bg-white/5 overflow-hidden mb-8 md:mb-10 group-hover:bg-[#d0a850]/10 transition-all border border-white/5 group-hover:border-[#d0a850]/30">
                   <Image
                     src={partner.image}
@@ -95,14 +100,14 @@ export default function Partners() {
                     </a>
                   ))}
                 </div>
-              </div>
+              </StaggerItem>
             ))}
           </div>
         </section>
 
 
         {/* 3. CTA */}
-        <section className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto">
+        <ScaleIn className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto">
            <div className="bg-white/[0.02] border border-white/5 rounded-2xl md:rounded-[40px] p-8 md:p-24 text-center space-y-8 md:space-y-12">
               <div className="space-y-4">
                 <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">Join the Network</span>
@@ -115,7 +120,7 @@ export default function Partners() {
                 Contact Partnership
               </Link>
            </div>
-        </section>
+        </ScaleIn>
       </div>
     </div>
   );

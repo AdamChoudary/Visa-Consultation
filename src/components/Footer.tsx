@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FaCheck, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaFacebook, FaTiktok, FaYoutube } from 'react-icons/fa';
+import { siteConfig } from '@/config/site';
 
-const Footer = React.memo(function Footer() {
+const Footer = memo(function Footer() {
   return (
     <footer className="bg-[#0f1927] pt-16 md:pt-24 pb-8 md:pb-12 mt-0 border-t border-white/5">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 text-center md:text-left">
@@ -33,29 +34,29 @@ const Footer = React.memo(function Footer() {
           <ul className="text-white/80 space-y-2 text-sm md:text-base list-none p-0 flex flex-col items-center md:items-start font-medium">
             <li className="flex items-start text-center gap-3 text-left">
               <FaMapMarkerAlt className="text-[#d0a860] text-lg mt-1 shrink-0" />
-              <span className="max-w-[280px] md:max-w-[320px]">Office# 104, Mezzanine Floor, Embassy Gardens, Sector C1, Bahria Enclave, Islamabad</span>
+              <span className="max-w-[280px] md:max-w-[320px]">{siteConfig.contact.address}</span>
             </li>
             <li className="flex items-center gap-3 text-left">
               <FaPhoneAlt className="text-[#d0a860] text-lg shrink-0" />
-              <span className="text-base md:text-lg">+92 333 5965199</span>
+              <span className="text-base md:text-lg">{siteConfig.contact.phone}</span>
             </li>
             <li className="flex items-center gap-3 text-left">
               <FaEnvelope className="text-[#d0a860] text-lg shrink-0" />
-              <span className="lowercase">info@thevisaconsultancy.com</span>
+              <span className="lowercase">{siteConfig.contact.email}</span>
             </li>
             <li className="flex items-center gap-3 text-left">
               <FaClock className="text-[#d0a860] text-lg shrink-0" />
-              <span>Mon – Sat | 11:00 AM – 7:00 PM</span>
+              <span>{siteConfig.contact.hours}</span>
             </li> 
             
             <li className="flex items-center gap-6 mt-4 pt-4 border-t border-white/5 w-full justify-center md:justify-start">
-              <a href="https://www.facebook.com/share/1AVzHjEm71/" target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
+              <a href={siteConfig.socials.facebook} target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
                 <FaFacebook />
               </a>
-              <a href="https://www.tiktok.com/@the.visa.consulta6" target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
+              <a href={siteConfig.socials.tiktok} target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
                 <FaTiktok />
               </a>
-              <a href="https://www.youtube.com/@TheVisaConsultancy1" target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
+              <a href={siteConfig.socials.youtube} target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
                 <FaYoutube />
               </a>
             </li>

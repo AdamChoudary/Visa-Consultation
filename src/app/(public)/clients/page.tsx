@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { StaggerItem, ScaleIn } from "@/components/MotionWrappers";
 import { FaUserGraduate, FaBriefcase, FaPassport, FaPlane } from "react-icons/fa";
 
 export const metadata = {
@@ -63,7 +64,11 @@ export default function Clients() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
             {successes.map((item, i) => (
-              <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
+              <StaggerItem 
+                key={i} 
+                index={i}
+                className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500"
+              >
                 <div className="w-16 h-16 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-3xl mb-8 md:mb-10 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
                   {item.icon}
                 </div>
@@ -71,13 +76,13 @@ export default function Clients() {
                 <p className="text-white/30 font-medium leading-relaxed text-sm md:text-base antialiased">
                   {item.desc}
                 </p>
-              </div>
+              </StaggerItem>
             ))}
           </div>
         </section>
 
         {/* 3. CTA */}
-        <section className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto">
+        <ScaleIn className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto">
            <div className="bg-white/[0.02] border border-white/5 rounded-2xl md:rounded-[40px] p-8 md:p-24 text-center space-y-8 md:space-y-12">
               <div className="space-y-4">
                 <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">The Next Chapter</span>
@@ -90,7 +95,7 @@ export default function Clients() {
                 Start Your Application
               </Link>
            </div>
-        </section>
+        </ScaleIn>
       </div>
     </div>
   );

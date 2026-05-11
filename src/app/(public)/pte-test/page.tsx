@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { StaggerItem } from "@/components/MotionWrappers";
 import { FaCheckDouble, FaDesktop, FaChartLine } from "react-icons/fa";
 
 export const metadata = {
@@ -97,7 +98,11 @@ export default function PteTest() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
             {sections.map((section, i) => (
-              <div key={i} className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500">
+              <StaggerItem 
+                key={i} 
+                index={i}
+                className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500"
+              >
                 <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
                   {section.icon}
                 </div>
@@ -110,7 +115,7 @@ export default function PteTest() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </StaggerItem>
             ))}
           </div>
         </section>

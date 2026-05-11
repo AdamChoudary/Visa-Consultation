@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { StaggerItem, ScaleIn } from "@/components/MotionWrappers";
 
 export const metadata = {
   title: "Family Reunion | The Visa Consultancy",
@@ -88,7 +89,11 @@ export default function FamilyReunionPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl overflow-hidden">
             {regions.map((region, i) => (
-              <div key={i} className="group bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500 overflow-hidden flex flex-col">
+              <StaggerItem 
+                key={i} 
+                index={i}
+                className="group bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500 overflow-hidden flex flex-col"
+              >
                 <div className="h-48 md:h-64 overflow-hidden relative transition-all duration-700">
                   <Image 
                     src={region.img} 
@@ -104,13 +109,13 @@ export default function FamilyReunionPage() {
                   <h3 className="text-white text-base font-bold uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{region.name}</h3>
                   <p className="text-white/30 font-medium leading-relaxed text-sm antialiased">{region.desc}</p>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
           </div>
         </section>
 
         {/* 3. CTA */}
-        <section className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto">
+        <ScaleIn className="py-16 md:py-24 border-t border-white/5 max-w-7xl mx-auto">
           <div className="bg-white/[0.02] border border-white/5 rounded-2xl md:rounded-[40px] p-8 md:p-24 text-center space-y-8 md:space-y-12">
              <div className="space-y-4">
                <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.3em] mb-4">Start Your Journey</span>
@@ -123,7 +128,7 @@ export default function FamilyReunionPage() {
                Consult An Expert
              </Link>
           </div>
-        </section>
+        </ScaleIn>
       </div>
     </div>
   );
