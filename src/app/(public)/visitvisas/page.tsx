@@ -41,7 +41,7 @@ export default function VisitVisasPage() {
             <div className="flex-1 space-y-8 md:space-y-10 animate-fade-in text-center lg:text-left">
                <div className="space-y-4">
                  <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] block">Explore the World</span>
-                 <h1 className="text-4xl md:text-5xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
+                 <h1 className="text-4xl md:text-6xl font-bold text-white heading-serif leading-[1.1] md:leading-[0.9] tracking-tighter uppercase">
                    Visit Visa <br className="hidden md:block"/> <span className="text-[#d0a850]">Explore the World</span> With Ease
                  </h1>
                </div>
