@@ -12,6 +12,7 @@ const sections = [
   { 
     title: "Prerequisites & Registration", 
     icon: <FaIdCard />, 
+    image: "/page images/language tests images/duolingo/duolingo-1.jpeg",
     items: [
       "Valid Passport or ID", 
       "Official Online Registration", 
@@ -21,6 +22,7 @@ const sections = [
   { 
     title: "Test Format", 
     icon: <FaLaptopHouse />, 
+    image: "/page images/language tests images/duolingo/duolingo-2.jpeg",
     items: [
       "Online Test from Home", 
       "Adaptive Skill-Level Test", 
@@ -30,6 +32,7 @@ const sections = [
   { 
     title: "Achieve Your Target Score", 
     icon: <FaBullseye />, 
+    image: "/page images/language tests images/duolingo/duolingo-3.jpeg",
     items: [
       "University Score Analysis", 
       "Preparation Guidance", 
@@ -100,20 +103,34 @@ export default function Duolingo() {
               <StaggerItem 
                 key={i} 
                 index={i}
-                className="group p-8 md:p-12 bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500"
+                className="group bg-[#0f1921] hover:bg-white/[0.02] transition-all duration-500 overflow-hidden flex flex-col"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
-                  {section.icon}
+                {section.image && (
+                  <div className="relative h-auto w-full overflow-hidden border-b border-white/5">
+                    <Image 
+                      src={section.image}
+                      alt={section.title}
+                      width={600}
+                      height={400}
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f1921]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                )}
+                <div className="p-8 md:p-10 flex-1 flex flex-col">
+                  <div className="w-12 h-12 rounded-xl bg-[#d0a850]/10 flex items-center justify-center text-[#d0a850] text-xl mb-6 md:mb-8 group-hover:bg-[#d0a850] group-hover:text-[#0f1921] transition-all">
+                    {section.icon}
+                  </div>
+                  <h3 className="text-white text-base font-bold mb-6 md:mb-8 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{section.title}</h3>
+                  <ul className="space-y-3 md:space-y-4 text-white/30 font-medium list-none p-0">
+                    {section.items.map((item, idx) => (
+                      <li key={idx} className="flex items-center gap-3 text-[13px] md:text-sm">
+                        <span className="w-1 h-1 bg-[#d0a850] rounded-full"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-white text-base font-bold mb-6 md:mb-8 uppercase tracking-widest group-hover:text-[#d0a850] transition-colors">{section.title}</h3>
-                <ul className="space-y-3 md:space-y-4 text-white/30 font-medium list-none p-0">
-                  {section.items.map((item, idx) => (
-                    <li key={idx} className="flex items-center gap-3 text-[13px] md:text-sm">
-                      <span className="w-1 h-1 bg-[#d0a850] rounded-full"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
               </StaggerItem>
             ))}
           </div>
@@ -140,11 +157,11 @@ export default function Duolingo() {
             <div className="flex-1 w-full relative group">
               <div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/5 shadow-2xl relative z-10 transition-all duration-1000">
                 <Image 
-                  src="/page images/language-test/duolingo.webp" 
+                  src="/page images/language tests images/duolingo/duolingo-4.jpeg" 
                   alt="Duolingo Success" 
                   width={800} 
                   height={500} 
-                  className="w-full h-[250px] md:h-[500px] object-cover transition-transform duration-1000 group-hover:scale-110" 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
                   sizes="(max-width: 768px) 100vw, 800px"
                 />
               </div>
