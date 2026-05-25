@@ -91,7 +91,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               {/* Soft decorative frame */}
               <div className="absolute -inset-4 border border-[#d0a850]/10 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               
-              <div className="aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-[0_40px_100px_-30px_rgba(0,0,0,0.8)] border border-white/10 bg-[#16222c] relative group">
+              <div className="aspect-[3/2] w-full rounded-3xl overflow-hidden shadow-[0_40px_100px_-30px_rgba(0,0,0,0.8)] border border-white/10 bg-[#16222c] relative group">
                 {/* Visual Placeholder for stability */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-20">
                   <span className="text-[#d0a850] text-[10px] font-black uppercase tracking-[0.5em]">Consultancy Asset</span>
