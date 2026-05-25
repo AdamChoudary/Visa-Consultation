@@ -272,3 +272,14 @@ h1, h2, h3, .heading-serif {
 .ql-snow .ql-picker {
   color: #475569 !important;
 }
+
+/* Quill Text Alignment for Frontend */
+.ql-align-center {
+  text-align: center !important;
+}
+.ql-align-right {
+  text-align: right !important;
+}
+.ql-align-justify {
+  text-align: justify !important;
+}

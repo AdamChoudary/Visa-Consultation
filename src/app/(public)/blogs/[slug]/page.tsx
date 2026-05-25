@@ -81,7 +81,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                          prose-strong:text-[#d0a850] prose-a:text-[#d0a850] prose-a:no-underline hover:prose-a:underline
                          prose-blockquote:border-l-2 prose-blockquote:border-[#d0a850] prose-blockquote:bg-[#16222c]/40 prose-blockquote:py-5 prose-blockquote:px-8 prose-blockquote:rounded-r-xl prose-blockquote:italic
                          prose-img:rounded-xl prose-img:shadow-2xl border-white/5"
-              dangerouslySetInnerHTML={{ __html: blog.content }}
+              dangerouslySetInnerHTML={{ __html: blog.content.replace(/&nbsp;/g, ' ') }}
             />
           </div>
 
