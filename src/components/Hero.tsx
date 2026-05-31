@@ -13,8 +13,8 @@ interface HeroProps {
   }[];
 }
 
-const MOBILE_VIDEO = "/vcv%20portrait.optimized.mp4";
-const DESKTOP_VIDEO = "/VC%20video.optimized.mp4";
+const MOBILE_VIDEO = "/vcv-portrait.mp4";
+const DESKTOP_VIDEO = "/vc-video.optimized.mp4";
 
 function getVideoSrc() {
   if (typeof window === "undefined") return DESKTOP_VIDEO;
