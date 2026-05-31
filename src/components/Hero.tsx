@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { m } from "framer-motion";
 import { FaFacebook, FaTiktok, FaInstagram, FaWhatsapp, FaLinkedin, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
@@ -13,10 +13,42 @@ interface HeroProps {
   }[];
 }
 
+const MOBILE_VIDEO = "/vcv%20portrait.optimized.mp4";
+const DESKTOP_VIDEO = "/VC%20video.optimized.mp4";
+
+function getVideoSrc() {
+  if (typeof window === "undefined") return DESKTOP_VIDEO;
+  return window.innerWidth < 768 ? MOBILE_VIDEO : DESKTOP_VIDEO;
+}
+
 const Hero = React.memo(function Hero({ socialLinks }: HeroProps) {
   const [isMuted, setIsMuted] = useState(true);
   const [volume, setVolume] = useState(1);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Dynamically pick the right video based on screen width.
+  // The <source media> attribute is NOT supported inside <video> —
+  // browsers ignore it and always pick the first source. We fix this
+  // by setting the src directly on the video element via JS.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const updateSrc = () => {
+      const src = getVideoSrc();
+      if (video.getAttribute("src") !== src) {
+        video.src = src;
+        video.load();
+        video.play().catch(() => {/* autoplay blocked, muted so should be fine */});
+      }
+    };
+
+    updateSrc(); // set on mount
+
+    const mq = window.matchMedia("(min-width: 768px)");
+    mq.addEventListener("change", updateSrc);
+    return () => mq.removeEventListener("change", updateSrc);
+  }, []);
 
   const toggleMute = useCallback(() => {
     if (videoRef.current) {
@@ -51,6 +83,7 @@ const Hero = React.memo(function Hero({ socialLinks }: HeroProps) {
 
   return (
     <section className="relative w-full h-[calc(100vh-64px)] md:h-[calc(100vh-96px)] overflow-hidden bg-[#0f1921]">
+      {/* src is set dynamically via useEffect based on screen width */}
       <video
         ref={videoRef}
         autoPlay
@@ -59,10 +92,7 @@ const Hero = React.memo(function Hero({ socialLinks }: HeroProps) {
         playsInline
         preload="metadata"
         className="absolute inset-0 w-full h-full object-cover object-top opacity-60"
-      >
-        <source src="/VC video.optimized.mp4" type="video/mp4" media="(min-width: 768px)" />
-        <source src="/vcv portrait.optimized.mp4" type="video/mp4" />
-      </video>
+      />
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0f1921]"></div>
 
