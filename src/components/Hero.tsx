@@ -96,23 +96,6 @@ const Hero = React.memo(function Hero({ socialLinks }: HeroProps) {
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0f1921]"></div>
 
-      {/* Hero Content Overlay */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-        <m.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-6 max-w-4xl"
-        >
-          <h1 className="heading-serif text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight drop-shadow-2xl">
-            Expert Visa &amp; Immigration Consultancy
-          </h1>
-          <p className="text-base md:text-xl text-gray-200 max-w-2xl mx-auto font-medium drop-shadow-lg">
-            Navigate international borders with confidence. Professional guidance
-            for study, work, visit visas, and permanent immigration worldwide.
-          </p>
-        </m.div>
-      </div>
 
       {/* Floating Social Links */}
       <div className="fixed right-8 top-1/2 -translate-y-1/2 z-[100] hidden lg:flex flex-col gap-6">
