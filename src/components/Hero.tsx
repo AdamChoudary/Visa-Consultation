@@ -102,9 +102,15 @@ const Hero = React.memo(function Hero({ socialLinks }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8"
+          className="space-y-6 max-w-4xl"
         >
-          {/* This space was empty in original, but preserved for consistency */}
+          <h1 className="heading-serif text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight drop-shadow-2xl">
+            Expert Visa &amp; Immigration Consultancy
+          </h1>
+          <p className="text-base md:text-xl text-gray-200 max-w-2xl mx-auto font-medium drop-shadow-lg">
+            Navigate international borders with confidence. Professional guidance
+            for study, work, visit visas, and permanent immigration worldwide.
+          </p>
         </m.div>
       </div>
 

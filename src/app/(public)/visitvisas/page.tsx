@@ -2,10 +2,54 @@ import Image from "next/image";
 import Link from "next/link";
 import { StaggerItem, ScaleIn } from "@/components/MotionWrappers";
 
-export const metadata = {
-  title: "Visit Visas | The Visa Consultancy",
-  description: "Seamless travel experiences for tourism, business, and short-term visits. Expert support for Schengen, USA, UK, and Canada visit visa applications.",
-};
+import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import FaqSection, { type Faq } from "@/components/FaqSection";
+import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/structured-data";
+
+const PAGE_DESCRIPTION =
+  "Seamless travel experiences for tourism, business, and short-term visits. Expert support for Schengen, USA, UK, and Canada visit visa applications.";
+
+const FAQS: Faq[] = [
+  {
+    question: "Which visit visas can you assist with?",
+    answer:
+      "We provide support for UAE/Dubai, Schengen (Europe), UK and USA visit visas for tourism, business and family visits.",
+  },
+  {
+    question: "What documents are needed for a visit visa?",
+    answer:
+      "This depends on the destination, but typically includes a valid passport, financial proof, a travel itinerary, hotel bookings, an invitation letter where applicable, and travel insurance. We help you prepare and organise the complete set.",
+  },
+  {
+    question: "Do you help with the US visa interview and DS-160 form?",
+    answer:
+      "Yes. Our USA visit visa service includes DS-160 form guidance, embassy interview preparation and financial documentation support.",
+  },
+  {
+    question: "Can you help if my visit visa was refused before?",
+    answer:
+      "Yes. We review the reasons for a previous refusal and help you submit a stronger, well-documented application. Final decisions always rest with the embassy.",
+  },
+  {
+    question: "Do you assist with travel insurance and hotel bookings?",
+    answer:
+      "We guide you on travel insurance and help arrange the itinerary, invitation letters and hotel documentation required for your submission.",
+  },
+];
+
+export const metadata = buildMetadata({
+  title: "Visit Visas",
+  path: "/visitvisas",
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    "visit visa",
+    "tourist visa",
+    "Schengen visa",
+    "business visa",
+    "visit visa consultant",
+  ],
+});
 
 const destinations = [
   { 
@@ -34,6 +78,20 @@ export default function VisitVisasPage() {
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: "Visit Visa Services",
+            description: PAGE_DESCRIPTION,
+            path: "/visitvisas",
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Visit Visas", path: "/visitvisas" },
+          ]),
+          faqSchema(FAQS),
+        ]}
+      />
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[40vh] md:min-h-[50vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
@@ -129,6 +187,8 @@ export default function VisitVisasPage() {
              </Link>
           </div>
         </ScaleIn>
+
+        <FaqSection faqs={FAQS} />
       </div>
     </div>
   );

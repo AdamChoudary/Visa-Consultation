@@ -3,10 +3,48 @@ import Link from "next/link";
 import { StaggerItem } from "@/components/MotionWrappers";
 import { FaIdCard, FaLaptopHouse, FaBullseye, FaLaptopCode, FaGraduationCap } from "react-icons/fa";
 
-export const metadata = {
-  title: "Duolingo Preparation | The Visa Consultancy",
-  description: "The modern, convenient way to prove your English proficiency. Accepted by thousands of universities worldwide, taken from your home.",
-};
+import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import FaqSection, { type Faq } from "@/components/FaqSection";
+import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/structured-data";
+
+const PAGE_DESCRIPTION =
+  "The modern, convenient way to prove your English proficiency. Accepted by thousands of universities worldwide, taken from your home.";
+
+const FAQS: Faq[] = [
+  {
+    question: "What is the Duolingo English Test?",
+    answer:
+      "It is a modern, convenient way to prove your English proficiency. The test is taken online from the comfort of your home and is accepted by thousands of universities worldwide.",
+  },
+  {
+    question: "How is the Duolingo test taken?",
+    answer:
+      "The test is taken online from home and uses an adaptive format that adjusts to your skill level as you go.",
+  },
+  {
+    question: "How quickly do I get my Duolingo results?",
+    answer:
+      "Certified results are typically available within 48 hours of completing the test.",
+  },
+  {
+    question: "What do I need to register for the Duolingo test?",
+    answer:
+      "You need a valid passport or ID, an official online registration, and payment of the exam fee.",
+  },
+  {
+    question: "Is the Duolingo English Test accepted by universities?",
+    answer:
+      "Yes. The Duolingo English Test is accepted by thousands of universities worldwide. We also provide university score analysis and registration and visa support.",
+  },
+];
+
+export const metadata = buildMetadata({
+  title: "Duolingo Preparation",
+  path: "/duolingo",
+  description: PAGE_DESCRIPTION,
+  keywords: ["Duolingo English Test", "DET", "Duolingo preparation", "online English test", "English proficiency test"],
+});
 
 const sections = [
   { 
@@ -45,6 +83,20 @@ export default function Duolingo() {
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: "Duolingo English Test Preparation",
+            description: PAGE_DESCRIPTION,
+            path: "/duolingo",
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Duolingo Preparation", path: "/duolingo" },
+          ]),
+          faqSchema(FAQS),
+        ]}
+      />
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[50vh] md:min-h-[60vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
@@ -184,6 +236,8 @@ export default function Duolingo() {
              </Link>
           </div>
         </section>
+
+        <FaqSection faqs={FAQS} />
       </div>
     </div>
   );

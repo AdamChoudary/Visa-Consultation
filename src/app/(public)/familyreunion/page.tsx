@@ -2,10 +2,54 @@ import Image from "next/image";
 import Link from "next/link";
 import { StaggerItem, ScaleIn } from "@/components/MotionWrappers";
 
-export const metadata = {
-  title: "Family Reunion | The Visa Consultancy",
-  description: "Bringing loved ones together across borders. We specialize in complex family reunion visas for Europe, USA, Canada, and Australia with legal precision and care.",
-};
+import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import FaqSection, { type Faq } from "@/components/FaqSection";
+import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/structured-data";
+
+const PAGE_DESCRIPTION =
+  "Bringing loved ones together across borders. We specialize in complex family reunion visas for Europe, USA, Canada, and Australia with legal precision and care.";
+
+const FAQS: Faq[] = [
+  {
+    question: "Which countries do you handle family reunion visas for?",
+    answer:
+      "We assist with family reunion and sponsorship applications for the UK, Canada, USA and Australia.",
+  },
+  {
+    question: "Who can I sponsor or be reunited with?",
+    answer:
+      "Depending on each country's rules, this can include a spouse or partner, fiancé, children, parents and other dependent family members.",
+  },
+  {
+    question: "What documents are required for a family reunion visa?",
+    answer:
+      "Typically relationship evidence, proof that the financial requirement is met, sponsorship documents, and country-specific forms such as IRCC submissions or a US affidavit of support. We help prepare and verify all of these.",
+  },
+  {
+    question: "Do you help with the financial requirement and sponsorship?",
+    answer:
+      "Yes. We assist with preparing the financial requirement, sponsorship forms and supporting documentation to give your application the best chance of approval.",
+  },
+  {
+    question: "How complex are family reunion cases?",
+    answer:
+      "They can be document-heavy and detail-sensitive. We manage the relationship evidence and legal complexities for you so the process stays smooth and well-organised.",
+  },
+];
+
+export const metadata = buildMetadata({
+  title: "Family Reunion",
+  path: "/familyreunion",
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    "family reunion visa",
+    "family sponsorship",
+    "spouse visa",
+    "dependent visa",
+    "family immigration",
+  ],
+});
 
 const regions = [
   { 
@@ -34,6 +78,20 @@ export default function FamilyReunionPage() {
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: "Family Reunion Visa Services",
+            description: PAGE_DESCRIPTION,
+            path: "/familyreunion",
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Family Reunion", path: "/familyreunion" },
+          ]),
+          faqSchema(FAQS),
+        ]}
+      />
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[40vh] md:min-h-[50vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
@@ -129,6 +187,8 @@ export default function FamilyReunionPage() {
              </Link>
           </div>
         </ScaleIn>
+
+        <FaqSection faqs={FAQS} />
       </div>
     </div>
   );

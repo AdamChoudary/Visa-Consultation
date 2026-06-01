@@ -4,11 +4,22 @@ import Image from "next/image";
 import { StaggerItem, ScaleIn, FadeIn } from "@/components/MotionWrappers";
 import Hero from "@/components/Hero";
 import { FaFacebook, FaTiktok, FaInstagram, FaWhatsapp, FaLinkedin, FaGraduationCap, FaBriefcase, FaGlobe, FaUserFriends } from "react-icons/fa";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "The Visa Consultancy | Premium Immigration Services",
-  description: "Your journey abroad starts here. Expert consultancy for study, work, and visit visas.",
-};
+export const metadata = buildMetadata({
+  path: "/",
+  description:
+    "Your journey abroad starts here. Expert consultancy for study, work, and visit visas, plus permanent immigration and PR — for the UK, USA, Canada, Australia, Europe and beyond.",
+  keywords: [
+    "visa consultancy",
+    "immigration consultant",
+    "student visa",
+    "work visa",
+    "visit visa",
+    "permanent residency",
+    "study abroad",
+  ],
+});
 
 const socialLinks = [
   { href: "https://wa.me/923335965199", icon: <FaWhatsapp />, color: "#25D366", label: "WhatsApp" },

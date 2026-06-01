@@ -3,10 +3,48 @@ import Link from "next/link";
 import { StaggerItem } from "@/components/MotionWrappers";
 import { FaCheckDouble, FaDesktop, FaChartLine } from "react-icons/fa";
 
-export const metadata = {
-  title: "PTE Preparation | The Visa Consultancy",
-  description: "The leading computer-based English test trusted by universities and governments worldwide. Get your results in as little as 48 hours with our expert guidance.",
-};
+import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import FaqSection, { type Faq } from "@/components/FaqSection";
+import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/structured-data";
+
+const PAGE_DESCRIPTION =
+  "The leading computer-based English test trusted by universities and governments worldwide. Get your results in as little as 48 hours with our expert guidance.";
+
+const FAQS: Faq[] = [
+  {
+    question: "What is the PTE and who accepts it?",
+    answer:
+      "PTE is a computer-based English test trusted by universities and governments worldwide for study, work and migration purposes.",
+  },
+  {
+    question: "Which PTE tests are available?",
+    answer:
+      "There are three main options: PTE Academic (for study, work and migration), PTE Academic Online (taken from home), and PTE Core (used for Canadian immigration / IRCC).",
+  },
+  {
+    question: "What are the requirements to take the PTE?",
+    answer:
+      "You need valid identification such as a passport, you must meet the age requirement (16+, with consent for ages 16–17), and you pay the test fee through Pearson.",
+  },
+  {
+    question: "How quickly do I get my PTE results?",
+    answer:
+      "PTE results are typically available quickly — often in as little as 48 hours.",
+  },
+  {
+    question: "Do you help with PTE booking and preparation?",
+    answer:
+      "Yes. We help align your score goals, connect you with expert training, assist with Pearson VUE booking, and provide complete preparation guidance.",
+  },
+];
+
+export const metadata = buildMetadata({
+  title: "PTE Preparation",
+  path: "/pte-test",
+  description: PAGE_DESCRIPTION,
+  keywords: ["PTE", "PTE Academic", "PTE preparation", "PTE coaching", "English proficiency test"],
+});
 
 const sections = [
   { 
@@ -46,6 +84,20 @@ export default function PteTest() {
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: "PTE Preparation & Test Support",
+            description: PAGE_DESCRIPTION,
+            path: "/pte-test",
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "PTE Preparation", path: "/pte-test" },
+          ]),
+          faqSchema(FAQS),
+        ]}
+      />
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[50vh] md:min-h-[60vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
@@ -185,6 +237,8 @@ export default function PteTest() {
              </Link>
           </div>
         </section>
+
+        <FaqSection faqs={FAQS} />
       </div>
     </div>
   );

@@ -3,10 +3,54 @@ import Link from "next/link";
 import { StaggerItem } from "@/components/MotionWrappers";
 import { FaUserTie, FaIdCard, FaChartLine, FaUsers } from "react-icons/fa";
 
-export const metadata = {
-  title: "Immigration | The Visa Consultancy",
-  description: "Your path to a new life starts here. Expert guidance for skilled migration, business visas, and permanent residency programs (PR) worldwide.",
-};
+import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import FaqSection, { type Faq } from "@/components/FaqSection";
+import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/structured-data";
+
+const PAGE_DESCRIPTION =
+  "Your path to a new life starts here. Expert guidance for skilled migration, business visas, and permanent residency programs (PR) worldwide.";
+
+const FAQS: Faq[] = [
+  {
+    question: "What immigration programs do you handle?",
+    answer:
+      "We assist with skilled worker programs, permanent residency (PR), business and investor immigration, and family sponsorship applications.",
+  },
+  {
+    question: "How do I know if I'm eligible for permanent residency?",
+    answer:
+      "We carry out an eligibility assessment based on your age, education, work experience and language skills, and calculate your points where the program is points-based, to identify the most suitable pathway.",
+  },
+  {
+    question: "Which countries do you cover for immigration?",
+    answer:
+      "We support immigration and PR programs worldwide, with popular pathways to Canada, Australia, the UK and Europe.",
+  },
+  {
+    question: "Are there any hidden charges in the process?",
+    answer:
+      "No. We follow a transparent process with no hidden charges and provide clear, step-by-step guidance throughout your application.",
+  },
+  {
+    question: "Do you provide guidance after the visa is approved?",
+    answer:
+      "Yes. After approval we assist with pre-departure planning and settlement guidance to help you transition smoothly to your new country.",
+  },
+];
+
+export const metadata = buildMetadata({
+  title: "Immigration",
+  path: "/immigration",
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    "immigration consultant",
+    "permanent residency",
+    "PR visa",
+    "skilled migration",
+    "investor immigration",
+  ],
+});
 
 const programs = [
   { t: "Skilled Worker Programs", d: "Professional guidance for skilled migration programs based on education, work experience, and language proficiency.", i: <FaUserTie /> },
@@ -32,6 +76,20 @@ const benefits = [
 export default function ImmigrationPage() {
   return (
     <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: "Immigration & Permanent Residency Services",
+            description: PAGE_DESCRIPTION,
+            path: "/immigration",
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Immigration", path: "/immigration" },
+          ]),
+          faqSchema(FAQS),
+        ]}
+      />
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[40vh] md:min-h-[50vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
@@ -166,6 +224,8 @@ export default function ImmigrationPage() {
              </Link>
           </div>
         </section>
+
+        <FaqSection faqs={FAQS} />
       </div>
     </div>
   );

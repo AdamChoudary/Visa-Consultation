@@ -3,10 +3,17 @@ import Image from "next/image";
 import { StaggerItem, ScaleIn } from "@/components/MotionWrappers";
 import { FaFacebookF, FaTiktok, FaInstagram } from "react-icons/fa";
 
-export const metadata = {
-  title: "Partners | The Visa Consultancy",
-  description: "Explore our global network of trusted institutional partners including real estate, creative studios, and branding experts.",
-};
+import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/structured-data";
+
+export const metadata = buildMetadata({
+  title: "Partners",
+  path: "/partners",
+  description:
+    "Explore our global network of trusted institutional partners including real estate, creative studios, and branding experts.",
+  keywords: ["business partners", "institutional partners", "visa consultancy network"],
+});
 
 const partners = [
   {
@@ -45,6 +52,12 @@ export default function Partners() {
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Partners", path: "/partners" },
+        ])}
+      />
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[30vh] md:min-h-[40vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">

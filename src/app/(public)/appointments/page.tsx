@@ -3,10 +3,19 @@ import Link from "next/link";
 import { StaggerItem } from "@/components/MotionWrappers";
 import { FaGraduationCap, FaPassport, FaIdCard, FaBriefcase } from "react-icons/fa";
 
-export const metadata = {
-  title: "Book Appointment | The Visa Consultancy",
-  description: "Secure your global future with a personalized consultation. Book a meeting with our experts for student, visit, or work visas and immigration support.",
-};
+import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { serviceSchema, breadcrumbSchema } from "@/lib/structured-data";
+
+const PAGE_DESCRIPTION =
+  "Secure your global future with a personalized consultation. Book a meeting with our experts for student, visit, or work visas and immigration support.";
+
+export const metadata = buildMetadata({
+  title: "Book Appointment",
+  path: "/appointments",
+  description: PAGE_DESCRIPTION,
+  keywords: ["book visa appointment", "embassy appointment", "visa consultation", "VFS appointment booking"],
+});
 
 const appointmentTypes = [
   { title: "Student Embassy Appointment", desc: "Professional assistance in securing your student visa interview slot and preparing your academic file for official embassy submission.", icon: <FaGraduationCap /> },
@@ -32,6 +41,19 @@ const consultancyBenefits = [
 export default function AppointmentPage() {
   return (
     <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: "Embassy Appointment & Consultation Booking",
+            description: PAGE_DESCRIPTION,
+            path: "/appointments",
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Book Appointment", path: "/appointments" },
+          ]),
+        ]}
+      />
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[40vh] md:min-h-[50vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">

@@ -14,6 +14,7 @@ const playfair = Playfair_Display({
 
 export const metadata = {
   title: "Admin Portal | The Visa Consultancy",
+  robots: { index: false, follow: false },
 };
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {

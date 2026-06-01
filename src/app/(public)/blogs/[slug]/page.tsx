@@ -1,6 +1,11 @@
+import { cache } from "react";
+import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { buildMetadata } from "@/lib/seo";
+import { articleSchema, breadcrumbSchema } from "@/lib/structured-data";
 
 export const dynamic = "force-dynamic";
 
@@ -19,14 +24,52 @@ interface Blog {
   };
 }
 
+/** Cached so generateMetadata and the page share a single DB query per request. */
+const getBlog = cache(async (slug: string) => {
+  return prisma.blog.findUnique({
+    where: { slug },
+    include: { author: true },
+  });
+});
+
+/** Strip HTML and entities to a clean plain-text excerpt for meta descriptions. */
+function excerpt(html: string, max = 160): string {
+  const text = html
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/\s+/g, " ")
+    .trim();
+  return text.length > max ? `${text.slice(0, max - 1).trimEnd()}…` : text;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = await getBlog(slug);
+
+  if (!blog || blog.status !== "published") {
+    return buildMetadata({ title: "Article Not Found", noIndex: true });
+  }
+
+  return buildMetadata({
+    title: blog.title,
+    description: excerpt(blog.content),
+    path: `/blogs/${blog.slug}`,
+    type: "article",
+    image: blog.imageUrl ? { url: blog.imageUrl, alt: blog.title } : undefined,
+    publishedTime: blog.createdAt.toISOString(),
+    authors: blog.author?.name ? [blog.author.name] : undefined,
+  });
+}
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const { slug } = await params;
 
-  const blogData = await prisma.blog.findUnique({
-    where: { slug },
-    include: { author: true },
-  });
+  const blogData = await getBlog(slug);
 
   if (!blogData || blogData.status !== "published") {
     notFound();
@@ -36,6 +79,25 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
   return (
     <article className="bg-[#0f1921] min-h-screen text-white pt-16 md:pt-24 pb-32">
+      <JsonLd
+        id="article"
+        data={[
+          articleSchema({
+            title: blog.title,
+            description: excerpt(blog.content),
+            slug: blog.slug,
+            image: blog.imageUrl,
+            authorName: blog.author?.name || "The Visa Consultancy",
+            publishedTime: new Date(blog.createdAt).toISOString(),
+            section: blog.category,
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Blogs", path: "/blogs" },
+            { name: blog.title, path: `/blogs/${blog.slug}` },
+          ]),
+        ]}
+      />
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
           

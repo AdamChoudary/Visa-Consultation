@@ -3,10 +3,48 @@ import Link from "next/link";
 import { StaggerItem } from "@/components/MotionWrappers";
 import { FaClipboardCheck, FaGlobeAmericas, FaTrophy } from "react-icons/fa";
 
-export const metadata = {
-  title: "TOEFL Preparation | The Visa Consultancy",
-  description: "The key academic requirement for students aiming for higher education in North America. Accepted by 11,000+ universities worldwide. Get expert guidance today.",
-};
+import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import FaqSection, { type Faq } from "@/components/FaqSection";
+import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/structured-data";
+
+const PAGE_DESCRIPTION =
+  "The key academic requirement for students aiming for higher education in North America. Accepted by 11,000+ universities worldwide. Get expert guidance today.";
+
+const FAQS: Faq[] = [
+  {
+    question: "Who should take the TOEFL?",
+    answer:
+      "TOEFL is a key academic English requirement for students aiming for higher education, particularly in North America.",
+  },
+  {
+    question: "Which TOEFL formats are available?",
+    answer:
+      "You can take the TOEFL iBT (computer-based), the Home Edition (the same test taken at home), or the paper-based test, which is available at limited locations.",
+  },
+  {
+    question: "What do I need to register for the TOEFL?",
+    answer:
+      "You need a valid passport with an exact name match, an official ETS registration, and payment of the exam fee.",
+  },
+  {
+    question: "How widely is the TOEFL accepted?",
+    answer:
+      "The TOEFL is accepted by more than 11,000 universities and institutions worldwide.",
+  },
+  {
+    question: "Do you offer TOEFL preparation support?",
+    answer:
+      "Yes. We provide university score analysis, expert tutor referrals, registration assistance and complete application guidance.",
+  },
+];
+
+export const metadata = buildMetadata({
+  title: "TOEFL Preparation",
+  path: "/toefl-test",
+  description: PAGE_DESCRIPTION,
+  keywords: ["TOEFL", "TOEFL iBT", "TOEFL preparation", "TOEFL coaching", "English proficiency test"],
+});
 
 const sections = [
   { 
@@ -46,6 +84,20 @@ export default function ToeflTest() {
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: "TOEFL Preparation & Test Support",
+            description: PAGE_DESCRIPTION,
+            path: "/toefl-test",
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "TOEFL Preparation", path: "/toefl-test" },
+          ]),
+          faqSchema(FAQS),
+        ]}
+      />
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[50vh] md:min-h-[60vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
@@ -185,6 +237,8 @@ export default function ToeflTest() {
              </Link>
           </div>
         </section>
+
+        <FaqSection faqs={FAQS} />
       </div>
     </div>
   );

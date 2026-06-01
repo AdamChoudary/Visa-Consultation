@@ -2,10 +2,54 @@ import Image from "next/image";
 import Link from "next/link";
 import { StaggerItem, ScaleIn } from "@/components/MotionWrappers";
 
-export const metadata = {
-  title: "Work Visas | The Visa Consultancy",
-  description: "Advance your career on a global stage. We provide end-to-end support for work permits, skilled migration, and relocation documentation.",
-};
+import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import FaqSection, { type Faq } from "@/components/FaqSection";
+import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/structured-data";
+
+const PAGE_DESCRIPTION =
+  "Advance your career on a global stage. We provide end-to-end support for work permits, skilled migration, and relocation documentation.";
+
+const FAQS: Faq[] = [
+  {
+    question: "Which countries do you provide work visa services for?",
+    answer:
+      "We assist with work visas for Dubai/UAE, the United Kingdom, USA and Canada, including employer sponsorship and documentation support.",
+  },
+  {
+    question: "Do I need a job offer before applying for a work visa?",
+    answer:
+      "Most work visas require a job offer or employer sponsorship — for example UK sponsorship, a Canadian LMIA, or a US H-1B or L-1 petition. We guide you on the specific requirements for each route.",
+  },
+  {
+    question: "What documents are required for a work visa?",
+    answer:
+      "Typically a valid passport, your job offer or employment contract, qualifications, and country-specific documents such as an LMIA, sponsorship certificate or DS-160. We prepare a complete, embassy-ready file.",
+  },
+  {
+    question: "Do you help with US work visas like H-1B and L-1?",
+    answer:
+      "Yes. Our USA work visa support includes guidance on H-1B, L-1 and other categories, along with DS-160 preparation and interview guidance.",
+  },
+  {
+    question: "Can you assess my eligibility for skilled migration?",
+    answer:
+      "Yes. We carry out points-based eligibility assessments and prepare the supporting documentation needed for skilled migration routes.",
+  },
+];
+
+export const metadata = buildMetadata({
+  title: "Work Visas",
+  path: "/workvisas",
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    "work visa",
+    "work permit",
+    "skilled migration",
+    "overseas employment",
+    "work visa consultant",
+  ],
+});
 
 const jobs = [
   { 
@@ -34,6 +78,20 @@ export default function WorkVisasPage() {
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: "Work Visa Services",
+            description: PAGE_DESCRIPTION,
+            path: "/workvisas",
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Work Visas", path: "/workvisas" },
+          ]),
+          faqSchema(FAQS),
+        ]}
+      />
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[40vh] md:min-h-[50vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
@@ -129,6 +187,8 @@ export default function WorkVisasPage() {
              </Link>
           </div>
         </ScaleIn>
+
+        <FaqSection faqs={FAQS} />
       </div>
     </div>
   );

@@ -2,10 +2,17 @@ import Link from "next/link";
 import { StaggerItem, ScaleIn } from "@/components/MotionWrappers";
 import { FaUserGraduate, FaBriefcase, FaPassport, FaPlane } from "react-icons/fa";
 
-export const metadata = {
-  title: "Clients | The Visa Consultancy",
-  description: "Read about our success stories and milestones in helping students, professionals, and families achieve their international goals.",
-};
+import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/structured-data";
+
+export const metadata = buildMetadata({
+  title: "Clients",
+  path: "/clients",
+  description:
+    "Read about our success stories and milestones in helping students, professionals, and families achieve their international goals.",
+  keywords: ["visa success stories", "client testimonials", "visa approvals"],
+});
 
 const successes = [
   {
@@ -34,6 +41,12 @@ export default function Clients() {
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Clients", path: "/clients" },
+        ])}
+      />
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[30vh] md:min-h-[40vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">

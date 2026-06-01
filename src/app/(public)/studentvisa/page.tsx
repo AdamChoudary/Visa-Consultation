@@ -3,10 +3,54 @@ import Link from "next/link";
 import { StaggerItem, FadeIn } from "@/components/MotionWrappers";
 import { FaUniversity, FaFileInvoice, FaCoins, FaUserCheck } from "react-icons/fa";
 
-export const metadata = {
-  title: "Student Visa | The Visa Consultancy",
-  description: "Your gateway to international education. Expert guidance for student visas in the UK, USA, Canada, Germany, Australia, and more.",
-};
+import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import FaqSection, { type Faq } from "@/components/FaqSection";
+import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/structured-data";
+
+const PAGE_DESCRIPTION =
+  "Your gateway to international education. Expert guidance for student visas in the UK, USA, Canada, Germany, Australia, and more.";
+
+const FAQS: Faq[] = [
+  {
+    question: "Which countries do you offer student visa services for?",
+    answer:
+      "We assist with student visas for the United Kingdom, USA, Canada, Germany, France, Australia and other popular study destinations, guiding you through each country's specific requirements.",
+  },
+  {
+    question: "What documents are required for a student visa?",
+    answer:
+      "Requirements vary by country but typically include a valid passport, your admission or offer letter (such as a CAS or I-20), proof of funds, academic transcripts, an English proficiency test result, and a statement of purpose. We review and prepare a complete, embassy-ready file for your destination.",
+  },
+  {
+    question: "Do you help with university admission as well as the visa?",
+    answer:
+      "Yes. We support you from admission and offer-letter stages (CAS, I-20, study permit documentation) through financial evidence preparation and final embassy submission.",
+  },
+  {
+    question: "Is an English language test required for a student visa?",
+    answer:
+      "Most universities and embassies require proof of English through IELTS, PTE, TOEFL or the Duolingo English Test. Some destinations, such as Germany, may also require additional certifications like APS. We advise you based on your chosen country.",
+  },
+  {
+    question: "How long does the student visa process take?",
+    answer:
+      "Processing times vary by country, university intake and season. We help you start early and submit an accurate application so you can meet your intake deadlines comfortably.",
+  },
+];
+
+export const metadata = buildMetadata({
+  title: "Student Visa",
+  path: "/studentvisa",
+  description: PAGE_DESCRIPTION,
+  keywords: [
+    "student visa",
+    "study visa",
+    "study abroad consultant",
+    "international education",
+    "student visa application",
+  ],
+});
 
 const regions = [
   { 
@@ -96,6 +140,20 @@ export default function StudentVisaPage() {
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-8 md:pt-16 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: "Student Visa Services",
+            description: PAGE_DESCRIPTION,
+            path: "/studentvisa",
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Student Visa", path: "/studentvisa" },
+          ]),
+          faqSchema(FAQS),
+        ]}
+      />
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[50vh] md:min-h-[60vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto">
@@ -220,6 +278,8 @@ export default function StudentVisaPage() {
              </Link>
           </div>
         </section>
+
+        <FaqSection faqs={FAQS} />
       </div>
     </div>
   );

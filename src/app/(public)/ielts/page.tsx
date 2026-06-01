@@ -3,10 +3,48 @@ import Link from "next/link";
 import { StaggerItem } from "@/components/MotionWrappers";
 import { FaPassport, FaFileAlt, FaStar } from "react-icons/fa";
 
-export const metadata = {
-  title: "IELTS Preparation | The Visa Consultancy",
-  description: "Prepare for the world's most popular English language proficiency test with expert guidance. Accepted by 11,000+ organizations worldwide.",
-};
+import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import FaqSection, { type Faq } from "@/components/FaqSection";
+import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/structured-data";
+
+const PAGE_DESCRIPTION =
+  "Prepare for the world's most popular English language proficiency test with expert guidance. Accepted by 11,000+ organizations worldwide.";
+
+const FAQS: Faq[] = [
+  {
+    question: "What's the difference between IELTS Academic and General?",
+    answer:
+      "IELTS Academic is intended for students applying to universities, while IELTS General is generally used for work and migration purposes. We help you choose the right one for your goal.",
+  },
+  {
+    question: "Is IELTS computer-based or paper-based?",
+    answer:
+      "Both options are available. You can take IELTS on a computer or on paper, depending on your preference and the test centre.",
+  },
+  {
+    question: "What do I need to register for IELTS?",
+    answer:
+      "You need a valid passport that matches your registration details, a booking through the official IELTS portal, and confirmation of your exam fee payment.",
+  },
+  {
+    question: "Do you provide IELTS preparation or only booking?",
+    answer:
+      "We provide both. Alongside test booking and visa support, we offer university band requirement analysis and professional preparation guidance to help you reach your target band.",
+  },
+  {
+    question: "How widely is IELTS accepted?",
+    answer:
+      "IELTS is accepted by more than 11,000 organisations worldwide, including universities, employers and immigration authorities.",
+  },
+];
+
+export const metadata = buildMetadata({
+  title: "IELTS Preparation",
+  path: "/ielts",
+  description: PAGE_DESCRIPTION,
+  keywords: ["IELTS", "IELTS preparation", "IELTS coaching", "English proficiency test", "IELTS band score"],
+});
 
 const sections = [
   { 
@@ -45,6 +83,20 @@ export default function Ielts() {
 
   return (
     <div className="bg-[#0f1921] min-h-screen pt-24 md:pt-32 pb-16 md:pb-24 selection:bg-[#d0a850] selection:text-black">
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: "IELTS Preparation & Test Support",
+            description: PAGE_DESCRIPTION,
+            path: "/ielts",
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "IELTS Preparation", path: "/ielts" },
+          ]),
+          faqSchema(FAQS),
+        ]}
+      />
       <div className="container mx-auto px-4 md:px-6">
         {/* 1. HERO SECTION */}
         <section className="min-h-[50vh] md:min-h-[60vh] flex items-center pb-12 md:pb-20 max-w-7xl mx-auto ">
@@ -184,6 +236,8 @@ export default function Ielts() {
              </Link>
           </div>
         </section>
+
+        <FaqSection faqs={FAQS} />
       </div>
     </div>
   );
