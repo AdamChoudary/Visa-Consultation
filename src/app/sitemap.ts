@@ -6,21 +6,21 @@ export const dynamic = "force-dynamic";
 
 // Static public routes with their relative crawl priority.
 const STATIC_ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
-  { path: "/", priority: 1.0, changeFrequency: "weekly" },
-  { path: "/studentvisa", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/visitvisas", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/immigration", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/workvisas", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/familyreunion", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/appointments", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/toefl-test", priority: 0.7, changeFrequency: "monthly" },
-  { path: "/pte-test", priority: 0.7, changeFrequency: "monthly" },
-  { path: "/ielts", priority: 0.7, changeFrequency: "monthly" },
-  { path: "/duolingo", priority: 0.7, changeFrequency: "monthly" },
-  { path: "/blogs", priority: 0.8, changeFrequency: "daily" },
-  { path: "/contact", priority: 0.7, changeFrequency: "yearly" },
-  { path: "/clients", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/partners", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/", priority: 1.0, changeFrequency: "daily" },
+  { path: "/studentvisa", priority: 0.95, changeFrequency: "weekly" },
+  { path: "/visitvisas", priority: 0.95, changeFrequency: "weekly" },
+  { path: "/immigration", priority: 0.95, changeFrequency: "weekly" },
+  { path: "/workvisas", priority: 0.95, changeFrequency: "weekly" },
+  { path: "/familyreunion", priority: 0.90, changeFrequency: "weekly" },
+  { path: "/appointments", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/blogs", priority: 0.85, changeFrequency: "daily" },
+  { path: "/toefl-test", priority: 0.80, changeFrequency: "monthly" },
+  { path: "/pte-test", priority: 0.80, changeFrequency: "monthly" },
+  { path: "/ielts", priority: 0.80, changeFrequency: "monthly" },
+  { path: "/duolingo", priority: 0.80, changeFrequency: "monthly" },
+  { path: "/contact", priority: 0.75, changeFrequency: "monthly" },
+  { path: "/clients", priority: 0.65, changeFrequency: "monthly" },
+  { path: "/partners", priority: 0.65, changeFrequency: "monthly" },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

@@ -40,15 +40,24 @@ const FAQS: Faq[] = [
 ];
 
 export const metadata = buildMetadata({
-  title: "Student Visa",
+  title: "Student Visa & Study Abroad Consultant",
   path: "/studentvisa",
-  description: PAGE_DESCRIPTION,
+  description: "Expert student visa consultancy from Islamabad, Pakistan. We handle UK student visas (CAS), USA F-1 visas, Canada study permits, and Australia student visas — with full admission support, document preparation, and embassy submission. Trusted visa consultancy with high success rates.",
   keywords: [
     "student visa",
-    "study visa",
-    "study abroad consultant",
-    "international education",
-    "student visa application",
+    "student visa Pakistan",
+    "student visa consultant Islamabad",
+    "study abroad consultant Pakistan",
+    "UK student visa consultant",
+    "UK study visa Pakistan",
+    "Canada study permit Pakistan",
+    "USA student visa F-1",
+    "Australia student visa consultant",
+    "Germany student visa Pakistan",
+    "study visa consultant Islamabad",
+    "international student visa",
+    "student visa application Pakistan",
+    "student visa consultancy",
   ],
 });
 

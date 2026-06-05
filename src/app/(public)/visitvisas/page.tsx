@@ -39,15 +39,23 @@ const FAQS: Faq[] = [
 ];
 
 export const metadata = buildMetadata({
-  title: "Visit Visas",
+  title: "Visit Visa Consultant — Schengen, UK, USA, Dubai",
   path: "/visitvisas",
-  description: PAGE_DESCRIPTION,
+  description: "Trusted visit visa consultancy in Islamabad, Pakistan. Expert guidance for Dubai/UAE visit visas, Schengen visas, UK visit visas, and USA B-1/B-2 visas. Complete documentation, financial proof, and embassy submission support. High approval rate.",
   keywords: [
     "visit visa",
-    "tourist visa",
-    "Schengen visa",
-    "business visa",
-    "visit visa consultant",
+    "visit visa consultant Pakistan",
+    "visit visa Islamabad",
+    "Dubai visit visa from Pakistan",
+    "UAE visit visa consultant",
+    "Schengen visa consultant Pakistan",
+    "Schengen visa Islamabad",
+    "UK visit visa Pakistan",
+    "USA visit visa consultant",
+    "tourist visa consultant",
+    "visit visa application Pakistan",
+    "travel visa consultant Islamabad",
+    "Europe visit visa Pakistan",
   ],
 });
 

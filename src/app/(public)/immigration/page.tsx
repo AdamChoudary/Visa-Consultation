@@ -40,15 +40,24 @@ const FAQS: Faq[] = [
 ];
 
 export const metadata = buildMetadata({
-  title: "Immigration",
+  title: "Immigration & Permanent Residency (PR) Consultant",
   path: "/immigration",
-  description: PAGE_DESCRIPTION,
+  description: "Leading immigration consultancy in Islamabad, Pakistan. Professional PR visa guidance for Canada Express Entry, Australia Points Test, UK Indefinite Leave to Remain, and Europe permanent residency. Expert skilled migration, investor immigration, and family sponsorship services.",
   keywords: [
-    "immigration consultant",
-    "permanent residency",
-    "PR visa",
-    "skilled migration",
-    "investor immigration",
+    "immigration consultant Pakistan",
+    "immigration consultant Islamabad",
+    "permanent residency PR Pakistan",
+    "Canada PR consultant Pakistan",
+    "Canada Express Entry Pakistan",
+    "Australia PR consultant Pakistan",
+    "UK ILR consultant",
+    "Europe permanent residency Pakistan",
+    "skilled migration consultant Pakistan",
+    "investor immigration consultant",
+    "PR visa consultant Islamabad",
+    "immigration services Pakistan",
+    "settlement abroad consultant",
+    "PR application Pakistan",
   ],
 });
 

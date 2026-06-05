@@ -39,15 +39,23 @@ const FAQS: Faq[] = [
 ];
 
 export const metadata = buildMetadata({
-  title: "Family Reunion",
+  title: "Family Reunion & Spouse Visa Consultant",
   path: "/familyreunion",
-  description: PAGE_DESCRIPTION,
+  description: "Expert family reunion visa consultancy in Islamabad, Pakistan. Professional guidance for spouse visas, dependent visas, family sponsorship, and family reunification to the UK, Canada, USA, and Australia. Trusted visa consultancy with complete documentation support.",
   keywords: [
     "family reunion visa",
-    "family sponsorship",
-    "spouse visa",
-    "dependent visa",
-    "family immigration",
+    "family reunion visa Pakistan",
+    "spouse visa consultant Pakistan",
+    "spouse visa Islamabad",
+    "UK spouse visa Pakistan",
+    "Canada family sponsorship Pakistan",
+    "USA family visa Pakistan",
+    "Australia partner visa Pakistan",
+    "dependent visa consultant",
+    "family sponsorship consultant",
+    "family immigration Pakistan",
+    "family visa Islamabad",
+    "join family abroad",
   ],
 });
 

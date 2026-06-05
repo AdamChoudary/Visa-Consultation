@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "The Visa Consultancy",
-  description: "Expert immigration services for individuals and families seeking long-term settlement abroad.",
+  description: "The Visa Consultancy — Pakistan's trusted visa consultancy in Islamabad. We provide expert visa services for student visas, work visas, visit visas, family reunion visas, and permanent residency (PR) immigration to the UK, USA, Canada, Australia, Schengen Europe, and UAE. Professional visa consultancy with high approval rates and transparent guidance.",
   url: "https://thevisaconsultancy.com",
   contact: {
     address: "Office# 104, Mezzanine Floor, Embassy Gardens, Sector C1, Bahria Enclave, Islamabad",

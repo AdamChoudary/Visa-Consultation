@@ -19,7 +19,14 @@ const playfair = Playfair_Display({
 
 export const metadata = buildMetadata({
   description:
-    "Navigate international borders with confidence. Professional consultancy for Study, Work, and Immigration.",
+    "The Visa Consultancy — Pakistan's most trusted visa consultancy in Islamabad. Expert guidance for student visas, work visas, visit visas, immigration, and PR. UK, USA, Canada, Australia and Schengen visa services. Book a free consultation today.",
+  keywords: [
+    "visa consultancy Pakistan",
+    "visa consultancy Islamabad",
+    "immigration consultant Pakistan",
+    "best visa consultant Islamabad",
+    "visa services Pakistan",
+  ],
 });
 
 export default function RootLayout({ children }) {

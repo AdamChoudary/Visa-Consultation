@@ -39,15 +39,24 @@ const FAQS: Faq[] = [
 ];
 
 export const metadata = buildMetadata({
-  title: "Work Visas",
+  title: "Work Visa Consultant — UK, USA, Canada, Dubai",
   path: "/workvisas",
-  description: PAGE_DESCRIPTION,
+  description: "Professional work visa consultancy from Islamabad, Pakistan. Expert guidance for UK Skilled Worker visas, USA H-1B & L-1 visas, Canada work permits (LMIA), and Dubai work visas. Full support from job offer to visa approval. Trusted by professionals across Pakistan.",
   keywords: [
     "work visa",
-    "work permit",
-    "skilled migration",
-    "overseas employment",
-    "work visa consultant",
+    "work visa Pakistan",
+    "work visa consultant Islamabad",
+    "UK work visa Pakistan",
+    "UK skilled worker visa consultant",
+    "Canada work permit Pakistan",
+    "Canada LMIA consultant",
+    "USA H-1B visa consultant",
+    "Dubai work visa Pakistan",
+    "overseas employment consultant Pakistan",
+    "skilled migration consultant",
+    "work permit consultant Islamabad",
+    "abroad job visa Pakistan",
+    "work visa application Pakistan",
   ],
 });
 
