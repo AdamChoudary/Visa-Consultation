@@ -30,7 +30,7 @@ export function organizationSchema() {
     image: absoluteUrl("/logo.webp"),
     description: siteConfig.description,
     email: siteConfig.contact.email,
-    telephone: siteConfig.contact.phone,
+    telephone: [siteConfig.contact.phone, siteConfig.contact.phone2],
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
@@ -86,7 +86,7 @@ export function organizationSchema() {
     sameAs: Object.values(siteConfig.socials),
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: siteConfig.contact.phone,
+      telephone: [siteConfig.contact.phone, siteConfig.contact.phone2],
       contactType: "customer service",
       email: siteConfig.contact.email,
       availableLanguage: ["English", "Urdu"],

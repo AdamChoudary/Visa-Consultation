@@ -36,9 +36,18 @@ const Footer = memo(function Footer() {
               <FaMapMarkerAlt className="text-[#d0a860] text-lg mt-1 shrink-0" />
               <span className="max-w-[280px] md:max-w-[320px]">{siteConfig.contact.address}</span>
             </li>
-            <li className="flex items-center gap-3 text-left">
-              <FaPhoneAlt className="text-[#d0a860] text-lg shrink-0" />
-              <span className="text-base md:text-lg">{siteConfig.contact.phone}</span>
+            <li className="flex items-start gap-3 text-left">
+              <FaPhoneAlt className="text-[#d0a860] text-lg shrink-0 mt-1" />
+              <div className="flex flex-col">
+                <a href={`tel:${siteConfig.contact.phone.replace(/[^+\d]/g, '')}`} className="text-base md:text-lg hover:text-[#d0a850] transition-colors">
+                  {siteConfig.contact.phone}
+                </a>
+                {siteConfig.contact.phone2 && (
+                  <a href={`tel:${siteConfig.contact.phone2.replace(/[^+\d]/g, '')}`} className="text-base md:text-lg hover:text-[#d0a850] transition-colors">
+                    {siteConfig.contact.phone2}
+                  </a>
+                )}
+              </div>
             </li>
             <li className="flex items-center gap-3 text-left">
               <FaEnvelope className="text-[#d0a860] text-lg shrink-0" />

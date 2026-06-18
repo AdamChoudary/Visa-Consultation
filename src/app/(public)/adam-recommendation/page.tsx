@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaFacebook, FaTiktok, FaInstagram, FaWhatsapp, FaLinkedin, FaVolumeMute, FaVolumeUp, FaGraduationCap, FaBriefcase, FaGlobe, FaUserFriends } from "react-icons/fa";
+import { siteConfig } from "@/config/site";
 
 export default function Home() {
   const [isMuted, setIsMuted] = useState(true);
@@ -11,7 +12,7 @@ export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const socialLinks = [
-    { href: "https://wa.me/923335965199", icon: <FaWhatsapp />, color: "#25D366", label: "WhatsApp" },
+    { href: siteConfig.socials.whatsapp, icon: <FaWhatsapp />, color: "#25D366", label: "WhatsApp" },
     { href: "https://www.facebook.com/thevisaconsultancy1", icon: <FaFacebook />, color: "#1877F2", label: "Facebook" },
     { href: "https://www.tiktok.com/@the.visa.consulta6", icon: <FaTiktok />, color: "#FE2C55", label: "TikTok" },
     { href: "https://www.instagram.com/the_visa_consultancy", icon: <FaInstagram />, color: "#E4405F", label: "Instagram" },
