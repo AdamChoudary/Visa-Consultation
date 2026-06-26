@@ -7,6 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
 import FaqSection, { type Faq } from "@/components/FaqSection";
 import { serviceSchema, breadcrumbSchema, faqSchema } from "@/lib/structured-data";
+import { regions, countryFaqs } from "@/data/student-visa";
 
 const PAGE_DESCRIPTION =
   "Your gateway to international education. Expert guidance for student visas in the UK, USA, Canada, Germany, Australia, and more.";
@@ -54,87 +55,24 @@ export const metadata = buildMetadata({
     "USA student visa F-1",
     "Australia student visa consultant",
     "Germany student visa Pakistan",
+    "France student visa Pakistan",
+    "Italy student visa Pakistan",
+    "Ireland student visa",
+    "Switzerland student visa",
+    "Hungary student visa",
+    "New Zealand student visa",
+    "Malta student visa",
+    "Turkey student visa",
+    "Malaysia student visa",
+    "Thailand student visa",
+    "Croatia student visa",
+    "Albania student visa",
     "study visa consultant Islamabad",
     "international student visa",
     "student visa application Pakistan",
     "student visa consultancy",
   ],
 });
-
-const regions = [
-  { 
-    name: "United Kingdom", 
-    title: "British Excellence", 
-    desc: "Access world-class education at prestigious UK universities. We handle your CAS, financial evidence, and embassy submission with precision.", 
-    img: "/page images/studentvisa/uk.webp" 
-  },
-  { 
-    name: "USA", 
-    title: "American Dream", 
-    desc: "Explore endless opportunities at top-tier American universities. Comprehensive support for I-20, SEVIS, and F-1 visa interviews.", 
-    img: "/page images/studentvisa/usa.webp" 
-  },
-  { 
-    name: "Canada", 
-    title: "The Great North", 
-    desc: "Benefit from a world-class education system and post-graduation work opportunities. Expert guidance for study permits and provincial certifications.", 
-    img: "/page images/studentvisa/canada.webp" 
-  },
-  { 
-    name: "Germany", 
-    title: "Engineering Mastery", 
-    desc: "Study at renowned technical universities with affordable tuition. We assist with APS certification, blocked accounts, and visa documentation.", 
-    img: "/page images/studentvisa/germany.webp" 
-  },
-  { 
-    name: "France", 
-    title: "Cultural Hub", 
-    desc: "Experience academic excellence in the heart of Europe. Support for Campus France procedures and long-stay student visa applications.", 
-    img: "/page images/studentvisa/france.webp" 
-  },
-  { 
-    name: "Italy", 
-    title: "Art & Heritage", 
-    desc: "Pursue degrees in art, fashion, and technology at historic institutions. Assistance with Universitaly registration and pre-enrollment.", 
-    img: "/page images/studentvisa/italy.webp" 
-  },
-  { 
-    name: "Spain", 
-    title: "Mediterranean Spark", 
-    desc: "Vibrant campus life and prestigious business schools. Complete guidance for NIE, financial proof, and health insurance requirements.", 
-    img: "/page images/studentvisa/spain.webp" 
-  },
-  { 
-    name: "Portugal", 
-    title: "Atlantic Gateway", 
-    desc: "High-quality education with a welcoming atmosphere. Support for university admissions and D4/D5 student visa processes.", 
-    img: "/page images/studentvisa/portugal.webp" 
-  },
-  { 
-    name: "Sweden", 
-    title: "Innovation Leader", 
-    desc: "Focus on sustainability and creative thinking at top Nordic universities. Guidance for residence permits and tuition fee structures.", 
-    img: "/page images/studentvisa/sweden.webp" 
-  },
-  { 
-    name: "Finland", 
-    title: "Northern Lights", 
-    desc: "Study in the world's happiest country with an innovative education system. Expert help for residence permits and scholarship applications.", 
-    img: "/page images/studentvisa/finland.webp" 
-  },
-  { 
-    name: "Lithuania", 
-    title: "European Gem", 
-    desc: "Modern education at an affordable cost in a safe, growing economy. Comprehensive support for TRP and university enrollment.", 
-    img: "/page images/studentvisa/lithuania.webp" 
-  },
-  { 
-    name: "Australia", 
-    title: "The Southern Cross", 
-    desc: "Experience a world-class lifestyle and academic excellence. Expert guidance for GTE, SOP preparation, and financial proof requirements.", 
-    img: "/page images/studentvisa/australia.webp" 
-  }
-];
 
 const consultancyServices = [
   { t: "Free Educational Counselling & Guidance", d: "Personalized counselling to help students choose the best country based on academic background, career goals, and future opportunities.", i: <FaUniversity /> },
@@ -144,6 +82,8 @@ const consultancyServices = [
   { t: "Clear Documentation Services", d: "Complete support in documentation processing including attestation, verification, and legalization of academic and official documents.", i: <FaFileInvoice /> },
   { t: "Settlement & Accommodation Support", d: "Assistance in securing university dormitories and private accommodations to ensure a smooth and comfortable transition.", i: <FaUserCheck /> }
 ];
+
+const allCountryFaqs = Object.values(countryFaqs).flat();
 
 export default function StudentVisaPage() {
 
@@ -160,7 +100,7 @@ export default function StudentVisaPage() {
             { name: "Home", path: "/" },
             { name: "Student Visa", path: "/studentvisa" },
           ]),
-          faqSchema(FAQS),
+          faqSchema([...FAQS, ...allCountryFaqs]),
         ]}
       />
       <div className="container mx-auto px-4 md:px-6">
@@ -246,11 +186,28 @@ export default function StudentVisaPage() {
                    <span className="text-[#d0a850] text-[14px] md:text-sm font-bold uppercase tracking-[0.5em]">{region.name}</span>
                    <h2 className="text-3xl md:text-6xl font-bold text-white heading-serif uppercase leading-[1.2] md:leading-[1.1] tracking-tight">{region.title}</h2>
                  </div>
-                 <p className="text-base md:text-lg text-white/50 leading-relaxed font-medium">
-                   {region.desc}
-                 </p>
-                 <div className="pt-4 md:pt-8">
-                   <Link href="/contact" className="inline-flex items-center gap-6 group/link no-underline">
+                  <p className="text-base md:text-lg text-white/50 leading-relaxed font-medium">
+                    {region.desc}
+                  </p>
+                  {countryFaqs[region.name] && (
+                    <div className="space-y-3 pt-2">
+                      <p className="text-[#d0a850] text-[11px] uppercase tracking-[0.4em] font-bold text-left">Country FAQ</p>
+                      {countryFaqs[region.name].map((faq, idx) => (
+                        <details
+                          key={idx}
+                          className="group rounded-xl border border-white/10 bg-[#16222c]/40 px-5 py-4 transition-colors hover:border-[#d0a850]/30 open:border-[#d0a850]/40"
+                        >
+                          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-sm md:text-base font-semibold text-white [&::-webkit-details-marker]:hidden">
+                            {faq.question}
+                            <span className="shrink-0 text-[#d0a850] text-xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
+                          </summary>
+                          <p className="mt-3 text-gray-400 leading-[1.8] text-[14px] font-medium">{faq.answer}</p>
+                        </details>
+                      ))}
+                    </div>
+                  )}
+                  <div className="pt-4 md:pt-8">
+                    <Link href={`/studentvisa/${region.slug}`} className="inline-flex items-center gap-6 group/link no-underline">
                      <span className="text-[#d0a850] font-bold uppercase text-[14px] md:text-sm tracking-[0.4em]">Explore Process</span>
                      <div className="w-12 h-[1px] bg-[#d0a850]/30 group-hover/link:w-20 group-hover:link:bg-[#d0a850] transition-all duration-500"></div>
                    </Link>
