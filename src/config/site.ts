@@ -8,6 +8,7 @@ export const siteConfig = {
     phone2: "+92-3268450002",
     email: "info@thevisaconsultancy.com",
     hours: "Mon – Sat | 11:00 AM – 7:00 PM",
+    mapLink: "https://maps.app.goo.gl/zv1ymUu4ibRw6YmY6?g_st=aw",
   },
   socials: {
     whatsapp: "https://wa.me/923268450001",

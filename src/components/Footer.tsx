@@ -34,7 +34,14 @@ const Footer = memo(function Footer() {
           <ul className="text-white/80 space-y-2 text-sm md:text-base list-none p-0 flex flex-col items-center md:items-start font-medium">
             <li className="flex items-start text-center gap-3 text-left">
               <FaMapMarkerAlt className="text-[#d0a860] text-lg mt-1 shrink-0" />
-              <span className="max-w-[280px] md:max-w-[320px]">{siteConfig.contact.address}</span>
+              <a 
+                href={siteConfig.contact.mapLink} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="max-w-[280px] md:max-w-[320px] hover:text-[#d0a850] transition-colors"
+              >
+                {siteConfig.contact.address}
+              </a>
             </li>
             <li className="flex items-start gap-3 text-left">
               <FaPhoneAlt className="text-[#d0a860] text-lg shrink-0 mt-1" />
