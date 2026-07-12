@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { FaCheck, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaFacebook, FaTiktok, FaYoutube } from 'react-icons/fa';
+import { FaCheck, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaFacebook, FaTiktok, FaYoutube, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { siteConfig } from '@/config/site';
 
 const Footer = memo(function Footer() {
@@ -62,11 +62,17 @@ const Footer = memo(function Footer() {
               <a href={siteConfig.socials.facebook} target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
                 <FaFacebook />
               </a>
+              <a href={siteConfig.socials.instagram} target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
+                <FaInstagram />
+              </a>
               <a href={siteConfig.socials.tiktok} target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
                 <FaTiktok />
               </a>
               <a href={siteConfig.socials.youtube} target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
                 <FaYoutube />
+              </a>
+              <a href={siteConfig.socials.whatsapp} target="_blank" rel="noreferrer" className="text-white/60 hover:text-[#d0a850] text-xl transition-all">
+                <FaWhatsapp />
               </a>
             </li>
           </ul>  
